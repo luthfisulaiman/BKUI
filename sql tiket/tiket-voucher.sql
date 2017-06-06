@@ -35,7 +35,7 @@ CREATE TABLE `tiket` (
 -- Dumping data for table `tiket`
 --
 
-INSERT INTO `tiket` (`kode_tiket`, `type`) VALUES
+INSERT INTO 'tiket' (`kode_tiket`, `type`) VALUES
 ('A0P0S1B4K4', 'voucher'),
 ('A0P0S1B6K9', 'voucher'),
 ('A0P0S2B8K6', 'voucher'),
@@ -6032,7 +6032,8 @@ INSERT INTO `tiket` (`kode_tiket`, `type`) VALUES
 ('P5P7S1B4K6', 'voucher'),
 ('P5P7S2B6K4', 'voucher'),
 ('P5P7S4B2K8', 'voucher');
-INSERT INTO `tiket` (`kode_tiket`, `type`) VALUES
+
+INSERT INTO 'tiket' ('kode_tiket', 'type') VALUES
 ('P5P7S4B4K9', 'voucher'),
 ('P5P8S0B4K5', 'voucher'),
 ('P5P8S1B8K3', 'voucher'),
