@@ -79,11 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-<<<<<<< HEAD
                     KIKI
-=======
-                    Aesthetic Hehe
->>>>>>> de1130b6bbc7bdd84cbdd334c9b822aa640d3282
                 </div>
 
                 <div class="links">
