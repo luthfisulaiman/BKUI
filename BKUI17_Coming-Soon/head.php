@@ -22,5 +22,5 @@
         <a href="https://twitter.com/bkui_official" target="_blank" class="icon tooltip" title="@BKUI_Official"><i class="fa fa-twitter"></i></a>
         <a href="https://instagram.com/BKUI_Official" target="_blank" class="icon tooltip" title="@BKUI_Official"><i class="fa fa-instagram"></i></a>
         <a href="tel:+6281298969600"class="icon tooltip" title="+62 812 9896 9600 (Farra)"><i class="fa fa-phone"></i></a>
-        <a href='../../TIKET/web.php' target="_blank" class="icon tooltip" title="Mohon maaf, penjualan tiket belum dibuka. Penjualan tiket akan segera dibuka pada tanggal 12 Juni 2017"><i class="fa fa-ticket"></i></a>
+        <a href='../TIKET/web.php' target="_blank" class="icon tooltip" title="Mohon maaf, penjualan tiket belum dibuka. Penjualan tiket akan segera dibuka pada tanggal 12 Juni 2017"><i class="fa fa-ticket"></i></a>
       </div>
