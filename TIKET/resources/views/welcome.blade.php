@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ config('app.locale') }}">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,7 +79,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
+<<<<<<< HEAD
                     KIKI
+=======
+                    Aesthetic Hehe
+>>>>>>> de1130b6bbc7bdd84cbdd334c9b822aa640d3282
                 </div>
 
                 <div class="links">
