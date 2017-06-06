@@ -1,0 +1,75 @@
+/**Font Init**/
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Raleway');
+@font-face { font-family: TrashHand; src: url('http://www.mediafont.com/storage/contents/10471/font.eot'); /* IE */ src: local('TrashHand'), url('http://www.mediafont.com/storage/contents/10471/TrashHand.TTF'); /* non-IE */ } 
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+
+body {
+	overflow-x: hidden;
+}
+
+/*Basic Typography*/
+h1,h2,h3,h4,h5, p, a{
+	font-family:'Raleway';
+}
+
+/**Nav - Override Bootstrap**/
+.navbar-default{
+	background:#d3eaed;
+	box-shadow: 0 4px 8px 0 #000;
+}
+#nav-right li a{
+	color:#1B75BB;
+	font-family:'Raleway';
+	font-weight: bold;	
+
+}
+/*Section -1 */
+#head-section{
+	background:#EDF0F2;
+	padding:10px;
+	height:256px;
+	background:url('../images/background.png')fixed top right no-repeat ;
+	background-size:cover;
+}
+#head-section h1{
+	text-transform: uppercase;
+	font-family: 'TrashHand' !important;
+	font-weight: 900;
+	margin-top:6%;
+	font-size:4em;
+	font-weight:bold;
+	text-shadow: 1px 3px 2px rgba(0,0,0,0.4);
+}
+
+#content-section{
+	padding:50px;
+}
+#content-section .img-responsive{
+	margin:0 auto;
+}
+#content-section .thumbnail{
+	padding:20px;
+}
+#content-section h3{
+	color:#f4a300;
+	font-weight: 600;
+}
+#content-section {
+	text-align:justify;
+}
+
+
+#footer{
+	background:#675c4e;
+	padding:10px;
+	color:#fff;
+	width:100%;
+}
+#footer p{
+	font-weight:normal;
+}
