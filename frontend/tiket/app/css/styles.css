@@ -15,11 +15,6 @@ body {
 	height: 100%;
 }
 
-body {
-	
-	background-color: #92c86e;
-}
-
 @font-face { 
 	font-family: TrashHand; src: url('http://www.mediafont.com/storage/contents/10471/font.eot'); /* IE */ src: local('TrashHand'), url('http://www.mediafont.com/storage/contents/10471/TrashHand.TTF'); /* non-IE */  
 }
@@ -458,7 +453,12 @@ h2 {
 	}
 
 }
-
+@media screen and (min-width: 500px) {
+	#buy-content{
+		margin:0;
+		background:red;
+	}
+}
 @media screen and (max-width: 360px) {
 	
 	/* text */
@@ -579,6 +579,7 @@ footer p{
 	padding:40px;
 	background:#f5f7f8;
 	height:100%;
+	overflow-y:scroll;
 }
 #buy-content h1{
 	color: #155072;
