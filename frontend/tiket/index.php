@@ -40,10 +40,10 @@ include "head.php";
 		</div>
 		
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-4"><a href="buy-ticket.php">
 	<div class="inner-wrapper wow fadeInUp" data-wow-delay="0.9s">
 		<img src ="app/images/ticket.png" class = "img-responsive "  width="120">
-		<h2 class="text-menu text-center">Beli Tiket</h2>
+		<h2 class="text-menu text-center">Beli Tiket</h2></a>
 	</div>
 		
 	</div>

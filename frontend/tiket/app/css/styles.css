@@ -573,3 +573,50 @@ footer p{
 .inner-wrapper:hover{
 	background-color: rgba(233,233,235,0.9);
 }
+
+#buy-content{
+	margin-left:30%;
+	padding:40px;
+	background:#f5f7f8;
+	height:100%;
+}
+#buy-content h1{
+	color: #155072;
+	font-size:5em;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+	margin-bottom:30px;
+}
+label{
+	font-family:'Raleway';
+	font-size:1.2em;
+}
+.form-group input{
+	border: solid 1px #155072;
+	padding:20px;
+	border-radius:10px;
+}
+.form-group input[type="text"], input[type="email"], textarea{
+	font-family:'Raleway';
+	font-size:1.5em;
+}
+.form-group textarea{
+	border: solid 1px #155072;
+	padding:20px;
+	border-radius:10px;
+}
+
+.btn-buy{
+	background:#f5f7f8;
+	color:#155072;
+	font-family:'Raleway';
+	font-size:1.4em;
+	border-radius:10px;
+	border:2px solid #155072;
+}
+.btn-buy:hover{
+	background:#155072;
+	color:#fff;
+	font-family:'Raleway';
+	font-size:1.4em;
+	border-radius:10px;
+}
