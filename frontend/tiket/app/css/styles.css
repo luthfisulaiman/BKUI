@@ -578,10 +578,10 @@ footer p{
 #buy-content{
 	margin-left:30%;
 	padding:40px;
-	background:#f5f7f8;
 	height:100%;
-	overflow-y:scroll;
+	background:#f5f7f8;
 }
+
 #buy-content h1{
 	color: #155072;
 	font-size:5em;
@@ -594,7 +594,7 @@ label{
 }
 .form-group input{
 	border: solid 1px #155072;
-	padding:20px;
+	height:42px;
 	border-radius:10px;
 }
 .form-group input[type="text"], input[type="email"], textarea{
@@ -603,8 +603,25 @@ label{
 }
 .form-group textarea{
 	border: solid 1px #155072;
-	padding:20px;
+	height:42px;
 	border-radius:10px;
+}
+.selectpicker{
+	height:42px;
+	border: solid 1px #155072;
+	font-family:'Quicksand';
+	font-size:1.5em;
+	border-radius:10px;
+}
+.styled-option{
+	border-radius:10px;
+}
+@media only screen and (max-device-width:800px){
+	#buy-content{
+		margin-left:0;
+		height:100%;
+		overflow-y:scroll;
+	}     
 }
 
 .btn-buy{

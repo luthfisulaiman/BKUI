@@ -1,4 +1,3 @@
-</div>
 
 <div class="preloader">
   <div class="sk-spinner sk-spinner-wave">
@@ -8,7 +7,6 @@
     <div class="sk-rect4"></div>
     <div class="sk-rect5"></div>
   </div>
-</div>
 </div>
 
 		
