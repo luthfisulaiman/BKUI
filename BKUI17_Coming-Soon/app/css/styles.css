@@ -27,7 +27,7 @@ p {
 	height: 100%;
 	background: #92c86e url("../images/background.png") no-repeat top left;
 	background-size: cover;
-	overflow: hidden;
+	
 }
 
 .cd-container{

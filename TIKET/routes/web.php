@@ -12,10 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('ticket-home');
 });
 
-
-Route::get('tiket', function () {
-    return "view('tiket')";
+Route::get('buy-ticket', function () {
+    return view('buy-ticket');
 });
