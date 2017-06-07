@@ -1,12 +1,504 @@
+
 /**Font Init**/
 @import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Raleway');
 @font-face { font-family: TrashHand; src: url('http://www.mediafont.com/storage/contents/10471/font.eot'); /* IE */ src: local('TrashHand'), url('http://www.mediafont.com/storage/contents/10471/TrashHand.TTF'); /* non-IE */ } 
+
 
 * {
 	margin: 0;
 	padding: 0;
 }
 
+
+html,
+body {
+	height: 100%;
+}
+
+body {
+	
+	background-color: #92c86e;
+}
+
+@font-face { 
+	font-family: TrashHand; src: url('http://www.mediafont.com/storage/contents/10471/font.eot'); /* IE */ src: local('TrashHand'), url('http://www.mediafont.com/storage/contents/10471/TrashHand.TTF'); /* non-IE */  
+}
+
+p {
+	font-family: 'TrashHand' ;
+	text-align: left;
+	line-height: 1.5em;
+}
+
+.wrapper {
+	width: 100%;
+	height: 100%;
+	background: #92c86e url("../images/background.png") fixed no-repeat top left;
+	background-size: cover;
+	overflow-x:hidden;
+	
+}
+
+.cd-container{
+	background-color: #5E331A;
+	box-shadow: 2px 4px 3px rgba(0,0,0,0.4);
+	border-radius: 4px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 35%;
+	margin: 0 auto;
+}
+
+.hitung-mundur{
+	color: white;
+}
+
+a,
+a:hover,
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+
+a.text-link {
+	color: #a3221d;
+}
+
+a.text-link:hover {
+	text-decoration: underline;
+}
+
+.social-icon {
+	position: absolute;
+	right: 40px;
+}
+
+.icon {
+	display: inline-block;
+	font-size: 25px;
+	cursor: pointer;
+	margin: 25px 10px;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	border-radius: 50%;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+	color: #f8f8f8;
+
+	box-shadow: 0 0 0 2px #5E331A;
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	transition: color 0.3s;
+}
+
+.icon:after {
+	pointer-events: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	content: '';
+	-webkit-box-sizing: content-box; 
+	-moz-box-sizing: content-box; 
+	box-sizing: content-box;
+
+	top: -2px;
+	left: -2px;
+	padding: 2px;
+	z-index: -1;
+	background: #5E331A;
+	-webkit-transition: -webkit-transform 0.2s, opacity 0.3s;
+	-moz-transition: -moz-transform 0.2s, opacity 0.3s;
+	transition: transform 0.2s, opacity 0.3s;
+}
+
+.icon:hover {
+	color: #5E331A;
+}
+
+.icon:hover:after {
+	-webkit-transform: scale(1.3);
+	-moz-transform: scale(1.3);
+	-ms-transform: scale(1.3);
+	transform: scale(1.3);
+	opacity: 0;
+}
+
+.icon-twitter {
+	color: #5E331A;
+}
+
+.icon-instagram {
+	color: #5E331A;
+}
+
+.icon-phone {
+	color: #5E331A;
+}
+
+.icon-ticket {
+	color: #5E331A;
+}
+
+/* counter */
+#countdown-timer {
+	width: 100%;
+	height: 120px;
+	font-family: 'TrashHand' !important;
+	font-size: 3.8em;
+	color: #FFF;
+	overflow: hidden;
+	bottom: 0;
+	position: absolute;
+}
+
+.countDays, .countHours, .countMinutes, .countSeconds {
+	padding-top: 5px;
+	float: left;
+	width: 10%;
+	height: 120px;
+	background: #212121;
+	border: 1px solid #222;
+	margin-left: 35px;
+	text-align: center;
+}
+
+.countDays {
+	margin: 0;
+}
+
+.boxName {
+	display: block;
+	margin: 0 auto;
+	font-size: 20px;
+	color: #FFF100;
+	font-family: 'TrashHand' !important;
+}
+
+.Hours {
+	margin-left: 5px;
+}
+
+.Seconds {
+	margin-left: 2px;
+}
+
+/* text */
+.text-container {
+	position: absolute;
+	top: 30%;
+	left: 0px;
+	right: 0px;
+	text-align: center;
+	-webkit-transform: translate(0, -50%);
+	-moz-transform: translate(0, -50%);
+	-o-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+}
+
+.date-container {
+	position: absolute;
+	bottom: 20px;
+	right: 40px;
+}
+
+.date{
+	font-size: 3em
+}
+
+h1, h2 {
+	text-transform: uppercase;
+	font-family: 'TrashHand' !important;
+	font-weight: 900;
+}
+
+h1 {
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.4);
+}
+
+h2 {
+	text-shadow: 2px 3px 3px rgba(0,0,0,0.4);
+	color: white
+}
+
+.coming-soon {
+	font-size: 8em;
+	color: #155072;
+}
+
+.bkui17 {
+	font-size: 10em;
+	color: #F2E672;
+}
+
+/* preloader */
+.preloader {
+	width: 100%;
+	height: 100%;
+	background-color: #155072;
+	position: fixed;
+	z-index: 999;
+}
+
+.sk-spinner-wave.sk-spinner {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 50px;
+	height: 30px;
+	text-align: center;
+	font-size: 10px;
+
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+.sk-spinner-wave div {
+  background-color: #D0F4FC;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+  -webkit-animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+          animation: sk-waveStretchDelay 1.2s infinite ease-in-out;
+}
+
+.sk-spinner-wave .sk-rect2 {
+  -webkit-animation-delay: -1.1s;
+          animation-delay: -1.1s;
+}
+
+.sk-spinner-wave .sk-rect3 {
+  -webkit-animation-delay: -1s;
+          animation-delay: -1s;
+}
+
+.sk-spinner-wave .sk-rect4 {
+  -webkit-animation-delay: -0.9s;
+          animation-delay: -0.9s;
+}
+
+.sk-spinner-wave .sk-rect5 {
+  -webkit-animation-delay: -0.8s;
+          animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-waveStretchDelay {
+  	0%, 40%, 100% {
+    	-webkit-transform: scaleY(0.4);
+            	transform: scaleY(0.4);
+    }
+
+	20% {
+    	-webkit-transform: scaleY(1);
+            	transform: scaleY(1);
+    }
+}
+
+@keyframes sk-waveStretchDelay {
+	0%, 40%, 100% {
+    	-webkit-transform: scaleY(0.4);
+            	transform: scaleY(0.4);
+ 	}
+
+	20% {
+    	-webkit-transform: scaleY(1);
+            	transform: scaleY(1);
+    }
+}
+
+.info-button {
+	position: absolute;
+	right: 40px;
+	bottom: 20px;
+	font-family: 'TrashHand' !important;
+	font-weight: 700;
+	text-transform: uppercase;
+	color: #fff100;
+	background-color: #a3221d;
+	border: 2px solid #a3221d;
+	padding: 20px 30px;
+	cursor: pointer;
+	letter-spacing: 1.5px;
+
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+.info-button:hover {
+	background-color: transparent;
+	color: #155072;
+}
+
+/* overlay */
+.gray-overlay {
+	top: 0; right: 0; bottom: 0; left: 0;
+	position: absolute;
+	background-color: rgba(33, 33, 33, 0.3);
+}
+
+/* responsive */
+@media screen and (max-width: 991px) {
+
+	.coming-soon {
+		font-size: 8em;
+	}
+
+	.bkui17 {
+		font-size: 8em;
+	}
+
+}
+
+@media screen and (max-width: 767px) {
+
+	/* text */
+	h1 {
+		text-shadow: 2px 4px 5px rgba(0,0,0,0.4);
+	}
+
+	h2 {
+		text-shadow: 2px 3px 5px rgba(0,0,0,0.4);
+	}
+
+	.cd-container{
+		background-color: #5E331A;
+		box-shadow: 2px 4px 3px rgba(0,0,0,0.4);
+		border-radius: 4px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	.text-container {
+		text-align: center;
+		left: 0px;
+		right: 0px;
+		top:70%;
+	}
+
+	.coming-soon {
+		font-size: 5em;
+		
+	}
+
+	/* countdown */
+	#countdown-timer {
+		font-size: 2.5em;
+		height: 90px;
+	}
+
+	.countDays, .countHours, .countMinutes, .countSeconds {
+		width: 80px;
+		height: 90px;
+	}
+
+	.countHours, .countMinutes, .countSeconds {
+		margin-left: 20px;
+	}
+
+	.boxName {
+		font-size: 18px;
+	}
+}
+
+@media screen and (max-width: 540px) {
+	
+	/* social icon */
+	.social-icon {
+		left: 50%;
+		width: 294px;
+		-webkit-transform: translate(-50%, 0);
+		-moz-transform: translate(-50%, 0);
+		-o-transform: translate(-50%, 0);
+		transform: translate(-50%, 0);
+	}
+
+
+	/* countdown */
+	#countdown-timer {
+		font-size: 1.8em;
+		height: 72.5px;
+
+
+		width: 308px;
+		left: 50%;
+		-webkit-transform: translate(-50%, 0);
+		-moz-transform: translate(-50%, 0);
+		-o-transform: translate(-50%, 0);
+		transform: translate(-50%, 0);
+	}
+
+	.countDays, .countHours, .countMinutes, .countSeconds {
+		width: 60px;
+		height: 72.5px;
+	}
+
+	.boxName {
+		font-size: 17px;
+	}
+	
+	/*info button */
+	.info-button {
+		right: auto;
+		bottom: auto;
+		padding: 10px 20px;
+		left: 50%;
+		top: 75%;
+
+		-webkit-transform: translate(-50%, -50%);
+		-moz-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+	}
+
+}
+
+@media screen and (max-width: 360px) {
+	
+	/* text */
+	.coming-soon {
+		font-size: 4em;
+	}
+
+	.bkui17 {
+		font-size: 4em;
+	}
+
+	.date {
+		font-size: 2.5em;
+	}
+
+	.hitung-mundur{
+		font-size: 1.7em;
+	}
+
+}
+
+/* override Remodal */
+.remodal-close {
+	left: auto;
+	right: 0px;
+}
+
+.content {
+	padding-top: 500px;
+	margin-left: 400px;
+}
+
+/*@import url('https://fonts.googleapis.com/css?family=Chewy');*/
+
+.text-menu {
+	font-family: 'Chewy', cursive;
+	color: #F2E672;
+}
+
+=======
 
 body {
 	overflow-x: hidden;
@@ -20,41 +512,28 @@ h1,h2,h3,h4,h5, p, a{
 /**Nav - Override Bootstrap**/
 .navbar-default{
 	background:#d3eaed;
-	box-shadow: 0 4px 8px 0 #000;
 }
 #nav-right li a{
-	color:#1B75BB;
+	color:#155072;
 	font-family:'Raleway';
-	font-weight: bold;	
+	font-weight: bold;
+	font-size:1.2em;	
 
 }
-/*Section -1 */
-#head-section{
-	background:#EDF0F2;
-	padding:10px;
-	height:256px;
-	background:url('../images/background.png')fixed top right no-repeat ;
-	background-size:cover;
-}
-#head-section h1{
-	text-transform: uppercase;
-	font-family: 'TrashHand' !important;
-	font-weight: 900;
-	margin-top:6%;
-	font-size:4em;
-	font-weight:bold;
-	text-shadow: 1px 3px 2px rgba(0,0,0,0.4);
+#nav-right li a:hover{
+	background:#155072;
+	color:#fff;
+	font-size:1.2em;	
 }
 
 #content-section{
-	padding:50px;
+	margin:100px 0px 100px 0px;
+	padding:10px;
 }
 #content-section .img-responsive{
 	margin:0 auto;
 }
-#content-section .thumbnail{
-	padding:20px;
-}
+
 #content-section h3{
 	color:#f4a300;
 	font-weight: 600;
@@ -64,12 +543,33 @@ h1,h2,h3,h4,h5, p, a{
 }
 
 
-#footer{
-	background:#675c4e;
+footer{
+	font-size:1.2em;
 	padding:10px;
+	background:#1a6496;
 	color:#fff;
 	width:100%;
 }
-#footer p{
+footer p{
 	font-weight:normal;
+	font-family:'Raleway';
+}
+
+#head-text{
+	padding:50px;
+	text-align:center;
+}
+
+.inner-wrapper{
+	padding:40px;
+	border-radius:20px;
+	margin:10px 15px 10px 15px;
+	box-shadow: 2px 4px 3px rgba(0,0,0,0.4);
+  -moz-border-radius:30px;
+  -webkit-border-radius:30px;
+  background-color: rgba(233,233,235,0.7);
+ 
+}
+.inner-wrapper:hover{
+	background-color: rgba(233,233,235,0.9);
 }
