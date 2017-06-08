@@ -56,10 +56,10 @@ include "head.php";
 	</div>
 	</div>
 </div>
-<img src ="app/images/wave.png" class = "img-responsive"  >
+<img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">
 <footer>
 	<p class="text-center">Copyright &copy; 2017. Tim Sistem Informasi BKUI17</p>
 </footer>
 
 
-<?php include "foot.php";
+<?php include "foot.php"?>;
