@@ -190,7 +190,7 @@
 				</div>
 			</div>
 			<div class="col-md-12"> 
-			<button id="continue" class="btn btn-buy"><a href = "#">Submit </a></button>
+			<button id="continue" class="btn btn-buy"><a href = payment.php>Submit </a></button>
 		</div>
 		</div>
 	</div>

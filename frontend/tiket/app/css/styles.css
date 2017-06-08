@@ -585,7 +585,7 @@ footer p{
 
 #buy-content h1{
 	color: #155072;
-	font-size:5em;
+	font-size:3em;
 	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
 	margin-bottom:30px;
 }
@@ -658,4 +658,86 @@ label{
 }
 #peserta h1{
 	font-size:2em;
+}
+
+#payment{
+	margin-left:5%;
+	margin-right: 5%;
+	margin-top:5%;
+	padding:50px;
+	background:#f5f7f8;
+}
+
+#payment h1{
+	color: #155072;
+	font-size:3em;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+	margin-bottom:30px;
+}
+
+#payment .payment-head{
+	font-size: 2em;
+
+}
+.num-rounded{
+	color:#fff;
+	background: #155072;
+	padding:10px;
+	height: 20px;
+	width: 20px;
+}
+.btn-pay{
+	background:#f5f7f8;
+	color:#155072;
+	font-family:'Quicksand';
+	font-size:1em;
+	border-radius:10px;
+	border:2px solid #155072;
+	font-weight:bold;
+}
+.btn-pay:hover{
+	background:#155072;
+	color:#fff;
+	font-family:'Quicksand';
+	font-size:1em;
+	border-radius:10px;
+
+}
+
+#download{
+	margin-left:25%;
+	margin-right: 25%;
+	margin-top:5%;
+	padding:10px;
+	background:#f5f7f8;
+}
+
+#download h1{
+	color: #155072;
+	font-size:3em;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+	margin-bottom:30px;
+}
+
+#download .download-head{
+	font-size: 1.5em;
+
+}
+
+.btn-download{
+	background:#f5f7f8;
+	color:#155072;
+	font-family:'Quicksand';
+	font-size:1em;
+	border-radius:5px;
+	border:2px solid #155072;
+	font-weight:bold;
+}
+.btn-download:hover{
+	background:#155072;
+	color:#fff;
+	font-family:'Quicksand';
+	font-size:1em;
+	border-radius:5px;
+
 }
