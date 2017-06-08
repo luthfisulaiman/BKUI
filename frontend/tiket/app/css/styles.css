@@ -576,10 +576,10 @@ footer p{
 }
 
 #buy-content{
-	margin-left:30%;
-	margin-right: 10%;
+	margin-left:25%;
+	margin-right: 25%;
+	margin-top:5%;
 	padding:40px;
-	height:100%;
 	background:#f5f7f8;
 }
 
@@ -619,10 +619,11 @@ label{
 }
 @media only screen and (max-device-width:800px){
 	#buy-content{
-		margin-left:0;
+		margin:0;
 		height:100%;
 		overflow-y:scroll;
 	}     
+
 }
 
 .btn-buy{
@@ -649,8 +650,7 @@ label{
 }
 
 .wrap {
-	width: 90%;
-	height: 110cd%;
+	width: 100%;
 	background: #92c86e url("../images/background.png") fixed no-repeat top left;
 	background-size: 100%;
 	overflow-x:hidden;
