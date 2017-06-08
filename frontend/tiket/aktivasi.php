@@ -23,25 +23,27 @@
     </div>
 </nav>	 
 <body class="wrapper">
-	<div id="download">
-	<div class="row">
-		<div class="col-md-6">
-		<h1 class="coming-soon">Download Tiket</h1>
-		</div>
-	</div>
-
-	<h1 class="download-head">Nama 1</h1>
-		<div class="thumbnail">
-		<div class="modal-body">
-			<button id="continue" class="btn btn-download">Download</button>
-		</div>
-		</div>	
-			<h1 class="download-head"> Nama 2</h1>
-		<div class="thumbnail">
-		<div class="modal-body">
-				<button id="continue" class="btn btn-download">Download</button>
-		</div>
-		</div>
+	<div class="container">
+			<div class="header" id="buy-content">
+				<div class="row">
+					<a href="../tiket/" class="pull-right">Back To Home</a>
+					<div class="col-md-12">
+						<h1 class="coming-soon">Aktivasi Voucher</h1>
+					</div>
+					<div method="post">
+						<p>Masukkan kode yang terdapat pada tiket voucher</p>
+						<form>
+							<div class="form-group">
+								<input type="text"  class="form-control" name="ticketVoucherNumber">
+								
+							</div>
+							<a href="ticket-voucher-buy-registration.php">
+								<button type="button" class="btn btn-success" value="TicketActivated" name="activateTicket">Aktivasi</button>
+							</a>
+						</form>
+					</div>
+				</div>
+			</div>
 	</div>
 </body>
 <img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">

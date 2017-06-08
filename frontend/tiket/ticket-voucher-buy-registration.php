@@ -1,11 +1,32 @@
 <?php
 	include 'head.php';
 ?>
+<nav class="navbar-default navbar-head">
+	<div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right menu-top-right" id="nav-right">
+        	<li><a href="#"> Back To Home</a></li>
+        	<li><a href="#"> FAQ</a></li>
+            <li><a href="#">Need Help?</a></li>
+        	</ul>
+      </div>
+    </div>
+</nav>	 
 	<body class="wrapper">
 		<div class="container">
 			<div id="buy-content">
 				<div class="row">
-					<a href="/BK-Ganteng/frontend/tiket/" class="pull-right">Back To Home</a>
+					<a href="../tiket/" class="pull-right">Back To Home</a>
 					<div class="header col-md-12">
 						<h1 class="head-form" style="text-align:"center"; ">Isi Data Peserta</h1>
 					</div>
@@ -39,7 +60,7 @@
 			</div>
 		</div>
 	</body>
-	<img src ="app/images/wave.png" class = "img-responsive"  >
+	<img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">
 	<footer>
 		<p class="text-center">Copyright &copy; 2017. Tim Sistem Informasi BKUI17</p>
 	</footer>
