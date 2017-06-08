@@ -16,5 +16,6 @@ Route::get('/main', function () {
 });
 
 Route::get('/', function () {
-    return view('tiket');
+    return view('tes');
 });
+
