@@ -9,6 +9,17 @@
 	padding: 0;
 }
 
+#myInput {
+    background-image: url('../images/search.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    background-size: 20px;
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
 
 html,
 body {
@@ -209,8 +220,30 @@ h1, h2 {
 	font-weight: 900;
 }
 
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+    font-size: 20px;
+}
+
 h1 {
 	text-shadow: 2px 4px 3px rgba(0,0,0,0.4);
+}
+
+.contentOrder {
+	font-size: 20px;
+}
+
+.detailOrder {
+	text-transform: uppercase;
+	font-family: 'TrashHand' !important;
+	font-weight: 900;
+	text-shadow: 2px 3px 3px rgba(0,0,0,0.4);
+	color: #155072;
 }
 
 h2 {
@@ -589,6 +622,12 @@ footer p{
 	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
 	margin-bottom:30px;
 }
+
+table {
+	font-family:'Quicksand';
+	font-size:2em;
+}
+
 label{
 	font-family:'Quicksand';
 	font-size:1em;

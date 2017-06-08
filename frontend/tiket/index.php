@@ -57,6 +57,7 @@ include "head.php";
 	</div>
 </div>
 <img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">
+</body>
 <footer>
 	<p class="text-center">Copyright &copy; 2017. Tim Sistem Informasi BKUI17</p>
 </footer>
