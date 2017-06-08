@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="header" id="buy-content">
 				<div class="row">
-					<a href="/BK-Ganteng/frontend/tiket/" class="pull-right">Back To Home</a>
+					<a href="../tiket/" class="pull-right">Back To Home</a>
 					<div class="col-md-12">
 						<h1 class="coming-soon">Isi Data Peserta</h1>
 					</div>

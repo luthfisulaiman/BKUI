@@ -3,7 +3,7 @@
 ?>
 <body class="wrapper">
 <div id="buy-content">
-	<a href="/BK-Ganteng/frontend/tiket/" class="pull-right">Back To Home</a>
+	<a href="../tiket/" class="pull-right">Back To Home</a>
 	<br><br>
 	<form>
 		<div class="row">

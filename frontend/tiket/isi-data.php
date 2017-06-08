@@ -6,7 +6,7 @@
 <div id="buy-content">
 	
 	<div class="row">
-	<a href="#" class="pull-right">Back To Home</a>
+	<a href="../tiket/" class="pull-right">Back To Home</a>
 	<br><br>
 	<div class="col-md-12">
 		<h1 class="coming-soon">Isi Data Peserta</h1>
