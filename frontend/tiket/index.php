@@ -33,7 +33,7 @@ include "head.php";
 
 <div class="row" id="content-section">
 	<div class="container">
-	<div class="col-md-4">
+	<div class="col-md-4"><a href="ticket-voucher-buy.php">
 		<div class="inner-wrapper wow fadeInLeft" data-wow-delay="0.7s">
 			<img src ="app/images/coupon (2).png" class = "img-responsive" width="120">
 			<h2 class="text-menu text-center">Aktivasi Voucher</h2>
