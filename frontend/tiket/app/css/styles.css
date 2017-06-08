@@ -577,6 +577,7 @@ footer p{
 
 #buy-content{
 	margin-left:30%;
+	margin-right: 10%;
 	padding:40px;
 	height:100%;
 	background:#f5f7f8;
@@ -590,7 +591,7 @@ footer p{
 }
 label{
 	font-family:'Quicksand';
-	font-size:1.2em;
+	font-size:1em;
 }
 .form-group input{
 	border: solid 1px #155072;
@@ -599,7 +600,7 @@ label{
 }
 .form-group input[type="text"], input[type="email"], textarea{
 	font-family:'Quicksand';
-	font-size:1.5em;
+	font-size:1em;
 }
 .form-group textarea{
 	border: solid 1px #155072;
@@ -610,7 +611,7 @@ label{
 	height:42px;
 	border: solid 1px #155072;
 	font-family:'Quicksand';
-	font-size:1.5em;
+	font-size:1em;
 	border-radius:10px;
 }
 .styled-option{
@@ -640,4 +641,21 @@ label{
 	font-size:1.4em;
 	border-radius:10px;
 
+}
+
+.data-peserta {
+	font-size: 2.5em !important;
+	color: #155072;
+}
+
+.wrap {
+	width: 90%;
+	height: 110cd%;
+	background: #92c86e url("../images/background.png") fixed no-repeat top left;
+	background-size: 100%;
+	overflow-x:hidden;
+	
+}
+#peserta h1{
+	font-size:2em;
 }
