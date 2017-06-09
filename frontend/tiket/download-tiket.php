@@ -33,13 +33,13 @@
 	<h1 class="download-head">Nama 1</h1>
 		<div class="thumbnail">
 		<div class="modal-body">
-			<button id="continue" class="btn btn-download">Download</button>
+			<button id="continue" class="btn btn-buy">Download Tiket</button>
 		</div>
 		</div>	
 			<h1 class="download-head"> Nama 2</h1>
 		<div class="thumbnail">
 		<div class="modal-body">
-				<button id="continue" class="btn btn-download">Download</button>
+				<button id="continue" class="btn btn-buy">Download Tiket</button>
 		</div>
 		</div>
 	</div>

@@ -52,7 +52,7 @@
 		</div>
 			<div class="col-md-6"> 
 		  	<div class="form-group">
-		    <label for="jumlahTiket">Jenis Identias</label>
+		    <label for="jumlahTiket">Jenis Identitas</label>
 		    <select required id="jumlahTiket" class="form-control selectpicker">
 		    	<option class="styled-option">KTP</option>
 		    	<option class="styled-option">Kartu Pelajar</option>
@@ -65,7 +65,7 @@
 	  	<div class="col-md-12"> 
 		  	<div class="form-group">
 			    <label for="nomer-hp">Nomor HP</label>
-			    <input required type="text" class="form-control" id="pwd">
+			    <input required type="number" class="form-control" placeholder="085711111111" style="font-style: 'QuickSand'">
 		 	</div>
 	 	</div>
 	   	<div class="col-md-12"> 
@@ -81,7 +81,7 @@
 			</div>
 		</div>
 		<div class="col-md-12"> 
-			<button id="continue" class="btn btn-buy"><a href = isi-data.php>Lanjutkan </a></button>
+			<button id="continue" class="btn btn-buy" onclick="window.location.href='isi-data.php'">Lanjutkan</button>
 		</div>
 		</div>
 	</form>

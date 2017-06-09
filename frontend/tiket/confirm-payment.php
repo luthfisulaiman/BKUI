@@ -44,7 +44,7 @@
 			<div class="col-md-6">
 				<div class="form-group">
 				    <label for="email">Nama Bank:</label>
-				    <input required type="email" class="form-control" id="pwd">
+				    <input required type="text" class="form-control" id="pwd">
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -70,6 +70,14 @@
 					    <input required type="number" class="form-control" id="amount" placeholder="50000">
 			 		</div>
 		 		</div>
+		 		<div class="col-md-6"> 
+		 		<form method="post" action="./app.php" enctype="multipart/form-data">
+                        <label for="upload">Upload Bukti Pembayaran
+                        	<input type="file" name ="document" id="document" class="uploadFile">
+                        </label>
+                        <input type="submit" value = "Upload File" name = "submit" class="btn btn-pay"> 
+                 </form>
+                 </div>
 		 	</div>
 		 	<div>
 		 		<div class="col-md-12"> 
