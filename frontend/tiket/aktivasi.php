@@ -1,6 +1,8 @@
 <?php 
 	include 'head.php';
 ?>
+
+<body class="wrapper">
 <nav class="navbar-default navbar-head">
 	<div class="container">
       <div class="navbar-header">
@@ -18,32 +20,32 @@
         	<li><a href="#"> Back To Home</a></li>
         	<li><a href="#"> FAQ</a></li>
             <li><a href="#">Need Help?</a></li>
-        	</ul>
+        </ul>
       </div>
     </div>
-</nav>	 
-<body class="wrapper">
+</nav>
+
 	<div class="container">
-			<div class="header" id="buy-content">
-				<div class="row">
-					<a href="../tiket/" class="pull-right">Back To Home</a>
-					<div class="col-md-12">
-						<h1 class="coming-soon">Aktivasi Voucher</h1>
-					</div>
-					<div method="post">
-						<p>Masukkan kode yang terdapat pada tiket voucher</p>
-						<form>
-							<div class="form-group">
-								<input type="text"  class="form-control" name="ticketVoucherNumber">
-								
-							</div>
-							<a href="ticket-voucher-buy-registration.php">
-								<button type="button" class="btn btn-success" value="TicketActivated" name="activateTicket">Aktivasi</button>
-							</a>
-						</form>
-					</div>
+		<div class="header" id="buy-content">
+			<div class="row">
+				
+				<div class="col-md-12">
+					<h1 class="coming-soon">Aktivasi Voucher</h1>
+				</div>
+				<div method="post">
+					<p>Masukkan kode yang terdapat pada tiket voucher</p>
+					<form>
+						<div class="form-group">
+							<input type="text"  class="form-control" name="ticketVoucherNumber">
+							
+						</div>
+						<a href="ticket-voucher-buy-registration.php">
+							<button type="button" class="btn btn-success" value="TicketActivated" name="activateTicket">Aktivasi</button>
+						</a>
+					</form>
 				</div>
 			</div>
+		</div>
 	</div>
 </body>
 <img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">

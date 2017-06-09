@@ -1,6 +1,8 @@
 <?php 
 	include 'head.php';
 ?>
+ 
+<body class="wrapper">
 <nav class="navbar-default navbar-head">
 	<div class="container">
       <div class="navbar-header">
@@ -21,9 +23,8 @@
         	</ul>
       </div>
     </div>
-</nav>	 
-<body class="wrapper">
-<div id="buy-content">
+</nav>	
+<div id="buy-ticket">
 	<a href="../tiket/" class="pull-right">Back To Home</a>
 	<br><br>
 	<form>
@@ -86,11 +87,12 @@
 		</div>
 	</form>
 </div>
+<div class="hidden-small">
+	<img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">
+</div>
+
 </body>
-<img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">
 <footer>
 	<p class="text-center">Copyright &copy; 2017. Tim Sistem Informasi BKUI17</p>
 </footer>
-
-
 <?php include "foot.php";?>
