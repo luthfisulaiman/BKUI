@@ -33,285 +33,275 @@
 			<h3> No invoice: #BK000000</h3>
 		</div>
 		<div class="col-sm-6" style="margin-top: 50px;">
-		<div class="col-sm-9">
-			<h2 class="detailOrder">Nama Pemesan</h2>
-			<p class="contentOrder">Sandya Sekar</p>
+			<div class="col-sm-9">
+				<h2 class="detailOrder">Nama Pemesan</h2>
+				<p class="contentOrder">Sandya Sekar</p>
 
+				<div class="row">
+					<div class="col-sm-11">
+					<h2 class="detailOrder">Peserta 1</h2>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Nama:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Sandya Sekar Murti</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Email:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">sandyasekarmurti@gmail.com</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Nomor Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">1234567</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Jenis Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">KTP</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Jurusan:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">IPA</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Hari:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Minggu</p>
+							</div>
+						</div>
+				</div>
+			</div>
 			<div class="row">
-			<div class="col-sm-11">
-			<h2 class="detailOrder">Peserta 1</h2>
-				<table class="table table-borderless">
-					<tr>
-						<td>
-							Nama:
-						</td>
-						<td>
-							Sandya Sekar Murti
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Email:
-						</td>
-						<td>
-							sandyasekarmurti@gmail.com
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Nomor Identitas:
-						</td>
-						<td>
-							54637289
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jenis Identitas:
-						</td>
-						<td>
-							KTP
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jurusan:
-						</td>
-						<td>
-							IPA
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Hari:
-						</td>
-						<td>
-							Minggu
-						</td>
-					</tr>
-				</table>
-		</div>
-		</div>
-		<div class="row">
-		<div class="col-sm-11">
-			<h2 class="detailOrder">Peserta 2</h2>
-				<table class="table table-borderless">
-					<tr>
-						<td>
-							Nama:
-						</td>
-						<td>
-							Sandya Sekar Murti
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Email:
-						</td>
-						<td>
-							sandyasekarmurti@gmail.com
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Nomor Identitas:
-						</td>
-						<td>
-							54637289
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jenis Identitas:
-						</td>
-						<td>
-							KTP
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jurusan:
-						</td>
-						<td>
-							IPA
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Hari:
-						</td>
-						<td>
-							Minggu
-						</td>
-					</tr>
-				</table>
-		</div>
-		</div>
-		<div class="row">
-		<div class="col-sm-11">
-			<h2 class="detailOrder">Peserta 3</h2>
-				<table class="table table-borderless">
-					<tr>
-						<td>
-							Nama:
-						</td>
-						<td>
-							Sandya Sekar Murti
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Email:
-						</td>
-						<td>
-							sandyasekarmurti@gmail.com
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Nomor Identitas:
-						</td>
-						<td>
-							54637289
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jenis Identitas:
-						</td>
-						<td>
-							KTP
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jurusan:
-						</td>
-						<td>
-							IPA
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Hari:
-						</td>
-						<td>
-							Minggu
-						</td>
-					</tr>
-				</table>
-		</div>
-		</div>
-		<div class="row">
-		<div class="col-sm-11">
-			<h2 class="detailOrder">Peserta 3</h2>
-				<table class="table table-borderless">
-					<tr>
-						<td>
-							Nama:
-						</td>
-						<td>
-							Sandya Sekar Murti
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Email:
-						</td>
-						<td>
-							sandyasekarmurti@gmail.com
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Nomor Identitas:
-						</td>
-						<td>
-							54637289
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jenis Identitas:
-						</td>
-						<td>
-							KTP
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jurusan:
-						</td>
-						<td>
-							IPA
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Hari:
-						</td>
-						<td>
-							Minggu
-						</td>
-					</tr>
-				</table>
-		</div>
-		</div>
-		<div class="row">
-		<div class="col-sm-11">
-			<h2 class="detailOrder">Peserta 3</h2>
-				<table class="table table-borderless">
-					<tr>
-						<td>
-							Nama:
-						</td>
-						<td>
-							Sandya Sekar Murti
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Email:
-						</td>
-						<td>
-							sandyasekarmurti@gmail.com
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Nomor Identitas:
-						</td>
-						<td>
-							54637289
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jenis Identitas:
-						</td>
-						<td>
-							KTP
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jurusan:
-						</td>
-						<td>
-							IPA
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Hari:
-						</td>
-						<td>
-							Minggu
-						</td>
-					</tr>
-				</table>
-		</div>
-		</div>
+				<div class="col-sm-11">
+					<h2 class="detailOrder">Peserta 1</h2>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Nama:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Sandya Sekar Murti</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Email:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">sandyasekarmurti@gmail.com</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Nomor Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">1234567</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Jenis Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">KTP</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Jurusan:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">IPA</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Hari:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Minggu</p>
+							</div>
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-11">
+					<h2 class="detailOrder">Peserta 1</h2>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Nama:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Sandya Sekar Murti</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Email:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">sandyasekarmurti@gmail.com</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Nomor Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">1234567</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Jenis Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">KTP</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Jurusan:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">IPA</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Hari:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Minggu</p>
+							</div>
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-11">
+					<h2 class="detailOrder">Peserta 1</h2>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Nama:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Sandya Sekar Murti</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Email:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">sandyasekarmurti@gmail.com</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Nomor Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">1234567</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Jenis Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">KTP</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Jurusan:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">IPA</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Hari:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Minggu</p>
+							</div>
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-11">
+					<h2 class="detailOrder">Peserta 1</h2>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Nama:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Sandya Sekar Murti</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Email:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">sandyasekarmurti@gmail.com</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Nomor Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">1234567</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Jenis Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">KTP</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Jurusan:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">IPA</p>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Hari:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Minggu</p>
+							</div>
+						</div>
+				</div>
+			</div>
 		</div>					
 		</div>
 		<div class="col-sm-6">
