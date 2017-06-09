@@ -38,7 +38,50 @@
 				<p class="contentOrder">Sandya Sekar</p>
 
 				<div class="row">
-					<div class="col-sm-11">
+					<div class="col-sm-12">
+					<h2 class="detailOrder">Peserta 1</h2>
+						<div class="row">
+							<div class="col-sm-6">
+								<p class="contentOrder">Nama:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Sandya Sekar Murti</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Email:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">sandyasekarmurti@gmail.com</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Nomor Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">1234567</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Jenis Identitas:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">KTP</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Jurusan:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">IPA</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Hari:</p>
+							</div>
+							<div class="col-sm-6">
+								<p class="contentOrder">Minggu</p>
+							</div>
+						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
 					<h2 class="detailOrder">Peserta 1</h2>
 						<div class="row">
 							<div class="col-sm-6">
@@ -91,7 +134,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-11">
+				<div class="col-sm-12">
 					<h2 class="detailOrder">Peserta 1</h2>
 						<div class="row">
 							<div class="col-sm-6">
@@ -144,7 +187,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-11">
+				<div class="col-sm-12">
 					<h2 class="detailOrder">Peserta 1</h2>
 						<div class="row">
 							<div class="col-sm-6">
@@ -197,60 +240,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-sm-11">
-					<h2 class="detailOrder">Peserta 1</h2>
-						<div class="row">
-							<div class="col-sm-6">
-								<p class="contentOrder">Nama:</p>
-							</div>
-							<div class="col-sm-6">
-								<p class="contentOrder">Sandya Sekar Murti</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<p class="contentOrder">Email:</p>
-							</div>
-							<div class="col-sm-6">
-								<p class="contentOrder">sandyasekarmurti@gmail.com</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<p class="contentOrder">Nomor Identitas:</p>
-							</div>
-							<div class="col-sm-6">
-								<p class="contentOrder">1234567</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<p class="contentOrder">Jenis Identitas:</p>
-							</div>
-							<div class="col-sm-6">
-								<p class="contentOrder">KTP</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<p class="contentOrder">Jurusan:</p>
-							</div>
-							<div class="col-sm-6">
-								<p class="contentOrder">IPA</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-6">
-								<p class="contentOrder">Hari:</p>
-							</div>
-							<div class="col-sm-6">
-								<p class="contentOrder">Minggu</p>
-							</div>
-						</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-sm-11">
+				<div class="col-sm-12">
 					<h2 class="detailOrder">Peserta 1</h2>
 						<div class="row">
 							<div class="col-sm-6">
