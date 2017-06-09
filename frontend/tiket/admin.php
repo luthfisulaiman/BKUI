@@ -39,7 +39,7 @@
 		      <th>No</th>
 		      <th>Nama Pemesan</th>
 		      <th>Jumlah Pesanan</th>
-		      <th>Detil Pemesanan</th>
+		      <th>Action</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -47,32 +47,36 @@
 		      <th scope="row">1</th>
 		      <td>Sandya Sekar</td>
 		      <td>1</td>
-		      <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button></td>
+		      <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+		      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button></td>
 		    </tr>
 		    <tr>
 		      <th scope="row">2</th>
 		      <td>Mary Sue</td>
 		      <td>2</td>
-		      <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button></td>
+		      <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+		      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button></td>
 		    </tr>
 		    <tr>
 		      <th scope="row">3</th>
 		      <td>Gary Stu</td>
 		      <td>3</td>
-		      <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button></td>
+		     <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+		      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button></td>
 		    </tr>
 		    <tr>
 		      <th scope="row">4</th>
 		      <td>Gary Stu</td>
 		      <td>3</td>
-		      <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button></td>
+		     <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+		      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button></td>
 		    </tr>
 		    <tr>
 		      <th scope="row">5</th>
 		      <td>Gary Stu</td>
 		      <td>3</td>
-		      <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button></td>
-		    </tr>
+		      <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+		      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button></td>
 		  </tbody>
 		</table>
 	</div>

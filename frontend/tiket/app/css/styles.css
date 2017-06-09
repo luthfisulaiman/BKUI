@@ -236,6 +236,7 @@ h1 {
 
 .contentOrder {
 	font-size: 20px;
+	font-family: 'Quicksand';
 }
 
 .detailOrder {
@@ -625,7 +626,7 @@ footer p{
 
 table {
 	font-family:'Quicksand';
-	font-size:2em;
+	font-size:1em;
 }
 
 label{

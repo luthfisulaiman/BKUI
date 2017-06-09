@@ -315,14 +315,56 @@
 		</div>					
 		</div>
 		<div class="col-sm-6">
-			<h2 class="detailOrder">Status Pembayaran</h2>
-			<p class="contentOrder">Pembayaran Belum Dilakukan</p>
-
-			<button id="continue" class="btn btn-pay">Ubah Status Pembayaran</button>
-
-			<h2 class="detailOrder">Aktifkan Tiket</h2>
-			<button id="continue" class="btn btn-pay">Aktifkan Tiket Peserta</button>
+			<div class="row">
+				<div class="col-sm-12">
+					<h2 class="detailOrder">Total</h2>
+					<p class="contentOrder">Rp. 50.000,-</p>
+				</div>
+				<div class="col-sm-12">
+					<h2 class="detailOrder">Status Pembayaran</h2>
+					<p class="contentOrder">Pembayaran Telah Dilakukan</p>
+				</div>
+				<div class="col-sm-12">
+					<div class="row">
+						<div class="col-sm-6 contentOrder">
+							No. Rekening:
+						</div>
+						<div class="col-sm-6 contentOrder">
+							12345
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 contentOrder">
+							Nama Pemilik Rekening:
+						</div>
+						<div class="col-sm-6 contentOrder">
+							Sandya Sekar
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 contentOrder">
+							Tanggal Transfer:
+						</div>
+						<div class="col-sm-6 contentOrder">
+							09/06/2017
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 contentOrder">
+							Jumlah Pembayaran:
+						</div>
+						<div class="col-sm-6 contentOrder">
+							Rp. 50.000,-
+						</div>
+					</div>
+					<button id="continue" class="btn btn-pay">Pembayaran Telah Diterima</button>
+				</div>
+				<div class="col-sm-12">
+					<h2 class="detailOrder">Aktifkan Tiket</h2>
+					<button id="continue" class="btn btn-pay">Aktifkan Tiket Peserta</button>
+				</div>
 		</div>
+	</div>
 	</div>
 	</div>
 </body>
