@@ -675,24 +675,7 @@ input {
 .styled-option{
 	border-radius:10px;
 }
-@media only screen and (max-device-width:800px){
-	#buy-content{
-		margin:0;
-		height:100%;
-		overflow-y:scroll;
-	}     
-	.navbar-default{
-		background:#f5f7f8;
-	}
-	.navbar-toggle{
-		background:#f5f7f8;
-		border:solid 1px #155072;
-	}
-	.icon-bar{
-		border: solid 1px #155072;
-	}
 
-}
 
 .btn-buy{
 	background:#f5f7f8;
@@ -809,4 +792,53 @@ input {
 	border-radius:10px;
 
 }
-=======
+#tracking-content, #buy-ticket{
+	margin-left:25%;
+	margin-right: 25%;
+	margin-top:5%;
+	margin-bottom:8%;
+	padding:40px;
+	background:#f5f7f8;
+}
+
+#tracking-content, #buy-ticket h1{
+	color: #155072;
+	font-size:3em;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+	margin-bottom:30px;
+}
+
+
+
+@media only screen and (max-device-width:800px){
+	#buy-content{
+		margin:0;
+		height:100%;
+		overflow-y:scroll;
+	}     
+	.navbar-default{
+		background:#f5f7f8;
+	}
+	.navbar-toggle{
+		background:#f5f7f8;
+		border:solid 1px #155072;
+	}
+	.icon-bar{
+		border: solid 1px #155072;
+	}
+	#tracking-content, #buy-ticket{
+		margin:0;
+		height:90vh;
+		overflow-y:scroll;
+	}
+	.hidden-small{
+		display:none;
+	}
+	footer{
+		background:#f5f7f8;
+	}
+	footer p{
+		color:#155072;
+	}
+
+}	
