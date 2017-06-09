@@ -25,15 +25,32 @@
 <body class="wrapper">
 
 <div id="buy-content">
-	
 	<div class="row">
 		<a href="../tiket/" class="pull-right">Back To Home</a>
 		<br><br>
-		<div class="col-md-12">
-			<h1 class="coming-soon">Data Pemesanan</h1>
+		<div class="col-md-4">
+			<h3>Filter</h3>
+			<div class="row">
+				<div class="col-md-1">
+					<img src ="app/images/move-to-next.png" width="10px;" height="10px;">
+				</div>
+				<div class="col-md-10">
+					<p>Sudah Membayar</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-1">
+					<img src ="app/images/move-to-next.png" width="10px;" height="10px;">
+				</div>
+				<div class="col-md-10">
+					<p>Belum Membayar</p>
+				</div>
+			</div>
 		</div>
+		<div class="col-md-8">
+			<h3 style="text-align: center;">Dashboard Admin</h3>
 		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Pembeli">
-		<table class="table" id="myTable">
+		<table class="table table-responsive" id="myTable">
 		  <thead>
 		    <tr>
 		      <th>No</th>
@@ -47,38 +64,72 @@
 		      <th scope="row">1</th>
 		      <td>Sandya Sekar</td>
 		      <td>1</td>
-		      <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
-		      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button></td>
+		      <td><div class="row">
+		      <div class="col-md-6">
+			      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+			  </div>
+			  <div class="col-md-6">
+			      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button>
+			  </div>
+			  </div></td>
 		    </tr>
 		    <tr>
 		      <th scope="row">2</th>
 		      <td>Mary Sue</td>
 		      <td>2</td>
-		      <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
-		      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button></td>
+		      <td>
+		      <div class="row">
+		      <div class="col-md-6">
+			      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+			  </div>
+			  <div class="col-md-6">
+			      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button>
+			  </div>
+			  </div>
+		      </td>
 		    </tr>
 		    <tr>
 		      <th scope="row">3</th>
 		      <td>Gary Stu</td>
 		      <td>3</td>
-		     <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
-		      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button></td>
+		     <td><div class="row">
+		      <div class="col-md-6">
+			      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+			  </div>
+			  <div class="col-md-6">
+			      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button>
+			  </div>
+			  </div></td>
 		    </tr>
 		    <tr>
 		      <th scope="row">4</th>
 		      <td>Gary Stu</td>
 		      <td>3</td>
-		     <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
-		      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button></td>
+		     <td><div class="row">
+		      <div class="col-md-6">
+			      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+			  </div>
+			  <div class="col-md-6">
+			      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button>
+			  </div>
+			  </div></td>
 		    </tr>
 		    <tr>
 		      <th scope="row">5</th>
 		      <td>Gary Stu</td>
 		      <td>3</td>
-		      <td><button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
-		      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button></td>
+		      <td><div class="row">
+		      <div class="col-md-6">
+			      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+			  </div>
+			  <div class="col-md-6">
+			      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button>
+			  </div>
+			  </div></td>
+		     </tr>
 		  </tbody>
 		</table>
+		</div>
 	</div>
 </div>
 </body>

@@ -74,6 +74,10 @@ a.text-link:hover {
 	text-decoration: underline;
 }
 
+ul li {
+	text-decoration: none;
+}
+
 .social-icon {
 	position: absolute;
 	right: 40px;
@@ -663,6 +667,16 @@ label{
 		height:100%;
 		overflow-y:scroll;
 	}     
+	.navbar-default{
+		background:#f5f7f8;
+	}
+	.navbar-toggle{
+		background:#f5f7f8;
+		border:solid 1px #155072;
+	}
+	.icon-bar{
+		border: solid 1px #155072;
+	}
 
 }
 

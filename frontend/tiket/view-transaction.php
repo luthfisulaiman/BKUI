@@ -15,7 +15,7 @@
 
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav navbar-right menu-top-right" id="nav-right">
-        	<li><a href="#"> Back To Home</a></li>
+        	<li><a href="admin.php"> Back To Dashboard</a></li>
         	<li><a href="#"> FAQ</a></li>
             <li><a href="#">Need Help?</a></li>
         	</ul>
@@ -26,7 +26,7 @@
 
 <div id="payment">	
 	<div class="row">
-		<a href="../tiket/" class="pull-right">Back To Home</a>
+		<a href="admin.php" class="pull-right">Back To Dashboard</a>
 		<br><br>
 			<h1 class="coming-soon">Detail Pemesanan</h1>
 		<div style="float: right;">
@@ -357,16 +357,35 @@
 							Rp. 50.000,-
 						</div>
 					</div>
-					<button id="continue" class="btn btn-pay">Pembayaran Telah Diterima</button>
-				</div>
-				<div class="col-sm-12">
-					<h2 class="detailOrder">Aktifkan Tiket</h2>
-					<button id="continue" class="btn btn-pay">Aktifkan Tiket Peserta</button>
+					<button id="continue" class="btn btn-pay" data-toggle="modal" data-target="#confirmPayment" style="margin-top: 10px;">Pembayaran Telah Diterima</button>
 				</div>
 		</div>
 	</div>
 	</div>
 	</div>
+
+	<div class="modal fade" id="confirmPayment" role="dialog">
+	    <div class="modal-dialog">
+	    	<div class="modal-content">
+	    		<div class="modal-body">
+	    			<h4 class="modal-title">Aktifkan Tiket Peserta?</h4>
+	    		</div>
+	    		<div class="modal-footer">
+		          <button id="continue" class="btn btn-pay">Ya</button>
+		          <button id="continue" class="btn btn-pay" data-dismiss="modal">Tidak</button>
+		        </div>
+		        <!--div class="modal-header">
+		          <button type="button" class="close" data-dismiss="modal">&times;</button>
+		        </div>
+		        <div class="modal-body">
+		          <p> </p>
+		        </div>
+		        <div class="modal-footer">
+		          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div-->
+		      </div>
+		  </div>
+	  </div>
 </body>
 <img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">
 	<footer>
