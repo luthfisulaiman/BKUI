@@ -11,11 +11,22 @@
 |
 */
 
-Route::get('/main', function () {
-    return view('welcome');
-});
-
 Route::get('/', function () {
-    return view('tes');
+    return view('pages.menu');
 });
 
+Route::get('/menu', function () {
+    return View::make('pages.menu');
+});
+
+Route::get('/tes', function () {
+    return view('pages.tes');
+});
+
+Route::get('/tes2', function () {
+    return View::make('pages.tes');
+});
+
+Route::get('/nama', function () {
+    return View::make('pages.nama');
+});

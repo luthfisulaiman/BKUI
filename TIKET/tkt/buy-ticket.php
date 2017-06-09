@@ -2,9 +2,8 @@
 	include 'head.php';
 ?>
 <body class="wrapper">
-
 <div id="buy-content">
-	<a href="#" class="pull-right">Back To Home</a>
+	<a href="../tiket/" class="pull-right">Back To Home</a>
 	<br><br>
 	<form>
 		<div class="row">
@@ -42,12 +41,6 @@
 		    </select>
 			</div>
 		</div>
-		<div class="col-md-12">
-			<div class="form-group">
-			    <label for="asal-sekolah">Asal Sekolah</label>
-			    <input required type="text" class="form-control" id="pwd">
-	  		</div>
-	  	</div>
 	  	<div class="col-md-12"> 
 		  	<div class="form-group">
 			    <label for="nomer-hp">Nomer HP</label>
@@ -67,7 +60,7 @@
 			</div>
 		</div>
 		<div class="col-md-12"> 
-			<button id="continue" class="btn btn-buy">Lanjutkan</button>
+			<button id="continue" class="btn btn-buy"><a href = isi-data.php>Lanjutkan </a></button>
 		</div>
 		</div>
 	</form>

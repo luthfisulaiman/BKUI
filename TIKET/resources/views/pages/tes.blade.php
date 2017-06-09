@@ -23,7 +23,7 @@
                 @endif
 
                 <div class="content">
-                    <h1 class="title m-b-md">
+                    <h1 style="font-size:9em; color: black;" class="title m-b-md">
                         Tiket BKUI
                     </h1>
 
