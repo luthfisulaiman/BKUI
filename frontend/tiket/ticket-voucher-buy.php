@@ -2,8 +2,7 @@
 	include 'head.php';
 ?>
 	<body class="wrapper">
-		<div class="container">
-			<div class="header" id="buy-content">
+		<div class="header" id="buy-content">
 				<div class="row">
 					<a href="/BK-Ganteng/frontend/tiket/" class="pull-right">Back To Home</a>
 					<div class="col-md-12">
@@ -24,11 +23,13 @@
 						</form>
 					</div>
 				</div>
-			</div>
 		</div>
+		
+		<img src ="app/images/wave.png" class ="img-responsive"  >
+		<footer>
+			<p class="text-center">Copyright &copy; 2017. Tim Sistem Informasi BKUI17</p>
+		</footer>
 	</body>
-	<img src ="app/images/wave.png" class = "img-responsive"  >
-	<footer>
-		<p class="text-center">Copyright &copy; 2017. Tim Sistem Informasi BKUI17</p>
-	</footer>
+
+
 	<?php include "foot.php";

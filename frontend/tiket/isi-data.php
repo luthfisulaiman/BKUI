@@ -177,7 +177,7 @@
 			<div>
 				<div class="col-md-6"> 
 			  	<div class="form-group">
-			    <label for="jumlahTiket">Jenis Identias</label>
+			    <label for="jumlahTiket">Jenis Identitas</label>
 			    <select required id="jumlahTiket" class="form-control selectpicker">
 			    	<option class="styled-option">KTP</option>
 			    	<option class="styled-option">Kartu Pelajar</option>
@@ -211,7 +211,7 @@
 				</div>
 			</div>
 			<div class="col-md-12"> 
-			<button id="continue" class="btn btn-buy"><a href = payment.php>Submit </a></button>
+			<button id="continue" class="btn btn-buy" onclick="window.location.href='payment.php'">Submit</button>
 		</div>
 		</div>
 	</div>

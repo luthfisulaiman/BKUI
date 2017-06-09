@@ -327,18 +327,18 @@
 				<div class="col-sm-12">
 					<div class="row">
 						<div class="col-sm-6 contentOrder">
-							No. Rekening:
-						</div>
-						<div class="col-sm-6 contentOrder">
-							12345
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-sm-6 contentOrder">
 							Nama Pemilik Rekening:
 						</div>
 						<div class="col-sm-6 contentOrder">
 							Sandya Sekar
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6 contentOrder">
+							Nama Bank:
+						</div>
+						<div class="col-sm-6 contentOrder">
+							Mandiri
 						</div>
 					</div>
 					<div class="row">
@@ -357,7 +357,7 @@
 							Rp. 50.000,-
 						</div>
 					</div>
-					<button id="continue" class="btn btn-pay" data-toggle="modal" data-target="#confirmPayment" style="margin-top: 10px;">Pembayaran Telah Diterima</button>
+					<button id="continue" class="btn btn-pay" data-toggle="modal" data-target="#confirmPayment" style="margin-top: 10px;">Aktifkan Tiket</button>
 				</div>
 		</div>
 	</div>

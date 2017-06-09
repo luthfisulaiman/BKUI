@@ -41,7 +41,7 @@
 			<div class="thumbnail">
 				<div class="modal-body">
 					<p>E-Tiket akan dikirim maksimal 3 hari setelah pembayaran</p>
-				<button id="continue" class="btn btn-pay">Saya Sudah Membayar</button>
+				<button id="continue" class="btn btn-pay" onclick="window.location.href='confirm-payment.php'">Saya Sudah Membayar</button>
 				</div>	
 			</div>
 		</div>

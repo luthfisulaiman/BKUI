@@ -23,7 +23,7 @@
 
 html,
 body {
-	height: 100%;
+	width: 100%;
 }
 
 @font-face { 
@@ -38,7 +38,7 @@ p {
 
 .wrapper {
 	width: 100%;
-	height: 100%;
+
 	background: #92c86e url("../images/background.png") fixed no-repeat top left;
 	background-size: cover;
 	overflow-x:hidden;
@@ -135,7 +135,10 @@ ul li {
 	transform: scale(1.3);
 	opacity: 0;
 }
-
+.coming-soon {
+	font-size: 6em;
+	color:#155072;
+}
 .icon-twitter {
 	color: #5E331A;
 }
@@ -566,7 +569,7 @@ h1,h2,h3,h4,h5, p, a{
 }
 
 #content-section{
-	margin:100px 0px 100px 0px;
+	margin:100px 0px 10px 0px;
 	padding:10px;
 }
 #content-section .img-responsive{
@@ -617,6 +620,7 @@ footer p{
 	margin-left:25%;
 	margin-right: 25%;
 	margin-top:5%;
+	margin-bottom:8%;
 	padding:40px;
 	background:#f5f7f8;
 }
@@ -642,7 +646,7 @@ label{
 	height:42px;
 	border-radius:10px;
 }
-.form-group input[type="text"], input[type="email"], textarea{
+.form-group input[type="text"], input[type="email"], input[type="date"], textarea{
 	font-family:'Quicksand';
 	font-size:1em;
 }
