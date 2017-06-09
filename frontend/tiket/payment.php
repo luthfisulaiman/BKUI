@@ -65,27 +65,16 @@
 		     
 			</div>
 	</div>
+</div></div>
+<div class="hidden-small">
+	<img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">
+</div>
 
-
-	<div class="row">
-		
-		</div>
-		
-	</div>
-
-	<div class="row">
-		
-			
-			
-		</div>
-	</div>
-
-	</div>
-</body>
-<img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">
 <footer>
 	<p class="text-center">Copyright &copy; 2017. Tim Sistem Informasi BKUI17</p>
 </footer>
+</body>
+
 
 
 <?php include "foot.php";?>

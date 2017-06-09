@@ -25,33 +25,36 @@
     </div>
 </nav>
 
-	<div class="container">
-		<div class="header" id="buy-content">
-			<div class="row">
-				
-				<div class="col-md-12">
-					<h1 class="coming-soon">Aktivasi Voucher</h1>
+<div class="header" id="activate-content">
+	<div class="row">
+		
+		<div class="col-md-12">
+			<h1 class="coming-soon">Aktivasi Voucher</h1>
+		</div>
+		<div method="post">
+			<p>Masukkan kode yang terdapat pada tiket voucher</p>
+			<form>
+				<div class="form-group">
+					<input type="text"  class="form-control" name="ticketVoucherNumber">
+					
 				</div>
-				<div method="post">
-					<p>Masukkan kode yang terdapat pada tiket voucher</p>
-					<form>
-						<div class="form-group">
-							<input type="text"  class="form-control" name="ticketVoucherNumber">
-							
-						</div>
-						<a href="ticket-voucher-buy-registration.php">
-							<button type="button" class="btn btn-success" value="TicketActivated" name="activateTicket">Aktivasi</button>
-						</a>
-					</form>
-				</div>
-			</div>
+				<a href="ticket-voucher-buy-registration.php">
+					<button type="button" class="btn btn-buy" value="TicketActivated" name="activateTicket">Aktivasi</button>
+				</a>
+			</form>
 		</div>
 	</div>
-</body>
-<img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">
+</div>
+</div>
+<div class="hidden-small">
+	<img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">
+</div>
+
 <footer>
 	<p class="text-center">Copyright &copy; 2017. Tim Sistem Informasi BKUI17</p>
 </footer>
+
+</body>
 
 
 <?php include "foot.php";?>

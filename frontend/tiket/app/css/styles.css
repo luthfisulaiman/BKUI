@@ -652,7 +652,17 @@ label{
 }
 
 input[type="file"] {
-	
+
+	padding:10px;
+	color:#155072;
+	font-family:'Quicksand';
+	font-size:1em;
+	border-radius:10px;
+	position:inline;
+	font-weight:bold;
+}
+.btn-upload{
+	background:#155072;
 }
 .form-group textarea{
 	border: solid 1px #155072;
@@ -691,6 +701,21 @@ input {
 	color:#fff;
 	font-family:'Quicksand';
 	font-size:1.4em;
+	border-radius:10px;
+
+}
+.btn-upload{
+	background:#155072;
+	color:#fff;
+	font-family:'Quicksand';
+	font-size:1em;
+	
+}
+.btn-upload:hover{
+	
+	color:#fff;
+	font-family:'Quicksand';
+	
 	border-radius:10px;
 
 }
@@ -737,7 +762,7 @@ input {
 	height: 20px;
 	width: 20px;
 }
-.btn-pay, .uploadFile{
+.btn-pay{
 	background:#f5f7f8;
 	color:#155072;
 	font-family:'Quicksand';
@@ -792,7 +817,7 @@ input {
 	border-radius:10px;
 
 }
-#tracking-content, #buy-ticket{
+#tracking-content, #payment #download, #buy-ticket, #activate-content, #confirm-content{
 	margin-left:25%;
 	margin-right: 25%;
 	margin-top:5%;
@@ -801,7 +826,7 @@ input {
 	background:#f5f7f8;
 }
 
-#tracking-content, #buy-ticket h1{
+#tracking-content, #buy-ticket, #activate-content h1{
 	color: #155072;
 	font-size:3em;
 	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
@@ -826,9 +851,14 @@ input {
 	.icon-bar{
 		border: solid 1px #155072;
 	}
-	#tracking-content, #buy-ticket{
+	#tracking-content, #download, #buy-ticket,#activate-content, #confirm-content{
 		margin:0;
-		height:90vh;
+		height:85vh;
+		overflow-y:scroll;
+	}
+	#payment{
+		margin:0;
+		height:85vh;
 		overflow-y:scroll;
 	}
 	.hidden-small{
