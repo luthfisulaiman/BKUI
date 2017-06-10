@@ -11,54 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.menu');
-});
+Route::get('/','baseController@index');
 
-Route::get('/menu', function () {
-    return View::make('pages.menu');
-});
+Route::get('/aktivasi-voucher', 'baseController@aktivasi_voucher');
 
-Route::get('/tes', function () {
-    return view('pages.tes');
-});
+Route::get('/beli', 'baseController@beli');
 
-Route::get('/tes2', function () {
-    return View::make('pages.tes');
-});
+Route::get('/isi-data','baseController@isi_data');
 
-Route::get('/nama', function () {
-    return View::make('pages.nama');
-});
+Route::get('/payment','baseController@payment');
 
-Route::get('/aktivasi-voucher', function () {
-    return View::make('pages.aktivasi-voucher');
-});
+Route::get('/confirm-payment','baseController@confirm_payment');
 
-Route::get('/beli', function () {
-    return View::make('pages.beli');
-});
+Route::get('/registrasi-voucher', 'baseController@registrasi_voucher');
 
-Route::get('/isi-data', function () {
-    return View::make('pages.isi-data');
-});
+Route::get('/download-tiket', 'baseController@downlaod_tiket');
 
-Route::get('/payment', function () {
-    return View::make('pages.payment');
-});
-
-Route::get('/confirm-payment', function () {
-    return View::make('pages.confirm-payment');
-});
-
-Route::get('/registrasi-voucher', function () {
-    return View::make('pages.voucher-registration');
-});
-
-Route::get('/download-tiket', function () {
-    return View::make('pages.download-tiket');
-});
-
-Route::get('/tracking', function () {
-    return View::make('pages.tracking');
-});
+Route::get('/tracking', 'baseController@tracking');
