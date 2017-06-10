@@ -3,7 +3,7 @@
 <head>
     @include('includes.head')
 </head>
-<body class="wrapper wow fadeIn">
+<body class="wrapper">
     <div class="wrapper">
         @include('includes.header')
 
@@ -11,8 +11,6 @@
                 @yield('content')
         </div>
     </div>
-    <div class="footer">
         @include('includes.footer')
-    </div>
 </body>
 </html>

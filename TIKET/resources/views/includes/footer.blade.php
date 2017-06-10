@@ -1,5 +1,7 @@
 
-<img src ="../public/images/wave.png" style="background:none" class = "img-responsive" style="width: 100%;">
+<div class="hidden-small">
+	<img src ="../public/images/wave.png" style="background:none" class = "img-responsive" style="width: 100%;">
+</div>
 <footer>
 	<p class="text-center">Copyright &copy; 2017. Tim Sistem Informasi BKUI17</p>
 </footer>

@@ -25,6 +25,6 @@ Route::get('/confirm-payment','baseController@confirm_payment');
 
 Route::get('/registrasi-voucher', 'baseController@registrasi_voucher');
 
-Route::get('/download-tiket', 'baseController@downlaod_tiket');
+Route::get('/download-tiket', 'baseController@download_tiket');
 
 Route::get('/tracking', 'baseController@tracking');

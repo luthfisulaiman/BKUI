@@ -846,6 +846,9 @@ input {
 
 
 @media only screen and (max-device-width:800px){
+	body{
+		background:#fff;
+	}
 	#buy-content{
 		margin:0;
 		height:100%;
@@ -864,7 +867,12 @@ input {
 	.icon-bar{
 		border: solid 1px #155072;
 	}
-	#buy-tiket, #tracking-content, #download, #buy-ticket,#activate-content, #confirm-content{
+	#buy-tiket, #download, #buy-ticket,#activate-content, #confirm-content{
+		margin:0;
+		height:100%;
+		overflow-y:scroll;
+	}
+	#tracking-content{
 		margin:0;
 		height:85vh;
 		overflow-y:scroll;
@@ -877,14 +885,14 @@ input {
 	.hidden-small{
 		display:none;
 	}
+	.footer {
+		z-index:99;
+		position:absolute;
+	}
+
 	footer{
 		background:#f5f7f8;
-	}
-	footer p{
-		color:#155072;
-	}
-	#home-footer p{
-		color:#fff;
+		color:#155072;;
 	}
 
 }	
