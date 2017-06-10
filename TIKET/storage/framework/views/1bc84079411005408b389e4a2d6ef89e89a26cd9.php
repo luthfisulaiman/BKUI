@@ -1,5 +1,4 @@
-@extends('layouts.default')
-@section('content')
+<?php $__env->startSection('content'); ?>
 	<div class="row" id="head-text">
 	  <h1 class="coming-soon text-center wow fadeInDown" data-wow-delay="0.2s">Pemesanan Tiket BKUI17</h1>
 	</div>
@@ -28,4 +27,5 @@
 			</div>
 		</div>
 	</div>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

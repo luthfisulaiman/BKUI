@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head> 
@@ -10,6 +11,7 @@
   <title>Tiket BKUI17</title>
   <script type="text/javascript" src="app/jquery/jquery-3.2.1.min.js"></script>
   <script src="app/js/wow.js"></script>
+  <script type="text/javascript" src="app/js/app.js"></script>
 <script>
    new WOW().init();
 </script>

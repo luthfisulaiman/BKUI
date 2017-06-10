@@ -1,86 +1,48 @@
+
+/**Font Init**/
+@import url('https://fonts.googleapis.com/css?family=Lato|Montserrat|Quicksand');
+@font-face { font-family: TrashHand; src: url('http://www.mediafont.com/storage/contents/10471/font.eot'); /* IE */ src: local('TrashHand'), url('http://www.mediafont.com/storage/contents/10471/TrashHand.TTF'); /* non-IE */ } 
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
 * {
 	margin: 0;
 	padding: 0;
 }
 
-html, body {
-	height: 100%;
-	background-color: #fff;
-	color: #636b6f;
-	font-family: 'TrashHand', sans-serif;
-	font-weight: 100;
-	height: 100vh;
-	margin: 0;
+#myInput {
+    background-image: url('../images/search.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    background-size: 20px;
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
 }
 
+html,
 body {
-	overflow: hidden;
-	background-color: #D0F4FC;
-	font-family: 'TrashHand', sans-serif;
-	font-weight: 100;
-	height: 100vh;
-	margin: 0;
+	width: 100%;
 }
 
-.full-height {
-    height: 100vh;
+@font-face { 
+	font-family: TrashHand; src: url('http://www.mediafont.com/storage/contents/10471/font.eot'); /* IE */ src: local('TrashHand'), url('http://www.mediafont.com/storage/contents/10471/TrashHand.TTF'); /* non-IE */  
 }
-
-.flex-center {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-}
-
-.position-ref {
-    position: relative;
-}
-
-.top-right {
-    position: absolute;
-    right: 10px;
-    top: 18px;
-}
-
-.content {
-    text-align: center;
-}
-
-.title {
-    font-size: 84px;
-    color: 
-}
-
-.links > a {
-    color: #636b6f;
-    padding: 0 25px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: .1rem;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.m-b-md {
-    margin-bottom: 30px;
-}
-
-
-@font-face { font-family: TrashHand; src: url('http://www.mediafont.com/storage/contents/10471/font.eot'); /* IE */ src: local('TrashHand'), url('http://www.mediafont.com/storage/contents/10471/TrashHand.TTF'); /* non-IE */ } 
-
 
 p {
-	font-family: 'TrashHand' !important;
+	font-family: 'TrashHand' ;
 	text-align: left;
 	line-height: 1.5em;
 }
 
 .wrapper {
 	width: 100%;
-	height: 100%;
-	background: url("../images/bg.png") no-repeat top left;
+
+	background: #92c86e url("../images/background.png") fixed no-repeat top left;
 	background-size: cover;
-	overflow: hidden;
+	overflow-x:hidden;
+	
 }
 
 .cd-container{
@@ -110,6 +72,10 @@ a.text-link {
 
 a.text-link:hover {
 	text-decoration: underline;
+}
+
+ul li {
+	text-decoration: none;
 }
 
 .social-icon {
@@ -169,7 +135,10 @@ a.text-link:hover {
 	transform: scale(1.3);
 	opacity: 0;
 }
-
+.coming-soon {
+	font-size: 6em;
+	color:#155072;
+}
 .icon-twitter {
 	color: #5E331A;
 }
@@ -232,7 +201,7 @@ a.text-link:hover {
 /* text */
 .text-container {
 	position: absolute;
-	top: 50%;
+	top: 30%;
 	left: 0px;
 	right: 0px;
 	text-align: center;
@@ -258,8 +227,31 @@ h1, h2 {
 	font-weight: 900;
 }
 
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+    font-size: 20px;
+}
+
 h1 {
 	text-shadow: 2px 4px 3px rgba(0,0,0,0.4);
+}
+
+.contentOrder {
+	font-size: 20px;
+	font-family: 'Quicksand';
+}
+
+.detailOrder {
+	text-transform: uppercase;
+	font-family: 'TrashHand' !important;
+	font-weight: 900;
+	text-shadow: 2px 3px 3px rgba(0,0,0,0.4);
+	color: #155072;
 }
 
 h2 {
@@ -267,7 +259,7 @@ h2 {
 	color: white
 }
 
-.coming-soon {
+.head-form {
 	font-size: 8em;
 	color: #155072;
 }
@@ -428,7 +420,7 @@ h2 {
 
 	.coming-soon {
 		font-size: 5em;
-		color: #F6EAC9;
+		
 	}
 
 	/* countdown */
@@ -502,7 +494,12 @@ h2 {
 	}
 
 }
-
+@media screen and (min-width: 500px) {
+	#buy-content{
+		margin:0;
+		background:red;
+	}
+}
 @media screen and (max-width: 360px) {
 	
 	/* text */
@@ -529,3 +526,365 @@ h2 {
 	left: auto;
 	right: 0px;
 }
+
+.content {
+	padding-top: 500px;
+	margin-left: 400px;
+}
+
+/*@import url('https://fonts.googleapis.com/css?family=Chewy');*/
+
+.text-menu {
+	font-family: 'Chewy', cursive;
+	color: #F2E672;
+	font-size:2.2em;
+}
+
+=======
+
+body {
+	overflow-x: hidden;
+}
+
+/*Basic Typography*/
+h1,h2,h3,h4,h5, p, a{
+	font-family:'Quicksand';
+}
+
+/**Nav - Override Bootstrap**/
+.navbar-default{
+	background:#d3eaed;
+}
+#nav-right li a{
+	color:#155072;
+	font-family:'Quicksand';
+	font-weight: bold;
+	font-size:1.4em;	
+
+}
+#nav-right li a:hover{
+	background:#155072;
+	color:#fff;
+	font-size:1.2em;	
+}
+
+#content-section{
+	margin:100px 0px 10px 0px;
+	padding:10px;
+}
+#content-section .img-responsive{
+	margin:0 auto;
+}
+
+#content-section h3{
+	color:#f4a300;
+	font-weight: 600;
+}
+#content-section {
+	text-align:justify;
+}
+
+#home-footer{
+	font-size:1.2em;
+	padding:10px;
+	background:#1a6496;
+	color:#fff;
+	width:100%;
+}
+footer{
+	font-size:1.2em;
+	padding:10px;
+	background:#1a6496;
+	color:#fff;
+	width:100%;
+}
+footer p{
+	font-weight:normal;
+	font-family:'Quicksand';
+}
+
+#head-text{
+	padding:50px;
+	text-align:center;
+}
+
+.inner-wrapper{
+	padding:40px;
+	border-radius:20px;
+	margin:10px 15px 10px 15px;
+	box-shadow: 2px 4px 3px rgba(0,0,0,0.4);
+  -moz-border-radius:30px;
+  -webkit-border-radius:30px;
+  background-color: rgba(233,233,235,0.7);
+ 
+}
+.inner-wrapper:hover{
+	background-color: rgba(233,233,235,0.9);
+}
+
+#buy-content{
+	margin-left:25%;
+	margin-right: 25%;
+	margin-top:5%;
+	margin-bottom:8%;
+	padding:40px;
+	background:#f5f7f8;
+}
+
+#buy-content h1{
+	color: #155072;
+	font-size:3em;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+	margin-bottom:30px;
+}
+
+table {
+	font-family:'Quicksand';
+	font-size:1em;
+}
+
+label{
+	font-family:'Quicksand';
+	font-size:1em;
+}
+.form-group input{
+	border: solid 1px #155072;
+	height:42px;
+	border-radius:10px;
+}
+.form-group input[type="text"], input[type="email"], input[type="date"], textarea{
+	font-family:'Quicksand';
+	font-size:1em;
+}
+
+input[type="file"] {
+
+	padding:10px;
+	color:#155072;
+	font-family:'Quicksand';
+	font-size:1em;
+	border-radius:10px;
+	position:inline;
+	font-weight:bold;
+}
+.btn-upload{
+	background:#155072;
+}
+.form-group textarea{
+	border: solid 1px #155072;
+	height:42px;
+	border-radius:10px;
+}
+.selectpicker{
+	height:42px;
+	border: solid 1px #155072;
+	font-family:'Quicksand';
+	font-size:1em;
+	border-radius:10px;
+}
+
+
+input {
+	font-family:'Quicksand';
+}
+
+.styled-option{
+	border-radius:10px;
+}
+
+
+.btn-buy{
+	background:#f5f7f8;
+	color:#155072;
+	font-family:'Quicksand';
+	font-size:1.4em;
+	border-radius:10px;
+	border:2px solid #155072;
+	font-weight:bold;
+}
+.btn-buy:hover{
+	background:#155072;
+	color:#fff;
+	font-family:'Quicksand';
+	font-size:1.4em;
+	border-radius:10px;
+
+}
+.btn-upload{
+	background:#155072;
+	color:#fff;
+	font-family:'Quicksand';
+	font-size:1em;
+	
+}
+.btn-upload:hover{
+	
+	color:#fff;
+	font-family:'Quicksand';
+	
+	border-radius:10px;
+
+}
+
+.data-peserta {
+	font-size: 2.5em !important;
+	color: #155072;
+}
+
+.wrap {
+	width: 100%;
+	background: #92c86e url("../images/background.png") fixed no-repeat top left;
+	background-size: 100%;
+	overflow-x:hidden;
+	
+}
+#peserta h1{
+	font-size:2em;
+}
+#buy-tiket{
+	margin-left:15%;
+	margin-right: 15%;
+	margin-top:5%;
+	padding:50px;
+	background:#f5f7f8;	
+}
+#payment{
+	margin-left:5%;
+	margin-right: 5%;
+	margin-top:5%;
+	padding:50px;
+	background:#f5f7f8;
+}
+
+#payment h1{
+	color: #155072;
+	font-size:3em;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+	margin-bottom:30px;
+}
+
+#payment .payment-head{
+	font-size: 2em;
+
+}
+.num-rounded{
+	color:#fff;
+	background: #155072;
+	padding:10px;
+	height: 20px;
+	width: 20px;
+}
+.btn-pay{
+	background:#f5f7f8;
+	color:#155072;
+	font-family:'Quicksand';
+	font-size:1em;
+	border-radius:10px;
+	border:2px solid #155072;
+	font-weight:bold;
+}
+.btn-pay:hover{
+	background:#155072;
+	color:#fff;
+	font-family:'Quicksand';
+	font-size:1em;
+	border-radius:10px;
+
+}
+
+#download{
+	margin-left:25%;
+	margin-right: 25%;
+	margin-top:5%;
+	padding:40px;
+	background:#f5f7f8;
+}
+
+#download h1{
+	color: #155072;
+	font-size:3em;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+	margin-bottom:30px;
+}
+
+#download .download-head{
+	font-size: 1.5em;
+
+}
+
+.btn-activate{
+	background:#f5f7f8;
+	color:#155072;
+	font-family:'Quicksand';
+	font-size:1.1em;
+	border-radius:10px;
+	border:2px solid #155072;
+	font-weight:bold;
+}
+.btn-activate:hover{
+	background:#155072;
+	color:#fff;
+	font-family:'Quicksand';
+	font-size:1.1em;
+	border-radius:10px;
+
+}
+#tracking-content, #payment #download, #activate-content, #confirm-content{
+	margin-left:25%;
+	margin-right: 25%;
+	margin-top:5%;
+	margin-bottom:8%;
+	padding:40px;
+	background:#f5f7f8;
+}
+
+#tracking-content, #buy-ticket, #activate-content h1{
+	color: #155072;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+	margin-bottom:30px;
+}
+
+
+@media only screen and (max-device-width:800px){
+	#buy-content{
+		margin:0;
+		height:100%;
+		overflow-y:scroll;
+	}     
+	.navbar-default{
+		background:#f5f7f8;
+	}
+	#nav-home {
+		background:#d3eaed;
+	}
+	.navbar-toggle{
+		background:#f5f7f8;
+		border:solid 1px #155072;
+	}
+	.icon-bar{
+		border: solid 1px #155072;
+	}
+	#buy-tiket, #tracking-content, #download, #buy-ticket,#activate-content, #confirm-content{
+		margin:0;
+		height:85vh;
+		overflow-y:scroll;
+	}
+	#payment{
+		margin:0;
+		height:85vh;
+		overflow-y:scroll;
+	}
+	.hidden-small{
+		display:none;
+	}
+	footer{
+		background:#f5f7f8;
+	}
+	footer p{
+		color:#155072;
+	}
+	#home-footer p{
+		color:#fff;
+	}
+
+}	

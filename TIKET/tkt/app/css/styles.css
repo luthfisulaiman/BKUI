@@ -9,10 +9,21 @@
 	padding: 0;
 }
 
+#myInput {
+    background-image: url('../images/search.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    background-size: 20px;
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}
 
 html,
 body {
-	height: 100%;
+	width: 100%;
 }
 
 @font-face { 
@@ -27,7 +38,7 @@ p {
 
 .wrapper {
 	width: 100%;
-	height: 100%;
+
 	background: #92c86e url("../images/background.png") fixed no-repeat top left;
 	background-size: cover;
 	overflow-x:hidden;
@@ -61,6 +72,10 @@ a.text-link {
 
 a.text-link:hover {
 	text-decoration: underline;
+}
+
+ul li {
+	text-decoration: none;
 }
 
 .social-icon {
@@ -120,7 +135,10 @@ a.text-link:hover {
 	transform: scale(1.3);
 	opacity: 0;
 }
-
+.coming-soon {
+	font-size: 6em;
+	color:#155072;
+}
 .icon-twitter {
 	color: #5E331A;
 }
@@ -209,8 +227,31 @@ h1, h2 {
 	font-weight: 900;
 }
 
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+    border: none;
+    font-size: 20px;
+}
+
 h1 {
 	text-shadow: 2px 4px 3px rgba(0,0,0,0.4);
+}
+
+.contentOrder {
+	font-size: 20px;
+	font-family: 'Quicksand';
+}
+
+.detailOrder {
+	text-transform: uppercase;
+	font-family: 'TrashHand' !important;
+	font-weight: 900;
+	text-shadow: 2px 3px 3px rgba(0,0,0,0.4);
+	color: #155072;
 }
 
 h2 {
@@ -218,7 +259,7 @@ h2 {
 	color: white
 }
 
-.coming-soon {
+.head-form {
 	font-size: 8em;
 	color: #155072;
 }
@@ -528,7 +569,7 @@ h1,h2,h3,h4,h5, p, a{
 }
 
 #content-section{
-	margin:100px 0px 100px 0px;
+	margin:100px 0px 10px 0px;
 	padding:10px;
 }
 #content-section .img-responsive{
@@ -543,7 +584,13 @@ h1,h2,h3,h4,h5, p, a{
 	text-align:justify;
 }
 
-
+#home-footer{
+	font-size:1.2em;
+	padding:10px;
+	background:#1a6496;
+	color:#fff;
+	width:100%;
+}
 footer{
 	font-size:1.2em;
 	padding:10px;
@@ -579,6 +626,7 @@ footer p{
 	margin-left:25%;
 	margin-right: 25%;
 	margin-top:5%;
+	margin-bottom:8%;
 	padding:40px;
 	background:#f5f7f8;
 }
@@ -589,6 +637,12 @@ footer p{
 	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
 	margin-bottom:30px;
 }
+
+table {
+	font-family:'Quicksand';
+	font-size:1em;
+}
+
 label{
 	font-family:'Quicksand';
 	font-size:1em;
@@ -598,9 +652,23 @@ label{
 	height:42px;
 	border-radius:10px;
 }
-.form-group input[type="text"], input[type="email"], textarea{
+.form-group input[type="text"], input[type="email"], input[type="date"], textarea{
 	font-family:'Quicksand';
 	font-size:1em;
+}
+
+input[type="file"] {
+
+	padding:10px;
+	color:#155072;
+	font-family:'Quicksand';
+	font-size:1em;
+	border-radius:10px;
+	position:inline;
+	font-weight:bold;
+}
+.btn-upload{
+	background:#155072;
 }
 .form-group textarea{
 	border: solid 1px #155072;
@@ -614,17 +682,16 @@ label{
 	font-size:1em;
 	border-radius:10px;
 }
+
+
+input {
+	font-family:'Quicksand';
+}
+
 .styled-option{
 	border-radius:10px;
 }
-@media only screen and (max-device-width:800px){
-	#buy-content{
-		margin:0;
-		height:100%;
-		overflow-y:scroll;
-	}     
 
-}
 
 .btn-buy{
 	background:#f5f7f8;
@@ -640,6 +707,21 @@ label{
 	color:#fff;
 	font-family:'Quicksand';
 	font-size:1.4em;
+	border-radius:10px;
+
+}
+.btn-upload{
+	background:#155072;
+	color:#fff;
+	font-family:'Quicksand';
+	font-size:1em;
+	
+}
+.btn-upload:hover{
+	
+	color:#fff;
+	font-family:'Quicksand';
+	
 	border-radius:10px;
 
 }
@@ -659,7 +741,13 @@ label{
 #peserta h1{
 	font-size:2em;
 }
-
+#buy-tiket{
+	margin-left:15%;
+	margin-right: 15%;
+	margin-top:5%;
+	padding:50px;
+	background:#f5f7f8;	
+}
 #payment{
 	margin-left:5%;
 	margin-right: 5%;
@@ -708,7 +796,7 @@ label{
 	margin-left:25%;
 	margin-right: 25%;
 	margin-top:5%;
-	padding:10px;
+	padding:40px;
 	background:#f5f7f8;
 }
 
@@ -724,20 +812,80 @@ label{
 
 }
 
-.btn-download{
+.btn-activate{
 	background:#f5f7f8;
 	color:#155072;
 	font-family:'Quicksand';
-	font-size:1em;
-	border-radius:5px;
+	font-size:1.1em;
+	border-radius:10px;
 	border:2px solid #155072;
 	font-weight:bold;
 }
-.btn-download:hover{
+.btn-activate:hover{
 	background:#155072;
 	color:#fff;
 	font-family:'Quicksand';
-	font-size:1em;
-	border-radius:5px;
+	font-size:1.1em;
+	border-radius:10px;
 
 }
+#tracking-content, #payment #download, #activate-content, #confirm-content{
+	margin-left:25%;
+	margin-right: 25%;
+	margin-top:5%;
+	margin-bottom:8%;
+	padding:40px;
+	background:#f5f7f8;
+}
+
+#tracking-content, #buy-ticket, #activate-content h1{
+	color: #155072;
+	font-size:3em;
+	text-shadow: 2px 4px 3px rgba(0,0,0,0.2);
+	margin-bottom:30px;
+}
+
+
+@media only screen and (max-device-width:800px){
+	#buy-content{
+		margin:0;
+		height:100%;
+		overflow-y:scroll;
+	}     
+	.navbar-default{
+		background:#f5f7f8;
+	}
+	#nav-home {
+		background:#d3eaed;
+	}
+	.navbar-toggle{
+		background:#f5f7f8;
+		border:solid 1px #155072;
+	}
+	.icon-bar{
+		border: solid 1px #155072;
+	}
+	#buy-tiket, #tracking-content, #download, #buy-ticket,#activate-content, #confirm-content{
+		margin:0;
+		height:85vh;
+		overflow-y:scroll;
+	}
+	#payment{
+		margin:0;
+		height:85vh;
+		overflow-y:scroll;
+	}
+	.hidden-small{
+		display:none;
+	}
+	footer{
+		background:#f5f7f8;
+	}
+	footer p{
+		color:#155072;
+	}
+	#home-footer p{
+		color:#fff;
+	}
+
+}	

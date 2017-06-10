@@ -1,10 +1,11 @@
-<?php
-	include 'head.php';
-?>
+
+@extends('layouts.default')
+
+@section('content')
 	<body class="wrapper">
 		<div class="header" id="buy-content">
 				<div class="row">
-					<a href="/BK-Ganteng/frontend/tiket/" class="pull-right">Back To Home</a>
+					<a href="../public" class="pull-right">Back To Home</a>
 					<div class="col-md-12">
 						<h1 class="head-form">Aktivasi Voucher</h1>
 					</div>
@@ -16,7 +17,7 @@
 							</div>
 
 							<div class="form-group">
-								<a href="ticket-voucher-buy-registration.php">
+								<a href="../public/registrasi-voucher">
 									<button type="button" class="btn btn-activate" value="TicketActivated" name="activateTicket">Aktivasi</button>
 								</a>
 							</div>
@@ -24,12 +25,5 @@
 					</div>
 				</div>
 		</div>
-		
-		<img src ="app/images/wave.png" class ="img-responsive"  >
-		<footer>
-			<p class="text-center">Copyright &copy; 2017. Tim Sistem Informasi BKUI17</p>
-		</footer>
 	</body>
-
-
-	<?php include "foot.php";
+@stop
