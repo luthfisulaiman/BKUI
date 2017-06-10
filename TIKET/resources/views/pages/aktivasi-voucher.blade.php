@@ -11,7 +11,8 @@
 			</div>
 			<div method="post">
 				<p>Masukkan kode yang terdapat pada tiket voucher</p>
-				<form>
+				<form method="POST" action="../public/registrasi-voucher">
+					{!! csrf_field() !!}
 					<div class="form-group">
 						<input type="text"  class="form-control" name="ticketVoucherNumber">
 					</div>

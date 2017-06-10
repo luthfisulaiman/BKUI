@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class baseController extends Controller
 {
@@ -41,5 +42,9 @@ class baseController extends Controller
 
     public function tracking(){
     	return view('pages.tracking');
+    }
+
+    public function activate(Request $request) {
+        return $request->all();
     }
 }

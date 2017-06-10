@@ -28,3 +28,5 @@ Route::get('/registrasi-voucher', 'baseController@registrasi_voucher');
 Route::get('/download-tiket', 'baseController@download_tiket');
 
 Route::get('/tracking', 'baseController@tracking');
+
+Route::get('/registrasi-voucher', ['uses' => 'baseController@activate']);
