@@ -32,6 +32,7 @@
 	<div class="col-md-12">
 		<h1 class="coming-soon">Isi Data Peserta</h1>
 	</div>
+	<div class="col-md-12">
 		<form>
 			<div id="peserta1">
 			<div class="row">	
@@ -229,6 +230,7 @@
 	</div>
 	
 	</form>
+	</div>
 	</div>
 </div>
 <div class="hidden-small">

@@ -584,7 +584,13 @@ h1,h2,h3,h4,h5, p, a{
 	text-align:justify;
 }
 
-
+#home-footer{
+	font-size:1.2em;
+	padding:10px;
+	background:#1a6496;
+	color:#fff;
+	width:100%;
+}
 footer{
 	font-size:1.2em;
 	padding:10px;
@@ -735,7 +741,13 @@ input {
 #peserta h1{
 	font-size:2em;
 }
-
+#buy-tiket{
+	margin-left:15%;
+	margin-right: 15%;
+	margin-top:5%;
+	padding:50px;
+	background:#f5f7f8;	
+}
 #payment{
 	margin-left:5%;
 	margin-right: 5%;
@@ -817,7 +829,7 @@ input {
 	border-radius:10px;
 
 }
-#tracking-content, #payment #download, #buy-ticket, #activate-content, #confirm-content{
+#tracking-content, #payment #download, #activate-content, #confirm-content{
 	margin-left:25%;
 	margin-right: 25%;
 	margin-top:5%;
@@ -834,7 +846,6 @@ input {
 }
 
 
-
 @media only screen and (max-device-width:800px){
 	#buy-content{
 		margin:0;
@@ -844,6 +855,9 @@ input {
 	.navbar-default{
 		background:#f5f7f8;
 	}
+	#nav-home {
+		background:#d3eaed;
+	}
 	.navbar-toggle{
 		background:#f5f7f8;
 		border:solid 1px #155072;
@@ -851,7 +865,7 @@ input {
 	.icon-bar{
 		border: solid 1px #155072;
 	}
-	#tracking-content, #download, #buy-ticket,#activate-content, #confirm-content{
+	#buy-tiket, #tracking-content, #download, #buy-ticket,#activate-content, #confirm-content{
 		margin:0;
 		height:85vh;
 		overflow-y:scroll;
@@ -869,6 +883,9 @@ input {
 	}
 	footer p{
 		color:#155072;
+	}
+	#home-footer p{
+		color:#fff;
 	}
 
 }	

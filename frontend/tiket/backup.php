@@ -5,7 +5,7 @@
 <body class="wrapper">
 <nav class="navbar-default navbar-head">
 	<div class="container">
-      <div class="navbar-header" >
+      <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -24,12 +24,12 @@
       </div>
     </div>
 </nav>	
-<div id="buy-tiket">
+<div id="buy-ticket">
 	<div class="row">
 		<form>
-		<div class="row">
+		
 		<div class="col-md-12">
-			<h1 class="coming-soon">Pembelian Tiket Online</h1>
+			<h1>Pembelian Tiket Online</h1>
 		</div>
 		
 		<div class="col-md-6">
@@ -83,7 +83,7 @@
 		<div class="col-md-12"> 
 			<button id="continue" class="btn btn-buy" onclick="window.location.href='isi-data.php'">Lanjutkan</button>
 		</div>
-		</div>
+	
 	</form>
 	</div>
 	
