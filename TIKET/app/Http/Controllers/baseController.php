@@ -33,8 +33,30 @@ class baseController extends Controller
     	return view('pages.confirm-payment');
     }
     
-    public function registrasi_voucher(){
-    	return view('pages.voucher-registration');
+    public function registrasi_voucher(Request $request){
+        $nama = $request->input('namaPeserta');
+        $jurusanSMA = $request->input('jurusan');
+        $email = $request->input('email');
+    	$kodeTiket = DB::table('tiket')
+                            -> select('kode_tiket')
+                            -> where('kode_tiket', '=', $request->input('kodeTiket')) -> first();
+
+        if ($kodeTiket) {
+            $kodeTiket = $kodeTiket->kode_tiket;
+
+            DB::table('pembayaran')->insert();
+
+            DB::table('detail_tiket')->insert();
+
+            DB::table('peserta')->insertGetId(
+                ['nama' => $nama, 'jurusan' => $jurusanSMA, 'email' => $email, 'kode_tiket' => $kodeTiket]
+            );
+            
+            return view('pages.menu');
+        }
+        else {
+            return view('pages.aktivasi-voucher');
+        }
     }
 
     public function download_tiket(){

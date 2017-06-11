@@ -73,6 +73,7 @@
 				</div>
 			</div>
 			</div>
+			<input type="submit" class="btn btn-activate" value="Submit" name="submitDataPeserta">
 		</form>
 	</div>
 	</div>

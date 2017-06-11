@@ -21,9 +21,6 @@
 
 					<div class="form-group">
 						<input type="submit" class="btn btn-activate" value="Aktivasi" name="activateTicket">
-						{{-- <a href="../public/registrasi-voucher">
-							<button type="button" class="btn btn-activate" value="TicketActivated" name="activateTicket">Aktivasi</button>
-						</a> --}}
 					</div>
 				</form>
 			</div>
