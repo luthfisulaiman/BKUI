@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class baseController extends Controller
 {
@@ -45,6 +46,20 @@ class baseController extends Controller
     }
 
     public function activate(Request $request) {
-        return $request->all();
+        $kodeVoucher = $request->input('ticketVoucherNumber');
+
+        if (strlen($kodeVoucher) == 10) {
+            $kodeTiket = DB::table('voucher')
+                            -> select('kode_tiket')
+                            -> where('kode_voucher', '=', $kodeVoucher) -> first();
+        }
+
+        if (isset($kodeTiket)) {
+            return view('pages.voucher-registration', compact('kodeTiket'));
+        }
+        else {
+            $salahKodeVoucher = TRUE;
+            return view('pages.aktivasi-voucher', compact('salahKodeVoucher'));
+        }
     }
 }

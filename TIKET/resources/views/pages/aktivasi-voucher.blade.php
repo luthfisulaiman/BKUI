@@ -1,26 +1,29 @@
-
 @extends('layouts.default')
 
 @section('content')
 	<body class="wrapper">
 		<div id="tracking-content">
 		<div class="row">
-			<a href="../public" class="pull-right">Back To Home</a>
 			<div class="col-md-12">
 				<h1 class="coming-soon">Aktivasi Voucher</h1>
 			</div>
-			<div method="post">
+			<div>
+				@if (isset($salahKodeVoucher))
+					<p><strong>Voucher yang anda masukkan salah</strong></p>
+				@endif
+
 				<p>Masukkan kode yang terdapat pada tiket voucher</p>
-				<form method="POST" action="../public/registrasi-voucher">
+				<form method="POST" action="../public/aktivasi-voucher">
 					{!! csrf_field() !!}
 					<div class="form-group">
 						<input type="text"  class="form-control" name="ticketVoucherNumber">
 					</div>
 
 					<div class="form-group">
-						<a href="../public/registrasi-voucher">
+						<input type="submit" class="btn btn-activate" value="Aktivasi" name="activateTicket">
+						{{-- <a href="../public/registrasi-voucher">
 							<button type="button" class="btn btn-activate" value="TicketActivated" name="activateTicket">Aktivasi</button>
-						</a>
+						</a> --}}
 					</div>
 				</form>
 			</div>

@@ -3,12 +3,15 @@
 <div class="container">
 	<div id="buy-content">
 		<div class="row">
-			<a href="../tiket/" class="pull-right">Back To Home</a>
 			<div class="header col-md-12">
 				<h1 class="head-form" style="text-align:"center"; ">Isi Data Peserta</h1>
 			</div>
 			<form method="post">
 				<p>Isilah identitas diri pada form di bawah ini</p>
+				<div class="form-group">
+				    <label for="name">Kode Tiket:</label>
+				    <input type="text" class="form-control" id="name" value="{{ $kodeTiket->kode_tiket }}" disabled>
+				</div>
 				<div class="form-group">
 				    <label for="name">Nama Pemesan:</label>
 				    <input type="text" class="form-control" id="name">
