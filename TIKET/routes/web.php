@@ -14,6 +14,8 @@
 Route::get('/','baseController@index');
 
 Route::get('/aktivasi-voucher', 'baseController@aktivasi_voucher');
+Route::post('/aktivasi-voucher', 'baseController@activate');
+Route::post('/registrasi-voucher', 'baseController@registrasi_voucher');
 
 Route::get('/beli', 'baseController@beli');
 
@@ -23,10 +25,6 @@ Route::get('/payment','baseController@payment');
 
 Route::get('/confirm-payment','baseController@confirm_payment');
 
-Route::get('/registrasi-voucher', 'baseController@registrasi_voucher');
-
 Route::get('/download-tiket', 'baseController@download_tiket');
 
 Route::get('/tracking', 'baseController@tracking');
-
-Route::get('/registrasi-voucher', ['uses' => 'baseController@activate']);

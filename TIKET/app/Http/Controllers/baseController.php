@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Illuminate\Support\Facades\DB;
 
 class baseController extends Controller
 {
@@ -32,8 +33,34 @@ class baseController extends Controller
     	return view('pages.confirm-payment');
     }
     
-    public function registrasi_voucher(){
-    	return view('pages.voucher-registration');
+    public function registrasi_voucher(Request $request){
+        $nama = $request->input('namaPeserta');
+        $jurusanSMA = $request->input('jurusan');
+        $email = $request->input('email');
+        $isHariPertama = $request->input('hariH');
+    	$kodeTiket = DB::table('tiket')
+                            -> select('kode_tiket')
+                            -> where('kode_tiket', '=', $request->input('kodeTiket')) -> first();
+
+        if ($kodeTiket) {
+            $kodeTiket = $kodeTiket->kode_tiket;
+
+            DB::table('tiket') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
+            DB::table('voucher') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
+
+            DB::table('detail_tiket')->insert(
+                ['kode_tiket' => $kodeTiket, 'kloter' => 'A', 'isHariPertama' => $isHariPertama, 'kode_pembayaran' => null]
+            );
+
+            DB::table('peserta')->insertGetId(
+                ['nama' => $nama, 'jurusan' => $jurusanSMA, 'email' => $email, 'kode_tiket' => $kodeTiket]
+            );
+            
+            return view('pages.voucher-registration');
+        }
+        else {
+            return view('pages.aktivasi-voucher');
+        }
     }
 
     public function download_tiket(){
@@ -45,6 +72,20 @@ class baseController extends Controller
     }
 
     public function activate(Request $request) {
-        return $request->all();
+        $kodeVoucher = $request->input('ticketVoucherNumber');
+
+        if (strlen($kodeVoucher) == 10) {
+            $kodeTiket = DB::table('voucher')
+                            -> select('kode_tiket')
+                            -> where('kode_voucher', '=', $kodeVoucher) -> first();
+        }
+
+        if (isset($kodeTiket)) {
+            return view('pages.voucher-registration', compact('kodeTiket'));
+        }
+        else {
+            $salahKodeVoucher = TRUE;
+            return view('pages.aktivasi-voucher', compact('salahKodeVoucher'));
+        }
     }
 }
