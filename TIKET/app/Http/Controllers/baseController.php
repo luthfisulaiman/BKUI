@@ -37,6 +37,7 @@ class baseController extends Controller
         $nama = $request->input('namaPeserta');
         $jurusanSMA = $request->input('jurusan');
         $email = $request->input('email');
+        $isHariPertama = $request->input('hariH');
     	$kodeTiket = DB::table('tiket')
                             -> select('kode_tiket')
                             -> where('kode_tiket', '=', $request->input('kodeTiket')) -> first();
@@ -44,15 +45,18 @@ class baseController extends Controller
         if ($kodeTiket) {
             $kodeTiket = $kodeTiket->kode_tiket;
 
-            DB::table('pembayaran')->insert();
+            DB::table('tiket') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
+            DB::table('voucher') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
 
-            DB::table('detail_tiket')->insert();
+            DB::table('detail_tiket')->insert(
+                ['kode_tiket' => $kodeTiket, 'kloter' => 'A', 'isHariPertama' => $isHariPertama, 'kode_pembayaran' => null]
+            );
 
             DB::table('peserta')->insertGetId(
                 ['nama' => $nama, 'jurusan' => $jurusanSMA, 'email' => $email, 'kode_tiket' => $kodeTiket]
             );
             
-            return view('pages.menu');
+            return view('pages.voucher-registration');
         }
         else {
             return view('pages.aktivasi-voucher');

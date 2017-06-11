@@ -71,8 +71,8 @@
 					  	<div class="form-group">
 					    <label for="rumpun">Rumpun UI</label>
 					    <select required id="rumpun" class="form-control selectpicker" name="hariH">
-					    	<option class="styled-option">IPA</option>
-					    	<option class="styled-option">IPS</option>
+					    	<option class="styled-option" value="0">IPA</option>
+					    	<option class="styled-option" value="1">IPS</option>
 					    </select>
 						</div>
 						</div>
