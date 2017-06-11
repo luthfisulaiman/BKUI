@@ -9,7 +9,11 @@
 			</div>
 			<div>
 				@if (isset($salahKodeVoucher))
-					<p><strong>Voucher yang anda masukkan salah</strong></p>
+					@if ($salahKodeVoucher == 'Kode Voucher Salah')
+						<p><strong>Voucher yang anda masukkan salah</strong></p>
+					@else
+						<p><strong>Voucher yang anda masukkan telah digunakan</strong></p>
+					@endif
 				@endif
 
 				<p>Masukkan kode yang terdapat pada tiket voucher</p>
