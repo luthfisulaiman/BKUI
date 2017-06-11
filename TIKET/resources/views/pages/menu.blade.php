@@ -23,7 +23,7 @@
 			<div class="col-md-4"><a href="../public/tracking">
 				<div class="inner-wrapper wow fadeInRight" data-wow-delay="1.1s">
 					<img src ="../public/images/search.png" class = "img-responsive"  width="120">
-					<h2 class="text-menu text-center">Lacak Tiket</h2>
+					<h2 class="text-menu text-center">Tracking Pembelian</h2>
 				</div>
 			</div>
 		</div>
