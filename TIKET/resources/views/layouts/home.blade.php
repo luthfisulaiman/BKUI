@@ -5,12 +5,12 @@
 </head>
 <body class="wrapper">
     <div class="wrapper">
-        @include('includes.header')
+        @include('includes.home-head')
 
         <div id="main" class="row">
             @yield('content')
         </div>
     </div>
-        @include('includes.footer')
+        @include('includes.home-footer')
 </body>
 </html>

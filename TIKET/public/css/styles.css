@@ -139,6 +139,11 @@ ul li {
 	font-size: 6em;
 	color:#155072;
 }
+.dashboard-title {
+	font-size: 4em;
+	color:#155072;
+	margin-bottom:5%;
+}
 .icon-twitter {
 	color: #5E331A;
 }
@@ -559,15 +564,13 @@ h1,h2,h3,h4,h5, p, a{
 	color:#155072;
 	font-family:'Quicksand';
 	font-weight: bold;
-	font-size:1.4em;	
-
+	font-size:1.1em;	
 }
 #nav-right li a:hover{
 	background:#155072;
 	color:#fff;
-	font-size:1.2em;	
+	font-size:1.1em;	
 }
-
 #content-section{
 	margin:100px 0px 10px 0px;
 	padding:10px;
@@ -620,6 +623,12 @@ footer p{
 }
 .inner-wrapper:hover{
 	background-color: rgba(233,233,235,0.9);
+}
+
+#admin{
+	margin:5% 10% 1% 10%;
+	padding:40px;
+	background:#f5f7f8;
 }
 
 #buy-content{
@@ -829,7 +838,7 @@ input {
 	border-radius:10px;
 
 }
-#tracking-content, #payment #download, #activate-content, #confirm-content{
+#tracking-content, #payment, #download, #activate-content, #confirm-content{
 	margin-left:25%;
 	margin-right: 25%;
 	margin-top:5%;
@@ -846,18 +855,15 @@ input {
 
 
 @media only screen and (max-device-width:800px){
-	body{
-		background:#fff;
-	}
 	#buy-content{
 		margin:0;
 		height:100%;
 		overflow-y:scroll;
 	}     
-	.navbar-default{
+	.navbar-default {
 		background:#f5f7f8;
 	}
-	#nav-home {
+	.navbar-home {
 		background:#d3eaed;
 	}
 	.navbar-toggle{
@@ -867,12 +873,7 @@ input {
 	.icon-bar{
 		border: solid 1px #155072;
 	}
-	#buy-tiket, #download, #buy-ticket,#activate-content, #confirm-content{
-		margin:0;
-		height:100%;
-		overflow-y:scroll;
-	}
-	#tracking-content{
+	#admin, #buy-tiket, #tracking-content, #download, #buy-ticket,#activate-content, #confirm-content{
 		margin:0;
 		height:85vh;
 		overflow-y:scroll;
@@ -885,14 +886,14 @@ input {
 	.hidden-small{
 		display:none;
 	}
-	.footer {
-		z-index:99;
-		position:absolute;
-	}
-
-	footer{
+	.footer-grey{
 		background:#f5f7f8;
-		color:#155072;;
+	}
+	.footer-grey p{
+		color:#155072;
+	}
+	#home-footer p{
+		color:#fff;
 	}
 
 }	

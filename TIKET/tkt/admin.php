@@ -24,31 +24,14 @@
 </nav>	 
 <body class="wrapper">
 
-<div id="buy-content">
+<div id="admin">
 	<div class="row">
-		<a href="../tiket/" class="pull-right">Back To Home</a>
-		<br><br>
-		<div class="col-md-4">
-			<h3>Filter</h3>
-			<div class="row">
-				<div class="col-md-1">
-					<img src ="app/images/move-to-next.png" width="10px;" height="10px;">
-				</div>
-				<div class="col-md-10">
-					<p>Sudah Membayar</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-1">
-					<img src ="app/images/move-to-next.png" width="10px;" height="10px;">
-				</div>
-				<div class="col-md-10">
-					<p>Belum Membayar</p>
-				</div>
-			</div>
+		<div class="col-md-12">
+			<h2 class="dashboard-title">Dashboard Admin</h2>
 		</div>
-		<div class="col-md-8">
-			<h3 style="text-align: center;">Dashboard Admin</h3>
+		
+		<div class="col-md-12">
+			
 		<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Pembeli">
 		<table class="table table-responsive" id="myTable">
 		  <thead>
@@ -133,8 +116,9 @@
 	</div>
 </div>
 </body>
+
 <img src ="app/images/wave.png" class = "img-responsive" style="width: 100%;">
 	<footer>
 		<p class="text-center">Copyright &copy; 2017. Tim Sistem Informasi BKUI17</p>
-	</footer>
+</footer>
 	<?php include "foot.php";?>

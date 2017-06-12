@@ -1,10 +1,11 @@
 $(document).ready(function(){
-new WOW().init();
+  new WOW().init();
 });
 
-$(window).load(function() {
-	$(".preloader").delay(200).fadeOut();
+$(window).on('load', function(){ 
+  $(".preloader").delay(200).fadeOut();
 });
+
 
 function myFunction() {
   // Declare variables 

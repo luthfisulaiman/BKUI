@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\DB;
 
 class baseController extends Controller
 {
+    public function admin(){
+        return view('pages.admin');
+    }
     public function index(){
     	return view('pages.menu');
     }

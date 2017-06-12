@@ -1,15 +1,15 @@
 @extends('layouts.default')
 
 @section('content')
-	<body class="wrapper">
-		<div id="tracking-content">
+	
+	<div id="tracking-content">
 		<div class="row">
 			<div class="col-md-12">
 				<h1 class="coming-soon">Aktivasi Voucher</h1>
 			</div>
 			<div>
 				@if (isset($salahKodeVoucher))
-					<p><strong>Voucher yang anda masukkan salah</strong></p>
+					<p class="warning-red"><strong>Voucher yang anda masukkan salah</strong></p>
 				@endif
 
 				<p>Masukkan kode yang terdapat pada tiket voucher</p>
@@ -26,5 +26,4 @@
 			</div>
 			</div>
 		</div>
-	</body>
 @stop
