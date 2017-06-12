@@ -42,24 +42,30 @@ class baseController extends Controller
         $email = $request->input('email');
         $isHariPertama = $request->input('hariH');
     	$kodeTiket = DB::table('tiket')
-                            -> select('kode_tiket')
+                            -> select(array('kode_tiket', 'isTaken'))
                             -> where('kode_tiket', '=', $request->input('kodeTiket')) -> first();
 
         if ($kodeTiket) {
-            $kodeTiket = $kodeTiket->kode_tiket;
+            if ($kodeTiket->isTaken == 0) {
+                $kodeTiket = $kodeTiket->kode_tiket;
 
-            DB::table('tiket') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
-            DB::table('voucher') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
+                DB::table('tiket') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
+                DB::table('voucher') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
 
-            DB::table('detail_tiket')->insert(
-                ['kode_tiket' => $kodeTiket, 'kloter' => 'A', 'isHariPertama' => $isHariPertama, 'kode_pembayaran' => null]
-            );
+                DB::table('detail_tiket')->insert(
+                    ['kode_tiket' => $kodeTiket, 'kloter' => 'A', 'isHariPertama' => $isHariPertama, 'kode_pembayaran' => null]
+                );
 
-            DB::table('peserta')->insertGetId(
-                ['nama' => $nama, 'jurusan' => $jurusanSMA, 'email' => $email, 'kode_tiket' => $kodeTiket]
-            );
-            
-            return view('pages.voucher-registration');
+                DB::table('peserta')->insertGetId(
+                    ['nama' => $nama, 'jurusan' => $jurusanSMA, 'email' => $email, 'kode_tiket' => $kodeTiket]
+                );
+                
+                return view('pages.menu');
+            }
+            else {
+                $salahKodeVoucher = 'Kode Voucher Sudah Digunakan';
+                return view('pages.aktivasi-voucher', compact('salahKodeVoucher'));
+            }
         }
         else {
             return view('pages.aktivasi-voucher');
@@ -79,15 +85,21 @@ class baseController extends Controller
 
         if (strlen($kodeVoucher) == 10) {
             $kodeTiket = DB::table('voucher')
-                            -> select('kode_tiket')
+                            -> select(array('kode_tiket', 'isTaken'))
                             -> where('kode_voucher', '=', $kodeVoucher) -> first();
         }
 
         if (isset($kodeTiket)) {
-            return view('pages.voucher-registration', compact('kodeTiket'));
+            if ($kodeTiket->isTaken == 0) {
+                return view('pages.voucher-registration', compact('kodeTiket'));
+            }
+            else {
+                $salahKodeVoucher = 'Kode Voucher Sudah Digunakan';
+                return view('pages.aktivasi-voucher', compact('salahKodeVoucher'));
+            }
         }
         else {
-            $salahKodeVoucher = TRUE;
+            $salahKodeVoucher = 'Kode Voucher Salah';
             return view('pages.aktivasi-voucher', compact('salahKodeVoucher'));
         }
     }
