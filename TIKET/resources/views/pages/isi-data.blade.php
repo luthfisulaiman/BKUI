@@ -4,12 +4,25 @@
 	
 	<div class="row">
 	<div class="col-md-12">
-		<h1 class="coming-soon">Isi Data Peserta</h1>
+		<h1 class="coming-soon">Data Pembeli</h1>
 	</div>
 	<div class="col-md-12">
 		<form>
 		<div class="row">
 		
+
+		<div class="col-md-6">
+			<div class="form-group">
+			    <label for="kode_pembayaran">Kode Pembayaran:</label>
+			    <input required type="text" class="form-control" id="kode_pembayaran" name="kode_pembayaran" value="{{ array_get($arrayPemesan, 'kode_pembayaran') }}" readonly>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+			    <label for="deadlineDate">Deadline Pembayaran</label>
+			    <input required type="text" class="form-control" id="deadlineDate" name="deadlineDate" value="{{ array_get($arrayPemesan, 'deadlineDate') }}" readonly>
+			</div>
+		</div>
 		<div class="col-md-6">
 			<div class="form-group">
 			    <label for="nama">Nama Pemesan:</label>

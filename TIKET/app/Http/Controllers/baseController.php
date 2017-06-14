@@ -31,39 +31,40 @@ class baseController extends Controller
             'email' => 'bail|required|email', 
             'no-identitas' => 'bail|required|numeric',
             'nomer-hp' => 'required',],
-            [ 'nama-pemesan.required' => 'Isi nama pemesan',
-            'email.required'  => 'Isi dengan email Anda',
-            'email.email'  => 'Isi dengan format email yang sesuai',
-            'no-identitas.required'  => 'Isi dengan nomor identitas Anda',
-            'no-identitas.numeric' => 'Isi dengan 10 digit angka nomor identitas Anda',
-            'nomer-hp.required' => 'Isi dengan nomor Hp Anda',
+            [ 'nama-pemesan.required' => '*isi nama pemesan',
+            'email.required'  => '*isi dengan email Anda',
+            'email.email'  => '*isi dengan format email yang sesuai',
+            'no-identitas.required'  => '*isi dengan nomor identitas Anda',
+            'no-identitas.numeric' => '*isi dengan nomor identitas Anda',
+            'nomer-hp.required' => '*isi dengan nomor Hp Anda',
             ]);
 
 
         $nama_pemesan = $request->input('nama-pemesan');
-        $email = $request->input('email');
-        $no_identitas = $request->input('no-identitas');
-        $no_hp = $request->input('nomer-hp');
-        $kode = 1;
-        $jumlah_tiket = $request->input('jumlahTiket');
         $randnum = rand(11111111,99999999);
-        $kodeTransaksi = 'K' . $randnum . 'T';
+        $kodePembayaran = 'K' . $randnum . 'P';
         $deadlineDate = Carbon::parse('+3 days')->toDateTimeString();
 
-        DB::table('pembayaran')->insert(
-            ['kode_pembayaran' => $kodeTransaksi, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
-        );
+        $email_pemesan = $request->input('email');
+        $no_identitas_pemesan = $request->input('no-identitas');
+        $jenis_identitas_pemesan = $request->input('jenisIdentitas');
+        $no_hp_pemesan = $request->input('nomer-hp');
+        $jumlah_tiket_pemesan = $request->input('jumlahTiket');
 
-        DB::table('pembayar')->insert(
-            ['email' => $email, 'nomorId' => $no_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kodeTransaksi]
-        );
+        $arrayPemesan = array('nama' => $nama_pemesan, 'email' => $email_pemesan, 'no_id' => $no_identitas_pemesan, 'jenis_id' => $jenis_identitas_pemesan, 'no_hp' => $no_hp_pemesan, 'jumlahTiket' => $jumlah_tiket_pemesan, 'kode_pembayaran' => $kodePembayaran, 'deadlineDate' => $deadlineDate);
 
         return view('pages.isi-data', compact('arrayPemesan'));
     }
 
     
     public function isi_data(){
-    	
+    	// DB::table('pembayaran')->insert(
+     //        ['kode_pembayaran' => $kodeTransaksi, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
+     //    );
+
+     //    DB::table('pembayar')->insert(
+     //        ['email' => $email, 'nomorId' => $no_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kodeTransaksi]
+     //    );
     }
     
     public function payment(){
