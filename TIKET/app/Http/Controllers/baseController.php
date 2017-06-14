@@ -44,11 +44,11 @@ class baseController extends Controller
             ['email' => $email, 'nomorId' => $no_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kodeTransaksi]
         );
 
-        return view('pages.isi-data', compact('jumlah_tiket'));
+        return view('pages.isi-data', compact('arrayPemesan'));
     }
     
     public function isi_data(){
-    	return view('pages.isi-data');
+    	
     }
     
     public function payment(){
