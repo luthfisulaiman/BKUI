@@ -52,10 +52,6 @@ class baseController extends Controller
                 DB::table('tiket') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
                 DB::table('voucher') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
 
-                DB::table('detail_tiket')->insert(
-                    ['kode_tiket' => $kodeTiket, 'kloter' => 'A', 'isHariPertama' => $isHariPertama, 'kode_pembayaran' => null]
-                );
-
                 DB::table('peserta')->insertGetId(
                     ['nama' => $nama, 'jurusan' => $jurusanSMA, 'email' => $email, 'kode_tiket' => $kodeTiket]
                 );
