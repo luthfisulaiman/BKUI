@@ -23,6 +23,17 @@ class baseController extends Controller
     public function beli(){
     	return view('pages.beli');
     }
+
+    public function beliSubmit(Request $request) {
+        $nama_pemesan = $request->input('nama-pemesan');
+        $email = $request->input('email');
+        $no_identitas = $request->input('no-identitas');
+        $jenis_identitas = $request->input('jenis-identitas');
+        $no_hp = $request->input('nomer-hp');
+        $jumlah_tiket = $request->input('jumlahTiket');
+
+        return view('pages.isi-data', compact('jumlah_tiket'));
+    }
     
     public function isi_data(){
     	return view('pages.isi-data');
