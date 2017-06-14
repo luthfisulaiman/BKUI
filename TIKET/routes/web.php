@@ -18,6 +18,8 @@ Route::post('/aktivasi-voucher', 'baseController@activate');
 Route::post('/registrasi-voucher', 'baseController@registrasi_voucher');
 
 Route::get('/beli', 'baseController@beli');
+Route::post('/beli', 'baseController@beliSubmit');
+Route::post('/isi-data', 'baseController@isi_data');
 
 Route::get('/isi-data','baseController@isi_data');
 
@@ -28,4 +30,5 @@ Route::get('/confirm-payment','baseController@confirm_payment');
 Route::get('/download-tiket', 'baseController@download_tiket');
 
 Route::get('/tracking', 'baseController@tracking');
+Route::post('/tracking', 'baseController@tracking_telusur');
 Route::get('/admin', 'baseController@admin');
