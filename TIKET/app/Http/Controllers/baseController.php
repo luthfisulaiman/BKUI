@@ -80,6 +80,31 @@ class baseController extends Controller
     	return view('pages.tracking');
     }
 
+    public function tracking_telusur(Request $request) {
+        $email = $request->input('email-peserta');
+        $nomorTransaksi = $request->input('nomor-transaksi');
+
+        if(isset($email) && isset($nomorTransaksi)) {
+            $query = ['email' => $email, 'pembayar.kode_pembayaran' => $nomorTransaksi];
+            $pembayar = DB::table('pembayar')
+                            -> join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
+                            -> select('email', 'pembayar.kode_pembayaran', 'isPaid', 'waktu_bayar')
+                            -> where($query) -> first();
+
+            if(isset($pembayar)) { // Jika dia membeli tiket
+                if ($pembayar->isPaid == 1) {
+                    // dia udah bayar
+                } else { // Jika dia belum bayar / belum lunas
+                    $waktu_bayar = $pembayar->waktu_bayar;
+                    return view('pages.payment', compact('waktu_bayar'));
+                }
+            } else {
+                $belum_beli = true;
+                return view('pages.beli', compact('belum_beli'));
+            }
+        }
+    }
+
     public function activate(Request $request) {
         $kodeVoucher = $request->input('ticketVoucherNumber');
 

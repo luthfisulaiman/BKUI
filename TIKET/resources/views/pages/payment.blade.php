@@ -11,11 +11,9 @@
 			<h1 class="payment-head"><span class="num-rounded">1.</span> Lakukan Pembayaran Sebelum</h1>
 			<div class="thumbnail">
 				<div class="modal-body">
-					<h4>Besok <?php
-						date_default_timezone_set("Asia/Jakarta");
-						echo date("h:i:sa"); "<br>";
-						?>
-					</h4>
+					@if (isset($waktu_bayar))
+						<h4>{{ $waktu_bayar }}</h4>
+					@endif
 				</div>
 			</div>	
 			<h1 class="payment-head"><span class="num-rounded">3.</span> Konfirmasi Pembayaran</h1>

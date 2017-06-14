@@ -5,6 +5,9 @@
 		<form>
 		<div class="row">
 		<div class="col-md-12">
+			@if (isset($belum_beli))
+				<p> Tiket tidak ditemukan, kamu harus beli tiket terlebih dahulu! </p>
+			@endif
 			<h1 class="coming-soon">Pembelian Tiket Online</h1>
 		</div>
 		
