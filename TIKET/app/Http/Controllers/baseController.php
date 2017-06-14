@@ -26,17 +26,19 @@ class baseController extends Controller
 
     public function beliSubmit(Request $request) {
         $nama_pemesan = $request->input('nama-pemesan');
-        $email = $request->input('email');
-        $no_identitas = $request->input('no-identitas');
-        $jenis_identitas = $request->input('jenis-identitas');
-        $no_hp = $request->input('nomer-hp');
-        $jumlah_tiket = $request->input('jumlahTiket');
+        $email_pemesan = $request->input('email');
+        $no_identitas_pemesan = $request->input('no-identitas');
+        $jenis_identitas_pemesan = $request->input('jenisIdentitas');
+        $no_hp_pemesan = $request->input('nomer-hp');
+        $jumlah_tiket_pemesan = $request->input('jumlahTiket');
 
-        return view('pages.isi-data', compact('jumlah_tiket'));
+        $arrayPemesan = array('nama' => $nama_pemesan, 'email' => $email_pemesan, 'no_id' => $no_identitas_pemesan, 'jenis_id' => $jenis_identitas_pemesan, 'no_hp' => $no_hp_pemesan, 'jumlahTiket' => $jumlah_tiket_pemesan);
+
+        return view('pages.isi-data', compact('arrayPemesan'));
     }
     
     public function isi_data(){
-    	return view('pages.isi-data');
+    	
     }
     
     public function payment(){

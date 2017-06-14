@@ -50,7 +50,7 @@
 	   	<div class="col-md-12"> 
 		  	<div class="form-group">
 		    <label for="jumlahTiket">Jumlah Tiket</label>
-		    <select required id="jumlahTiket" value="1" class="form-control selectpicker" name="jumlahTiket">
+		    <select required id="jumlahTiket" class="form-control selectpicker" name="jumlahTiket">
 		    	<option>1</option>
 		    	<option>2</option>
 		    	<option>3</option>
