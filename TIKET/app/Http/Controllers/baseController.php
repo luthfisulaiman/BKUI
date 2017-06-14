@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class baseController extends Controller
@@ -28,9 +29,20 @@ class baseController extends Controller
         $nama_pemesan = $request->input('nama-pemesan');
         $email = $request->input('email');
         $no_identitas = $request->input('no-identitas');
-        $jenis_identitas = $request->input('jenis-identitas');
         $no_hp = $request->input('nomer-hp');
+        $kode = 1;
         $jumlah_tiket = $request->input('jumlahTiket');
+        $randnum = rand(11111111,99999999);
+        $kodeTransaksi = 'K' . $randnum . 'T';
+        $deadlineDate = Carbon::parse('+3 days')->toDateTimeString();
+
+        DB::table('pembayaran')->insert(
+            ['kode_pembayaran' => $kodeTransaksi, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
+        );
+
+        DB::table('pembayar')->insert(
+            ['email' => $email, 'nomorId' => $no_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kodeTransaksi]
+        );
 
         return view('pages.isi-data', compact('jumlah_tiket'));
     }
