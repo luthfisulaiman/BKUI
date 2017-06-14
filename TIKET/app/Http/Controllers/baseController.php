@@ -26,6 +26,20 @@ class baseController extends Controller
     }
 
     public function beliSubmit(Request $request) {
+        $this->validate($request, [
+            'nama-pemesan' => 'required',
+            'email' => 'bail|required|email', 
+            'no-identitas' => 'bail|required|numeric',
+            'nomer-hp' => 'required',],
+            [ 'nama-pemesan.required' => 'Isi nama pemesan',
+            'email.required'  => 'Isi dengan email Anda',
+            'email.email'  => 'Isi dengan format email yang sesuai',
+            'no-identitas.required'  => 'Isi dengan nomor identitas Anda',
+            'no-identitas.numeric' => 'Isi dengan 10 digit angka nomor identitas Anda',
+            'nomer-hp.required' => 'Isi dengan nomor Hp Anda',
+            ]);
+
+
         $nama_pemesan = $request->input('nama-pemesan');
         $email = $request->input('email');
         $no_identitas = $request->input('no-identitas');
@@ -46,6 +60,7 @@ class baseController extends Controller
 
         return view('pages.isi-data', compact('arrayPemesan'));
     }
+
     
     public function isi_data(){
     	
