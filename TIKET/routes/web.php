@@ -12,7 +12,7 @@
 */
 
 Route::get('/','baseController@index');
-
+Route::get('/home','baseController@index');
 Route::get('/aktivasi-voucher', 'baseController@aktivasi_voucher');
 Route::post('/aktivasi-voucher', 'baseController@activate');
 Route::post('/registrasi-voucher', 'baseController@registrasi_voucher');

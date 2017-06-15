@@ -11,8 +11,8 @@
 			{{ csrf_field() }}
 				<div class="col-md-12">
 					<div class="form-group">
-					    <label for="email">Secret Code</label>
-					    <input type="kode" class="form-control" id="kode" name="kode">
+					    <label for="secretCode">Secret Code</label>
+					    <input type="password" class="form-control" id="kode" name="kode">
 					</div> 
 					<div class="form-group">
 					    <input required type="submit" class="btn btn-buy" value="Verify" id="pwd">
