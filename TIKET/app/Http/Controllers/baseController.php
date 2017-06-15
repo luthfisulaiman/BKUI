@@ -48,7 +48,7 @@ class baseController extends Controller
             'no-identitas.required'  => '*isi dengan nomor identitas Anda',
             'no-identitas.numeric' => '*isi dengan nomor identitas Anda',
             'nomer-hp.required' => '*isi dengan nomor Hp Anda',
-            'email.unique' => 'Anda sudah membeli tiket dengan email ini. Gunakan email lain',
+            'email.unique' => '*Anda tidak dapat membeli tiket dengan email yang sama',
             ]);
 
         $nama_pemesan = $request->input('nama-pemesan');
