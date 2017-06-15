@@ -22,6 +22,7 @@ Route::post('/beli', 'baseController@beliSubmit');
 Route::post('/isi-data', 'baseController@isi_data');
 
 Route::post('/nimda', 'baseController@admin');
+Route::post('/view-transaction', 'baseController@adminView');
 Route::get('/nimda', 'baseController@validateAdmin');
 Route::get('/view-transaction', 'baseController@view_transaction');
 
@@ -33,6 +34,6 @@ Route::post('/payment','baseController@payment');
 Route::post('/confirm-payment','baseController@confirm_payment');
 
 Route::get('/faq', 'baseController@faq');
-Route::get('/soldOut', 'baseController@soldOut');
+Route::get('/soldout', 'baseController@soldOut');
 
 

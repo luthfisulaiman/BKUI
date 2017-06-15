@@ -16,6 +16,28 @@ class baseController extends Controller
         return view('pages.adminDummy');
     }
 
+    public function adminView(Request $request) {
+        $kode_pembayaran = $request->view;
+        $usersQuery = DB::table('peserta')
+                        ->where('kode_pembayaran', '=', $kode_pembayaran)
+                        ->get();
+
+        $userName = DB::table('pembayar')
+                      ->select('nama')
+                      ->where('kode_pembayaran', '=', $kode_pembayaran)
+                      ->get();
+
+        $userPayment = DB::table('pembayaran')
+                        ->where('kode_pembayaran', '=', $kode_pembayaran)
+                        ->get();
+
+        $usersArray = ["pemesan" => $userName, "kode_pembayaran" => $kode_pembayaran, "dipesan" => $usersQuery, "bayaran" => $userPayment];
+
+        $request -> session() -> flash('usersArray', $usersArray);
+        // return $usersArray;
+        return view('pages.view-transaction', compact('usersArray'));
+    }
+
     public function admin(Request $request){
         if (isset($request) && $request->kode == 'borah_bkui17') {
             $usersArray = DB::table('pembayar')
@@ -104,6 +126,7 @@ class baseController extends Controller
     public function isi_data(Request $request) {
         $request -> session() -> reflash();
         $jumlah_tiket = $request->session()->get('arrayPemesan')['jumlahTiket'];
+        $kode_pembayaran = $request->session()->get('arrayPemesan')['kode_pembayaran'];
 
         for ($i = 1; $i <= $jumlah_tiket; $i++) {
             $namaPeserta = $request->input('namaPeserta_'.$i);
@@ -128,7 +151,7 @@ class baseController extends Controller
 
             if ($cekPeserta -> isEmpty()) {
                 DB::table('peserta') -> insertGetId(
-                    ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI]
+                    ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI, 'kode_pembayaran' => $kode_pembayaran]
                 );    
             }
             else {
@@ -144,7 +167,7 @@ class baseController extends Controller
                     }
                     else {
                         DB::table('peserta') -> insertGetId(
-                            ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI]
+                            ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI, 'kode_pembayaran' => $kode_pembayaran]
                         );
                     }
                 }
@@ -239,7 +262,7 @@ class baseController extends Controller
         DB::table('detail_tiket')->where('kode_tiket', $kodeTiket) ->update(['isHariPertama' => $rumpunUI]);
 
         DB::table('peserta') -> insertGetId(
-            ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI, 'kode_tiket' => $kodeTiket]
+            ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI, 'kode_tiket' => $kodeTiket, 'kode_pembayaran' => $kode_pembayaran]
         );
 
         $dataDownloadTiket = new \stdClass();
@@ -323,5 +346,9 @@ class baseController extends Controller
 
     public function faq(){
         return view('pages.faq');
+    }
+
+    public function soldOut() {
+        return view('pages.sold-out');
     }
 }

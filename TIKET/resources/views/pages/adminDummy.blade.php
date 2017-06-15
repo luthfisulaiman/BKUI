@@ -12,7 +12,7 @@
 				<div class="col-md-12">
 					<div class="form-group">
 					    <label for="email">Secret Code</label>
-					    <input type="kode" class="form-control" id="kode" name="kode">
+					    <input type="type" class="form-control" id="kode" name="kode">
 					</div> 
 					<div class="form-group">
 					    <input required type="submit" class="btn btn-buy" value="Verify" id="pwd">
