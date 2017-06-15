@@ -42,8 +42,19 @@ class baseController extends Controller
 
         $nama_pemesan = $request->input('nama-pemesan');
         $randnum = rand(11111111,99999999);
-        $kodePembayaran = 'K' . $randnum . 'P';
         $deadlineDate = Carbon::parse('+3 days')->toDateTimeString();
+        $kodePembayaran = '';
+
+        while(true) {
+            $kodePembayaran = 'K' . $randnum . 'P';
+            $cekKodePembayaran = DB::table('pembayaran')
+                                    -> select('kode_pembayaran')
+                                    -> where('kode_pembayaran', '=', $kodePembayaran) -> first();
+
+            if (is_null($cekKodePembayaran)) {
+                break;
+            }
+        }
 
         $email_pemesan = $request->input('email');
         $no_identitas_pemesan = $request->input('no-identitas');
@@ -66,38 +77,51 @@ class baseController extends Controller
         $deadlineDate = $request->session()->get('arrayPemesan')['deadlineDate'];
         $jumlah_tiket = $request->session()->get('arrayPemesan')['jumlahTiket'];
 
-        // DB::table('pembayaran')->insert(
-        //     ['kode_pembayaran' => $kode_pembayaran, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
-        // );
+        DB::table('pembayaran')->insert(
+            ['kode_pembayaran' => $kode_pembayaran, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
+        );
 
         $nama_pemesan = $request->session()->get('arrayPemesan')['nama'];
         $email_pemesan = $request->session()->get('arrayPemesan')['email'];
         $nomor_identitas = $request->session()->get('arrayPemesan')['no_id'];
         $no_hp = $request->session()->get('arrayPemesan')['no_hp'];
+        $jenis_identitas = $request->session()->get('arrayPemesan')['jenis_id'];
         
-        // DB::table('pembayar')->insert(
-        //     ['email' => $email_pemesan, 'alamat' => 'Test', 'nomorId' => $nomor_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kode_pembayaran]
-        // );
+        DB::table('pembayar')->insert(
+            ['email' => $email_pemesan, 'alamat' => 'Test', 'nomorId' => $nomor_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kode_pembayaran, 'jenis_identitas' => $jenis_identitas]
+        );
 
         for ($i = 1; $i <= $jumlah_tiket; $i++) {
             $namaPeserta = $request->input('namaPeserta_'.$i);
             $email = $request->input('email_'.$i);
             $jurusanSMA = $request->input('jurusanSMA_'.$i);
             $rumpunUI = $request->input('rumpunUI_'.$i);
-            $kode_tiket = DB::table('tiket')
-                            -> select('kode_tiket')
-                            -> where('isTaken', '=', 0) -> first() -> kode_tiket;
+            $asalSMA = $request->input('sekolah_'.$i);
+            $no_identitas = $request->input('no-identitas_'.$i);
+            $jenis_identitas = $request->input('jenisId_'.$i);
+
+            if (explode('_',$rumpunUI)[0] == 'ipa') {
+                $rumpunUI = 0;
+            }
+            else {
+                $rumpunUI = 1;
+            }
 
             DB::table('peserta') -> insertGetId(
-                ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'kode_tiket' => $kode_tiket]
+                ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI]
             );
         }
 
-        return view('pages.menu');
+        return view('pages.payment');
     }
     
     public function payment(){
-    	return view('pages.payment');
+        $arrayPembayar = DB::table('pembayar')
+                            -> join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
+                            -> select(array('waktu_bayar', 'jumlah_bayar'))
+                            -> first();
+
+    	return view('pages.payment', compact('arrayPembayar'));
     }
     
     public function confirm_payment(){
