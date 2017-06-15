@@ -14,6 +14,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Validator::extend('noHP', function($attribute, $value, $parameters, $validator) {
+
+            if($value == '628'){
+                return true;
+            }
+                return false;
+        }, '*Isi nomor HP anda dengan format 628xxxxxx');
     }
 
     /**

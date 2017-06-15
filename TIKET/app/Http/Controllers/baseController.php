@@ -32,7 +32,7 @@ class baseController extends Controller
             'nama-pemesan' => 'required',
             'email' => 'bail|required|email', 
             'no-identitas' => 'bail|required|numeric',
-            'nomer-hp' => 'required',],
+            'nomer-hp' => 'bail|required|noHP',],
             [ 'nama-pemesan.required' => '*isi nama pemesan',
             'email.required'  => '*isi dengan email Anda',
             'email.email'  => '*isi dengan format email yang sesuai',
@@ -40,7 +40,6 @@ class baseController extends Controller
             'no-identitas.numeric' => '*isi dengan nomor identitas Anda',
             'nomer-hp.required' => '*isi dengan nomor Hp Anda',
             ]);
-
 
         $nama_pemesan = $request->input('nama-pemesan');
         $randnum = rand(11111111,99999999);
