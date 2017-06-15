@@ -20,7 +20,7 @@ class baseController extends Controller
         if (isset($request) && $request->kode == 'borah_bkui17') {
             $usersArray = DB::table('pembayar')
                         ->join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
-                        ->select('nama', 'jumlah_bayar')
+                        ->select('nama', 'jumlah_bayar', 'pembayar.kode_pembayaran')
                         ->get();
 
             $request -> session() -> flash('usersArray', $usersArray);
