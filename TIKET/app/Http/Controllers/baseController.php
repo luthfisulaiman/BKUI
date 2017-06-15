@@ -23,7 +23,7 @@ class baseController extends Controller
                         ->select('nama', 'jumlah_bayar')
                         ->get();
 
-            // $request -> session() -> flash('usersArray', $usersArray);
+            $request -> session() -> flash('usersArray', $usersArray);
             return view('pages.admin', compact('usersArray'));
         } else {
             return view('pages.menu');
