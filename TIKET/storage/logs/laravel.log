@@ -13532,3 +13532,9 @@ Stack trace:
 #51 /Applications/MAMP/htdocs/BK-Ganteng/TIKET/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(116): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #52 /Applications/MAMP/htdocs/BK-Ganteng/TIKET/public/index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #53 {main}  
+[2017-06-15 04:19:02] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Cannot redeclare App\Http\Controllers\baseController::admin() in /Applications/MAMP/htdocs/BK-Ganteng/TIKET/app/Http/Controllers/baseController.php:107
+Stack trace:
+#0 {main}  
+[2017-06-15 04:19:07] local.ERROR: Symfony\Component\Debug\Exception\FatalErrorException: Cannot redeclare App\Http\Controllers\baseController::admin() in /Applications/MAMP/htdocs/BK-Ganteng/TIKET/app/Http/Controllers/baseController.php:107
+Stack trace:
+#0 {main}  
