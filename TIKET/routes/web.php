@@ -32,3 +32,4 @@ Route::get('/download-tiket', 'baseController@download_tiket');
 Route::get('/tracking', 'baseController@tracking');
 Route::post('/tracking', 'baseController@tracking_telusur');
 Route::get('/admin', 'baseController@admin');
+Route::get('/faq', 'baseController@faq');
