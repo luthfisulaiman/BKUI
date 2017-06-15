@@ -44,6 +44,10 @@ class baseController extends Controller
     	return view('pages.beli');
     }
 
+    public function soldOut(){
+        return view('pages.sold-out');
+    }
+
     public function beliSubmit(Request $request) {
         $this->validate($request, [
             'nama-pemesan' => 'required',
