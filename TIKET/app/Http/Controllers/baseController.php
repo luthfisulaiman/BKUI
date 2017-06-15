@@ -13,7 +13,13 @@ use App\Http\Controllers\stdClass;
 class baseController extends Controller
 {
     public function admin(){
-        return view('pages.admin');
+        $usersArray = DB::table('pembayar')
+                        ->join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
+                        ->select('nama', 'jumlah_bayar')
+                        ->get();
+
+        // $request -> session() -> flash('usersArray', $usersArray);
+        return view('pages.admin', compact('usersArray'));
     }
     public function index(){
     	return view('pages.menu');

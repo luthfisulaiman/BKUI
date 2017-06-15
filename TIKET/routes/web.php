@@ -21,7 +21,7 @@ Route::get('/beli', 'baseController@beli');
 Route::post('/beli', 'baseController@beliSubmit');
 Route::post('/isi-data', 'baseController@isi_data');
 
-Route::get('/user/nimda', 'baseController@admin');
+Route::get('/nimda', 'baseController@admin');
 
 Route::get('/download-tiket', 'baseController@download_tiket');
 

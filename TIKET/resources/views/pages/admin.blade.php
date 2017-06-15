@@ -18,10 +18,13 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			    <tr>
+			  @if (isset($usersArray))
+
+			  @foreach ($usersArray as $user)
+			  	<tr>
 			      <th scope="row">1</th>
-			      <td>Sandya Sekar</td>
-			      <td>1</td>
+			      <td>{{ $user->nama }}</td>
+			      <td>{{ $user->jumlah_bayar }}</td>
 			      <td><div class="row">
 			      <div class="col-md-6">
 				      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
@@ -31,7 +34,10 @@
 				  </div>
 				  </div></td>
 			    </tr>
-			    <tr>
+			  @endforeach
+
+			  @endif
+			    {{-- <tr>
 			      <th scope="row">2</th>
 			      <td>Mary Sue</td>
 			      <td>2</td>
@@ -84,7 +90,7 @@
 				      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button>
 				  </div>
 				  </div></td>
-			     </tr>
+			     </tr> --}}
 			  </tbody>
 			</table>
 		</div>
