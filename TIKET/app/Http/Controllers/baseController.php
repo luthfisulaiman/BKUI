@@ -216,4 +216,7 @@ class baseController extends Controller
             return view('pages.aktivasi-voucher', compact('salahKodeVoucher'));
         }
     }
+    public function faq(){
+        return view('pages.faq');
+    }
 }
