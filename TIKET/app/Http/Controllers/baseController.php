@@ -126,7 +126,23 @@ class baseController extends Controller
     public function isi_data(Request $request) {
         $request -> session() -> reflash();
         $jumlah_tiket = $request->session()->get('arrayPemesan')['jumlahTiket'];
+        
         $kode_pembayaran = $request->session()->get('arrayPemesan')['kode_pembayaran'];
+        $deadlineDate = $request->session()->get('arrayPemesan')['deadlineDate'];
+
+        DB::table('pembayaran')->insert(
+            ['kode_pembayaran' => $kode_pembayaran, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
+        );
+
+        $nama_pemesan = $request->session()->get('arrayPemesan')['nama'];
+        $email_pemesan = $request->session()->get('arrayPemesan')['email'];
+        $nomor_identitas = $request->session()->get('arrayPemesan')['no_id'];
+        $no_hp = $request->session()->get('arrayPemesan')['no_hp'];
+        $jenis_identitas = $request->session()->get('arrayPemesan')['jenis_id'];
+        
+        DB::table('pembayar')->insert(
+            ['email' => $email_pemesan, 'alamat' => 'Test', 'nomorId' => $nomor_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kode_pembayaran, 'jenis_identitas' => $jenis_identitas]
+        );
 
         for ($i = 1; $i <= $jumlah_tiket; $i++) {
             $namaPeserta = $request->input('namaPeserta_'.$i);
@@ -180,23 +196,6 @@ class baseController extends Controller
 
             
         }
-
-        $kode_pembayaran = $request->session()->get('arrayPemesan')['kode_pembayaran'];
-        $deadlineDate = $request->session()->get('arrayPemesan')['deadlineDate'];
-
-        DB::table('pembayaran')->insert(
-            ['kode_pembayaran' => $kode_pembayaran, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
-        );
-
-        $nama_pemesan = $request->session()->get('arrayPemesan')['nama'];
-        $email_pemesan = $request->session()->get('arrayPemesan')['email'];
-        $nomor_identitas = $request->session()->get('arrayPemesan')['no_id'];
-        $no_hp = $request->session()->get('arrayPemesan')['no_hp'];
-        $jenis_identitas = $request->session()->get('arrayPemesan')['jenis_id'];
-        
-        DB::table('pembayar')->insert(
-            ['email' => $email_pemesan, 'alamat' => 'Test', 'nomorId' => $nomor_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kode_pembayaran, 'jenis_identitas' => $jenis_identitas]
-        );
 
         $query = ['email' => $email_pemesan, 'pembayar.kode_pembayaran' => $kode_pembayaran];
         $pembayar = DB::table('pembayar')
