@@ -50,7 +50,7 @@
 	  	<div class="col-md-12"> 
 		  	<div class="form-group">
 			    <label for="nomer-hp">Nomor HP</label>
-			    <input  type="text" class="form-control" placeholder="085711111111" name="nomer-hp" style="font-style: 'QuickSand'" value="{{ old('nomer-hp') }}">
+			    <input  type="text" class="form-control" placeholder="628xxxxxxxx" name="nomer-hp" style="font-style: 'QuickSand'" value="{{ old('nomer-hp') }}">
 		 	</div>
 	 		<p>{{ $errors->first('nomer-hp') }}</p>  
 	 	</div>
