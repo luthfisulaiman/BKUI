@@ -194,8 +194,21 @@ class baseController extends Controller
     
     public function confirm_payment(Request $request){
         $request->session()->reflash();
+        $nomorReferensi = $request->referensi;
+        $namaBank = $request->namabank;
+        $tanggalDummy = $request->tanggal;
+        $nomorRekening = $request->noRekening;
+        $jumlahBayar = $request->amount;
 
-    	return view('pages.confirm-payment');
+        $dateDummy = explode("-", $tanggalDummy);
+        $tanggalTransfer = $dateDummy[2] . '-' . $dateDummy[0] . '-' . $dateDummy[1];
+
+
+        DB::table('pembayaran')
+            ->where('kode_pembayaran', $nomorReferensi)
+            ->update(['isPaid' => 1, 'nama_bank' => $namaBank, 'rekening_pemilik' => $nomorRekening, 'tanggal_transfer' => $tanggalDummy]);
+
+    	return view('pages.success');
     }
     
     public function registrasi_voucher(Request $request){
