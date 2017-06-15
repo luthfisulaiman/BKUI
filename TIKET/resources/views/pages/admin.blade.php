@@ -27,7 +27,7 @@
 			      <td>{{ $user->jumlah_bayar }}</td>
 			      <td><div class="row">
 			      <div class="col-md-6">
-				      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+				      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='../public/view-transaction'">View</button>
 				  </div>
 				  <div class="col-md-6">
 				      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button>
@@ -44,7 +44,7 @@
 			      <td>
 			      <div class="row">
 			      <div class="col-md-6">
-				      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+				      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='../public/view-transaction'">View</button>
 				  </div>
 				  <div class="col-md-6">
 				      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button>
@@ -58,7 +58,7 @@
 			      <td>3</td>
 			     <td><div class="row">
 			      <div class="col-md-6">
-				      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+				      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='../public/view-transaction'">View</button>
 				  </div>
 				  <div class="col-md-6">
 				      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button>
@@ -71,7 +71,7 @@
 			      <td>3</td>
 			     <td><div class="row">
 			      <div class="col-md-6">
-				      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+				      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='../public/view-transaction'">View</button>
 				  </div>
 				  <div class="col-md-6">
 				      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button>
@@ -84,7 +84,7 @@
 			      <td>3</td>
 			      <td><div class="row">
 			      <div class="col-md-6">
-				      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='view-transaction.php'">View</button>
+				      <button id="continue" class="btn btn-pay" style="font-size: 1em;" onclick="window.location.href='../public/view-transaction'">View</button>
 				  </div>
 				  <div class="col-md-6">
 				      <button id="continue" class="btn btn-pay" style="font-size: 1em;">Delete</button>

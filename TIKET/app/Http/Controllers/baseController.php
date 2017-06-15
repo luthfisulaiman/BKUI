@@ -21,6 +21,9 @@ class baseController extends Controller
         // $request -> session() -> flash('usersArray', $usersArray);
         return view('pages.admin', compact('usersArray'));
     }
+    public function view_transaction(){
+        return view('pages.view-transaction');
+    }
     public function index(){
     	return view('pages.menu');
     }
@@ -48,7 +51,7 @@ class baseController extends Controller
             ]);
 
         $nama_pemesan = $request->input('nama-pemesan');
-        $randnum = rand(1111111111,9999999999);
+        $randnum = rand(1111111111,999999999);
         $deadlineDate = Carbon::parse('+3 days')->toDateTimeString();
         $kodePembayaran = '';
 
@@ -197,7 +200,7 @@ class baseController extends Controller
     public function tracking_telusur(Request $request) {
          $this->validate($request, [
             'email-peserta' => 'bail|required|email',
-            'nomor-transaksi' => 'bail|required|numeric'],
+            'nomor-transaksi' => 'bail|required|numeric',],
             [ 'email-peserta.required' => '*Isi dengan email yang digunakan untuk membeli tiket',
             'email-peserta.email' => '*Isi dengan email yang digunakan untuk membeli tiket',
             'nomor-transaksi.required' => '*Isi dengan nomor referensi transaksi Anda',
