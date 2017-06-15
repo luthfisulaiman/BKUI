@@ -33,7 +33,7 @@ class baseController extends Controller
         return view('pages.view-transaction');
     }
     public function index(){
-    	return view('pages.menu');
+    	return view('pages.menu-presale');
     }
     
     public function aktivasi_voucher(){
