@@ -12,14 +12,22 @@ use App\Http\Controllers\stdClass;
 
 class baseController extends Controller
 {
-    public function admin(){
-        $usersArray = DB::table('pembayar')
+    public function validateAdmin() {
+        return view('pages.adminDummy');
+    }
+
+    public function admin(Request $request){
+        if (isset($request) && $request->kode == 'borah_bkui17') {
+            $usersArray = DB::table('pembayar')
                         ->join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
                         ->select('nama', 'jumlah_bayar')
                         ->get();
 
-        // $request -> session() -> flash('usersArray', $usersArray);
-        return view('pages.admin', compact('usersArray'));
+            // $request -> session() -> flash('usersArray', $usersArray);
+            return view('pages.admin', compact('usersArray'));
+        } else {
+            return view('pages.menu');
+        }
     }
     public function view_transaction(){
         return view('pages.view-transaction');
