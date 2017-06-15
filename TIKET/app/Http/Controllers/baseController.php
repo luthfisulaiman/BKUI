@@ -115,7 +115,6 @@ class baseController extends Controller
                                                -> where('email', '=', $email) -> get();
 
             if ($cekPeserta -> isEmpty()) {
-                return 1;
                 DB::table('peserta') -> insertGetId(
                     ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI]
                 );    
