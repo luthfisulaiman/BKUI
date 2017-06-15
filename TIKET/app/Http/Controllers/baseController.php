@@ -196,17 +196,13 @@ class baseController extends Controller
         $request->session()->reflash();
         $nomorReferensi = $request->referensi;
         $namaBank = $request->namabank;
-        $tanggalDummy = $request->tanggal;
+        $tanggalTransfer = $request->tanggal;
         $nomorRekening = $request->noRekening;
         $jumlahBayar = $request->amount;
 
-        $dateDummy = explode("-", $tanggalDummy);
-        $tanggalTransfer = $dateDummy[2] . '-' . $dateDummy[0] . '-' . $dateDummy[1];
-
-
         DB::table('pembayaran')
             ->where('kode_pembayaran', $nomorReferensi)
-            ->update(['isPaid' => 1, 'nama_bank' => $namaBank, 'rekening_pemilik' => $nomorRekening, 'tanggal_transfer' => $tanggalDummy]);
+            ->update(['isPaid' => 1, 'nama_bank' => $namaBank, 'rekening_pemilik' => $nomorRekening, 'tanggal_transfer' => $tanggalTransfer]);
 
     	return view('pages.success');
     }
