@@ -116,19 +116,20 @@ class baseController extends Controller
         $query = ['email' => $email_pemesan, 'pembayar.kode_pembayaran' => $kode_pembayaran];
         $pembayar = DB::table('pembayar')
                         -> join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
-                        -> select('email', 'pembayar.kode_pembayaran', 'isPaid', 'waktu_bayar', 'jumlah_bayar')
+                        -> select('email', 'pembayar.kode_pembayaran as kode_bayar', 'isPaid', 'waktu_bayar', 'jumlah_bayar')
                         -> where($query) -> first();
 
-        return view('pages.payment');
+        return view('pages.payment', compact('pembayar'));
     }
     
     public function payment(){
-        $arrayPembayar = DB::table('pembayar')
+        $query = ['email' => $email, 'pembayar.kode_pembayaran' => $nomorTransaksi];
+        $pembayar = DB::table('pembayar')
                             -> join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
-                            -> select(array('waktu_bayar', 'jumlah_bayar'))
-                            -> first();
+                            -> select('email', 'pembayar.kode_pembayaran as kode_bayar', 'isPaid', 'waktu_bayar', 'jumlah_bayar')
+                            -> where($query) -> first();
 
-    	return view('pages.payment', compact('arrayPembayar'));
+    	return view('pages.payment', compact('pembayar'));
     }
     
     public function confirm_payment(){
