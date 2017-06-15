@@ -13,54 +13,54 @@
 		<div class="col-md-6">
 			<div class="form-group">
 			    <label for="kode_pembayaran">Kode Referensi:</label>
-			    <input required type="text" class="form-control" id="kode_pembayaran" name="kode_pembayaran" value="{{ array_get($arrayPemesan, 'kode_pembayaran') }}" readonly>
+			    <input required type="text" class="form-control" id="kode_pembayaran" name="kode_pembayaran" value="{{ Session::get('arrayPemesan')['kode_pembayaran'] }}" readonly>
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
 			    <label for="deadlineDate">Deadline Pembayaran</label>
-			    <input required type="text" class="form-control" id="deadlineDate" name="deadlineDate" value="{{ array_get($arrayPemesan, 'deadlineDate') }}" readonly>
+			    <input required type="text" class="form-control" id="deadlineDate" name="deadlineDate" value="{{ Session::get('arrayPemesan')['deadlineDate'] }}" readonly>
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
 			    <label for="nama">Nama Pemesan:</label>
-			    <input required type="text" class="form-control" id="nama" name="nama_pemesan" value="{{ array_get($arrayPemesan, 'nama') }}" readonly>
+			    <input required type="text" class="form-control" id="nama" name="nama_pemesan" value="{{ Session::get('arrayPemesan')['nama'] }}" readonly>
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
 			    <label for="email">Email</label>
-			    <input required type="email" class="form-control" id="email" name="email_pemesan"  value="{{ array_get($arrayPemesan, 'email') }}" readonly>
+			    <input required type="email" class="form-control" id="email" name="email_pemesan"  value="{{ Session::get('arrayPemesan')['email'] }}" readonly>
 			</div>
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
 			    <label for="no-identitas">Nomor Identitas:</label>
-			    <input required type="text" class="form-control" id="no-identitas" name="no_identitas_pemesan"  value="{{ array_get($arrayPemesan, 'no_id') }}" readonly>
+			    <input required type="text" class="form-control" id="no-identitas" name="no_identitas_pemesan"  value="{{ Session::get('arrayPemesan')['no_id'] }}" readonly>
 			</div>
 		</div>
 			<div class="col-md-6"> 
 		  	<div class="form-group">
 		    	<label for="jenisIdentitas">Jenis Identitas</label>
-		    	<input required type="text" class="form-control" id="jenisIdentitas" name="jenisIdentitas_pemesan"  value="{{ array_get($arrayPemesan, 'jenis_id') }}" readonly>
+		    	<input required type="text" class="form-control" id="jenisIdentitas" name="jenisIdentitas_pemesan"  value="{{ Session::get('arrayPemesan')['jenis_id'] }}" readonly>
 			</div>
 		</div>
 	  	<div class="col-md-6"> 
 		  	<div class="form-group">
 			    <label for="nomer-hp">Nomor HP</label>
-			    <input required type="text" class="form-control" id="nomer-hp" name="nomer_hp_pemesan" value="{{ array_get($arrayPemesan, 'no_hp') }}" readonly>
+			    <input required type="text" class="form-control" id="nomer-hp" name="nomer_hp_pemesan" value="{{ Session::get('arrayPemesan')['no_hp'] }}" readonly>
 		 	</div>
 	 	</div>
 	   	<div class="col-md-6"> 
 		  	<div class="form-group">
 		    	<label for="jumlahTiket">Jumlah Tiket</label>
-		    	<input required type="text" class="form-control" id="jumlahTiket" name="jumlahTiket_pemesan" value="{{ array_get($arrayPemesan, 'jumlahTiket') }}" readonly>
+		    	<input required type="text" class="form-control" id="jumlahTiket" name="jumlahTiket_pemesan" value="{{ Session::get('arrayPemesan')['jumlahTiket'] }}" readonly>
 			</div>
 		</div>
 		</div>
 		<br><br>
-		@for ($i = 1; $i <= array_get($arrayPemesan, 'jumlahTiket'); $i++)
+		@for ($i = 1; $i <= Session::get('arrayPemesan')['jumlahTiket']; $i++)
 			<div id="peserta_{{ $i }}">
 			<div class="row">	
 				<h1 class="data-peserta"> Peserta {{ $i }} </h1>
@@ -128,6 +128,9 @@
 			</div>
 			<br>
 		@endfor
+			@if (isset($pesanErrorPeserta))
+				<p>{{ '*'.$pesanErrorPeserta }}</p>
+			@endif
 			<h4>*harap pastikan kembali info yang anda isi telah sesuai</h4>
 			<input type="submit" class="btn btn-activate" value="Submit" name="submitDataPeserta">
 		</form>
