@@ -51,7 +51,7 @@ class baseController extends Controller
             'no-identitas' => 'bail|required|numeric',
             'nomer-hp' => 'bail|required|noHP',],
             [ 'nama-pemesan.required' => '*isi nama pemesan',
-            'email.required'  => '*isi dengan email Anda',
+            'email.required'  => '*isi dengan email yang valid',
             'email.email'  => '*isi dengan format email yang sesuai',
             'no-identitas.required'  => '*isi dengan nomor identitas Anda',
             'no-identitas.numeric' => '*isi dengan nomor identitas Anda',
@@ -166,7 +166,7 @@ class baseController extends Controller
             [ 
             'namaPeserta.required'  => '*isi dengan nama Anda',
             'sekolah.required'  => '*isi dengan asal SMA',
-            'email.required'  => '*isi dengan email Anda',
+            'email.required'  => '*isi dengan email yang valid',
             'email.email'  => '*isi dengan format email yang sesuai',
             'no-identitas.required'  => '*isi dengan nomor identitas Anda',
             'no-identitas.numeric' => '*isi dengan nomor identitas Anda',
