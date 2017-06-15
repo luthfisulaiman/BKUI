@@ -17,12 +17,12 @@
 			</div>
 			<div class="col-md-12">
 				<div class="form-group">
-				    <label for="nomor-transaksi">Nomor Transaksi</label>
+				    <label for="nomor-transaksi">Nomor Referensi</label>
 				    <input required type="integer" class="form-control" id="nomor-transaksi" name="nomor-transaksi">
 				</div>
 			</div>
 			<div class="col-md-12">
-			<p> Pastikan email dan nomor transaksi anda sudah benar! </p>
+			<p> Pastikan email dan nomor referensi anda sudah benar! </p>
 				<div class="form-group">
 				    <input required type="submit" class="btn btn-buy" value="Telusuri" id="pwd">
 				</div>

@@ -12,7 +12,7 @@
 		<div class="row">
 		<div class="col-md-6">
 			<div class="form-group">
-			    <label for="kode_pembayaran">Kode Pembayaran:</label>
+			    <label for="kode_pembayaran">Kode Referensi:</label>
 			    <input required type="text" class="form-control" id="kode_pembayaran" name="kode_pembayaran" value="{{ array_get($arrayPemesan, 'kode_pembayaran') }}" readonly>
 			</div>
 		</div>
@@ -128,6 +128,7 @@
 			</div>
 			<br>
 		@endfor
+			<h4>*harap pastikan kembali info yang anda isi telah sesuai</h4>
 			<input type="submit" class="btn btn-activate" value="Submit" name="submitDataPeserta">
 		</form>
 	</div>

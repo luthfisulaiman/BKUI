@@ -4,7 +4,7 @@
 	<div class="row">
 		<div class="col-md-12">
 		<h1 class="coming-soon">Panduan Pembayaran</h1>
-		<h3>Kode Pembayaran {{ $pembayar->kode_bayar }}</h3>
+		<h3>Nomor Referensi {{ $pembayar->kode_bayar }}</h3>
 		</div>
 	</div>
 	<div class="row">
@@ -21,7 +21,10 @@
 			<div class="thumbnail">
 				<div class="modal-body">
 					<p>E-Tiket akan dikirim maksimal 3 hari setelah pembayaran</p>
-				<button id="continue" class="btn btn-pay" onclick="window.location.href='../public/confirm-payment'">Saya Sudah Membayar</button>
+				<form method="post" action="../public/payment">
+					{{ csrf_field() }}
+					<input type="submit" class="btn btn-activate" value="Saya sudah membayar" name="submit">
+				</form>
 				</div>	
 			</div>
 		</div>

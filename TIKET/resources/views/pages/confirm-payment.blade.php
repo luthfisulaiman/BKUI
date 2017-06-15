@@ -11,8 +11,8 @@
 			<div class="row">	
 				<div class="col-md-12">
 					<div class="form-group">
-					    <label for="nama">Nomor Pemesanan :</label>
-					    <input required type="text" class="form-control" id="email">
+					    <label for="nama">Nomor Referensi : </label>
+					    <input required type="text" class="form-control" id="email" value="{{ Session::get('dataPembayar')->kode_bayar }}" readonly="">
 					</div>
 				</div>
 				<div class="col-md-6">
@@ -41,7 +41,7 @@
 		  		<div class="col-md-6"> 
 				  	<div class="form-group">
 					    <label for="jumlahTiket">Jumlah Pembayaran:</label>
-					    <input required type="number" class="form-control" id="amount" placeholder="50000">
+					    <input required type="number" class="form-control" id="amount">
 			 		</div>
 		 		</div>
 		 		<div class="col-md-12"> 	 			

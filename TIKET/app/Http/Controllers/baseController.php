@@ -42,12 +42,12 @@ class baseController extends Controller
             ]);
 
         $nama_pemesan = $request->input('nama-pemesan');
-        $randnum = rand(11111111,99999999);
+        $randnum = rand(1111111111,9999999999);
         $deadlineDate = Carbon::parse('+3 days')->toDateTimeString();
         $kodePembayaran = '';
 
         while(true) {
-            $kodePembayaran = 'K' . $randnum . 'P';
+            $kodePembayaran = $randnum;
             $cekKodePembayaran = DB::table('pembayaran')
                                     -> select('kode_pembayaran')
                                     -> where('kode_pembayaran', '=', $kodePembayaran) -> first();
@@ -96,6 +96,8 @@ class baseController extends Controller
             $namaPeserta = $request->input('namaPeserta_'.$i);
             $email = $request->input('email_'.$i);
             $jurusanSMA = $request->input('jurusanSMA_'.$i);
+            $jurusanSMA = explode('_', $jurusanSMA)[0];
+
             $rumpunUI = $request->input('rumpunUI_'.$i);
             $asalSMA = $request->input('sekolah_'.$i);
             $no_identitas = $request->input('no-identitas_'.$i);
@@ -119,20 +121,20 @@ class baseController extends Controller
                         -> select('email', 'pembayar.kode_pembayaran as kode_bayar', 'isPaid', 'waktu_bayar', 'jumlah_bayar')
                         -> where($query) -> first();
 
+        $request->session()-> flash('dataPembayar', $pembayar);
+
         return view('pages.payment', compact('pembayar'));
     }
     
-    public function payment(){
-        $query = ['email' => $email, 'pembayar.kode_pembayaran' => $nomorTransaksi];
-        $pembayar = DB::table('pembayar')
-                            -> join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
-                            -> select('email', 'pembayar.kode_pembayaran as kode_bayar', 'isPaid', 'waktu_bayar', 'jumlah_bayar')
-                            -> where($query) -> first();
+    public function payment(Request $request){
+        $request->session()->reflash();
 
-    	return view('pages.payment', compact('pembayar'));
+        return view('pages.confirm-payment');
     }
     
-    public function confirm_payment(){
+    public function confirm_payment(Request $request){
+        $request->session()->reflash();
+
     	return view('pages.confirm-payment');
     }
     
@@ -186,6 +188,7 @@ class baseController extends Controller
                 if ($pembayar->isPaid == 1) {
                     // dia udah bayar
                 } else { // Jika dia belum bayar / belum lunas
+                    $request->session()-> flash('dataPembayar', $pembayar);
                     return view('pages.payment', compact('pembayar'));
                 }
             } else {

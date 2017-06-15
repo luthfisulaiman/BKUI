@@ -23,13 +23,11 @@ Route::post('/isi-data', 'baseController@isi_data');
 
 Route::get('/user/nimda', 'baseController@admin');
 
-Route::get('/payment','baseController@payment');
-
-Route::get('/confirm-payment','baseController@confirm_payment');
-
 Route::get('/download-tiket', 'baseController@download_tiket');
 
 Route::get('/tracking', 'baseController@tracking');
 Route::post('/tracking', 'baseController@tracking_telusur');
-// Route::get('/admin', 'baseController@admin');
+Route::post('/payment','baseController@payment');
+Route::post('/confirm-payment','baseController@confirm_payment');
+
 Route::get('/faq', 'baseController@faq');
