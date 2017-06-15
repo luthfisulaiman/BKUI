@@ -15,6 +15,9 @@ class baseController extends Controller
     public function admin(){
         return view('pages.admin');
     }
+    public function view_transaction(){
+        return view('pages.view-transaction');
+    }
     public function index(){
     	return view('pages.menu');
     }
