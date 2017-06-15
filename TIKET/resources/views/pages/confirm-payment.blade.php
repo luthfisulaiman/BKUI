@@ -3,8 +3,6 @@
 <div id="confirm-content">
 	
 	<div class="row">
-	<a href="../public/" class="pull-right">Back To Home</a>
-	<br><br>
 	<div class="col-md-12">
 		<h1 class="coming-soon">Konfirmasi Pembayaran</h1>
 	</div>

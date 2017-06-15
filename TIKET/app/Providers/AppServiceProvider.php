@@ -18,7 +18,7 @@ class AppServiceProvider extends ServiceProvider
         //
         Validator::extend('noHP', function($attribute, $value, $parameters, $validator) {
 
-            if($value == '628'){
+            if(substr($value, 0, 3) == '628'){
                 return true;
             }
                 return false;

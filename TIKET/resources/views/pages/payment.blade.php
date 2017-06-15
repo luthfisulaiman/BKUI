@@ -4,6 +4,7 @@
 	<div class="row">
 		<div class="col-md-12">
 		<h1 class="coming-soon">Panduan Pembayaran</h1>
+		<h3>Kode Pembayaran {{ $pembayar->kode_bayar }}</h3>
 		</div>
 	</div>
 	<div class="row">
@@ -11,8 +12,8 @@
 			<h1 class="payment-head"><span class="num-rounded">1.</span> Lakukan Pembayaran Sebelum</h1>
 			<div class="thumbnail">
 				<div class="modal-body">
-					@if (isset($waktu_bayar))
-						<h4>{{ $waktu_bayar }}</h4>
+					@if (isset($pembayar->waktu_bayar))
+						<h4>{{ $pembayar->waktu_bayar }}</h4>
 					@endif
 				</div>
 			</div>	
@@ -28,18 +29,22 @@
 			<h1 class="payment-head"><span class="num-rounded">2.</span> Transfer Ke</h1>
 			<div class="thumbnail">
 				<div class="modal-header">
-			          <h3 class="modal-title"><strong>BNI</strong></h3>
+			          <h3 class="modal-title"><strong>Bank Mandiri</strong></h3>
 	      		</div>
 	      		<div class="modal-body">
-		        <p>No Rekening :</p>
+		        <p>No Rekening : 157-00-0563388-9</p>
 		      	</div>
 
 		      	<div class="modal-body">
-		        <p> Atas Nama :</p>
+		        <p> Atas Nama : Bedah Kampus UI</p>
 		      	</div>
 
 		      	<div class="modal-footer">
-		        <p> Jumlah Pembayaran :</p>
+		        <p> Jumlah Pembayaran : 
+		        	@if (isset($pembayar->jumlah_bayar))
+		        		Rp{{  $pembayar->jumlah_bayar * 20000}}
+		        	@endif
+		        </p>
 		      	</div>
 		     
 			</div>

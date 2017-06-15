@@ -113,6 +113,12 @@ class baseController extends Controller
             );
         }
 
+        $query = ['email' => $email_pemesan, 'pembayar.kode_pembayaran' => $kode_pembayaran];
+        $pembayar = DB::table('pembayar')
+                        -> join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
+                        -> select('email', 'pembayar.kode_pembayaran', 'isPaid', 'waktu_bayar', 'jumlah_bayar')
+                        -> where($query) -> first();
+
         return view('pages.payment');
     }
     
@@ -172,15 +178,14 @@ class baseController extends Controller
             $query = ['email' => $email, 'pembayar.kode_pembayaran' => $nomorTransaksi];
             $pembayar = DB::table('pembayar')
                             -> join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
-                            -> select('email', 'pembayar.kode_pembayaran', 'isPaid', 'waktu_bayar')
+                            -> select('email', 'pembayar.kode_pembayaran as kode_bayar', 'isPaid', 'waktu_bayar', 'jumlah_bayar')
                             -> where($query) -> first();
 
             if(isset($pembayar)) { // Jika dia membeli tiket
                 if ($pembayar->isPaid == 1) {
                     // dia udah bayar
                 } else { // Jika dia belum bayar / belum lunas
-                    $waktu_bayar = $pembayar->waktu_bayar;
-                    return view('pages.payment', compact('waktu_bayar'));
+                    return view('pages.payment', compact('pembayar'));
                 }
             } else {
                 $belum_beli = true;
