@@ -26,29 +26,74 @@ class baseController extends Controller
     }
 
     public function beliSubmit(Request $request) {
+        $this->validate($request, [
+            'nama-pemesan' => 'required',
+            'email' => 'bail|required|email', 
+            'no-identitas' => 'bail|required|numeric',
+            'nomer-hp' => 'required',],
+            [ 'nama-pemesan.required' => '*isi nama pemesan',
+            'email.required'  => '*isi dengan email Anda',
+            'email.email'  => '*isi dengan format email yang sesuai',
+            'no-identitas.required'  => '*isi dengan nomor identitas Anda',
+            'no-identitas.numeric' => '*isi dengan nomor identitas Anda',
+            'nomer-hp.required' => '*isi dengan nomor Hp Anda',
+            ]);
+
+
         $nama_pemesan = $request->input('nama-pemesan');
-        $email = $request->input('email');
-        $no_identitas = $request->input('no-identitas');
-        $no_hp = $request->input('nomer-hp');
-        $kode = 1;
-        $jumlah_tiket = $request->input('jumlahTiket');
         $randnum = rand(11111111,99999999);
-        $kodeTransaksi = 'K' . $randnum . 'T';
+        $kodePembayaran = 'K' . $randnum . 'P';
         $deadlineDate = Carbon::parse('+3 days')->toDateTimeString();
 
-        DB::table('pembayaran')->insert(
-            ['kode_pembayaran' => $kodeTransaksi, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
-        );
+        $email_pemesan = $request->input('email');
+        $no_identitas_pemesan = $request->input('no-identitas');
+        $jenis_identitas_pemesan = $request->input('jenisIdentitas');
+        $no_hp_pemesan = $request->input('nomer-hp');
+        $jumlah_tiket_pemesan = $request->input('jumlahTiket');
 
-        DB::table('pembayar')->insert(
-            ['email' => $email, 'nomorId' => $no_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kodeTransaksi]
-        );
+        $arrayPemesan = array('nama' => $nama_pemesan, 'email' => $email_pemesan, 'no_id' => $no_identitas_pemesan, 'jenis_id' => $jenis_identitas_pemesan, 'no_hp' => $no_hp_pemesan, 'jumlahTiket' => $jumlah_tiket_pemesan, 'kode_pembayaran' => $kodePembayaran, 'deadlineDate' => $deadlineDate);
+
+        $request -> session() -> flash('arrayPemesan', $arrayPemesan);
 
         return view('pages.isi-data', compact('arrayPemesan'));
     }
+
     
-    public function isi_data(){
-    	
+    public function isi_data(Request $request) {
+        $request -> session() -> reflash();
+
+        $kode_pembayaran = $request->session()->get('arrayPemesan')['kode_pembayaran'];
+        $deadlineDate = $request->session()->get('arrayPemesan')['deadlineDate'];
+        $jumlah_tiket = $request->session()->get('arrayPemesan')['jumlahTiket'];
+
+        // DB::table('pembayaran')->insert(
+        //     ['kode_pembayaran' => $kode_pembayaran, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
+        // );
+
+        $nama_pemesan = $request->session()->get('arrayPemesan')['nama'];
+        $email_pemesan = $request->session()->get('arrayPemesan')['email'];
+        $nomor_identitas = $request->session()->get('arrayPemesan')['no_id'];
+        $no_hp = $request->session()->get('arrayPemesan')['no_hp'];
+        
+        // DB::table('pembayar')->insert(
+        //     ['email' => $email_pemesan, 'alamat' => 'Test', 'nomorId' => $nomor_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kode_pembayaran]
+        // );
+
+        for ($i = 1; $i <= $jumlah_tiket; $i++) {
+            $namaPeserta = $request->input('namaPeserta_'.$i);
+            $email = $request->input('email_'.$i);
+            $jurusanSMA = $request->input('jurusanSMA_'.$i);
+            $rumpunUI = $request->input('rumpunUI_'.$i);
+            $kode_tiket = DB::table('tiket')
+                            -> select('kode_tiket')
+                            -> where('isTaken', '=', 0) -> first() -> kode_tiket;
+
+            DB::table('peserta') -> insertGetId(
+                ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'kode_tiket' => $kode_tiket]
+            );
+        }
+
+        return view('pages.menu');
     }
     
     public function payment(){

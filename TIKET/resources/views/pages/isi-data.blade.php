@@ -4,12 +4,24 @@
 	
 	<div class="row">
 	<div class="col-md-12">
-		<h1 class="coming-soon">Isi Data Peserta</h1>
+		<h1 class="coming-soon">Data Pembeli</h1>
 	</div>
 	<div class="col-md-12">
-		<form>
+		<form method="post" action="../public/isi-data">
+		{{ csrf_field() }}
 		<div class="row">
-		
+		<div class="col-md-6">
+			<div class="form-group">
+			    <label for="kode_pembayaran">Kode Pembayaran:</label>
+			    <input required type="text" class="form-control" id="kode_pembayaran" name="kode_pembayaran" value="{{ array_get($arrayPemesan, 'kode_pembayaran') }}" readonly>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+			    <label for="deadlineDate">Deadline Pembayaran</label>
+			    <input required type="text" class="form-control" id="deadlineDate" name="deadlineDate" value="{{ array_get($arrayPemesan, 'deadlineDate') }}" readonly>
+			</div>
+		</div>
 		<div class="col-md-6">
 			<div class="form-group">
 			    <label for="nama">Nama Pemesan:</label>
@@ -34,13 +46,13 @@
 		    	<input required type="text" class="form-control" id="jenisIdentitas" name="jenisIdentitas_pemesan"  value="{{ array_get($arrayPemesan, 'jenis_id') }}" readonly>
 			</div>
 		</div>
-	  	<div class="col-md-12"> 
+	  	<div class="col-md-6"> 
 		  	<div class="form-group">
 			    <label for="nomer-hp">Nomor HP</label>
 			    <input required type="text" class="form-control" id="nomer-hp" name="nomer_hp_pemesan" value="{{ array_get($arrayPemesan, 'no_hp') }}" readonly>
 		 	</div>
 	 	</div>
-	   	<div class="col-md-12"> 
+	   	<div class="col-md-6"> 
 		  	<div class="form-group">
 		    	<label for="jumlahTiket">Jumlah Tiket</label>
 		    	<input required type="text" class="form-control" id="jumlahTiket" name="jumlahTiket_pemesan" value="{{ array_get($arrayPemesan, 'jumlahTiket') }}" readonly>
@@ -92,8 +104,8 @@
 				<div>
 			  		<div class="col-md-6"> 
 				  	<div class="form-group">
-				    <label for="jurusan_{{ $i }}">Jurusan SMA</label>
-				    <select required id="jurusan_{{ $i }}" class="form-control selectpicker" name="jurusan_{{ $i }}">
+				    <label for="jurusanSMA_{{ $i }}">Jurusan SMA</label>
+				    <select required id="jurusanSMA_{{ $i }}" class="form-control selectpicker" name="jurusanSMA_{{ $i }}">
 				    	<option class="styled-option" value="ipa_{{ $i }}">IPA</option>
 				    	<option class="styled-option" value="ips_{{ $i }}">IPS</option>
 				    	<option class="styled-option" value="others_{{ $i }}">Lain-lain</option>
@@ -104,10 +116,10 @@
 			 	<div>
 			 		<div class="col-md-12"> 
 				  	<div class="form-group">
-				    <label for="rumpun_{{ $i }}">Rumpun UI</label>
-				    <select required id="rumpun_{{ $i }}" class="form-control selectpicker" name="hariH">
-				    	<option class="styled-option" value="0_{{ $i }}">IPA</option>
-				    	<option class="styled-option" value="1_{{ $i }}">IPS</option>
+				    <label for="rumpunUI_{{ $i }}">Rumpun UI</label>
+				    <select required id="rumpunUI_{{ $i }}" class="form-control selectpicker" name="rumpunUI_{{ $i }}">
+				    	<option class="styled-option" value="ipa_{{ $i }}">IPA</option>
+				    	<option class="styled-option" value="ips_{{ $i }}">IPS</option>
 				    </select>
 					</div>
 					</div>

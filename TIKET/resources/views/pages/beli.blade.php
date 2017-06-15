@@ -15,21 +15,27 @@
 		<div class="col-md-6">
 			<div class="form-group">
 			    <label for="nama">Nama Pemesan:</label>
-			    <input required type="text" class="form-control" id="nama-pemesan" name="nama-pemesan">
+			    <input  type="text" class="form-control" id="nama-pemesan" name="nama-pemesan" value="{{ old('nama-pemesan') }}">
 			</div>
+			<p>{{ $errors->first('nama-pemesan') }}</p>  
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
 			    <label for="email">Email</label>
-			    <input required type="email" class="form-control" id="email" name="email">
+			    <input type="text" class="form-control" placeholder="Email Address" id="email" name="email" value="{{ old('email') }}">
+			    <!--input  type="email" class="form-control" id="email" name="email" value="{{ old('email') }}"-->
 			</div>
+
+			<p>{{ $errors->first('email') }}</p>  
 		</div>
 		<div class="col-md-6">
 			<div class="form-group">
 			    <label for="no-identitas">Nomor Identitas:</label>
-			    <input required type="text" class="form-control" id="no-identitas" name="no-identitas">
+			    <input  type="text" class="form-control" id="no-identitas" name="no-identitas" value="{{ old('no-identitas') }}">
 			</div>
+			<p>{{ $errors->first('no-identitas') }}</p>  
 		</div>
+		
 			<div class="col-md-6"> 
 		  	<div class="form-group">
 		    <label for="jenisIdentitas">Jenis Identitas</label>
@@ -44,9 +50,11 @@
 	  	<div class="col-md-12"> 
 		  	<div class="form-group">
 			    <label for="nomer-hp">Nomor HP</label>
-			    <input required type="number" class="form-control" placeholder="085711111111" name="nomer-hp" style="font-style: 'QuickSand'">
+			    <input  type="text" class="form-control" placeholder="085711111111" name="nomer-hp" style="font-style: 'QuickSand'" value="{{ old('nomer-hp') }}">
 		 	</div>
+	 		<p>{{ $errors->first('nomer-hp') }}</p>  
 	 	</div>
+	 	 
 	   	<div class="col-md-12"> 
 		  	<div class="form-group">
 		    <label for="jumlahTiket">Jumlah Tiket</label>
