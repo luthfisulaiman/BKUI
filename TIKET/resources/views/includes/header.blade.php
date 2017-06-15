@@ -13,7 +13,7 @@
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right menu-top-right" id="nav-right">
             	<li><a href="../public/"> Back To Home</a></li>
-            	<li><a href="faq"> FAQ</a></li>
+            	<li><a href="../public/faq"> FAQ</a></li>
               <li><a href="#">Need Help?</a></li>
             	</ul>
           </div>

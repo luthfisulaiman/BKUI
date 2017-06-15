@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
+use App\Http\Controllers\stdClass;
 
 class baseController extends Controller
 {
@@ -129,35 +131,30 @@ class baseController extends Controller
     }
     
     public function registrasi_voucher(Request $request){
-        $nama = $request->input('namaPeserta');
-        $jurusanSMA = $request->input('jurusan');
+        $request -> session() -> reflash();
+
+        $namaPeserta = $request->input('namaPeserta');
         $email = $request->input('email');
-        $isHariPertama = $request->input('hariH');
-    	$kodeTiket = DB::table('tiket')
-                            -> select(array('kode_tiket', 'isTaken'))
-                            -> where('kode_tiket', '=', $request->input('kodeTiket')) -> first();
+        $jurusanSMA = $request->input('jurusanSMA');
+        $rumpunUI = $request->input('rumpunUI');
+        $asalSMA = $request->input('sekolah');
+        $no_identitas = $request->input('no-identitas');
+        $jenis_identitas = $request->input('jenisId');
+        $kodeTiket = $request->session()->get('kodeTiket');
 
-        if ($kodeTiket) {
-            if ($kodeTiket->isTaken == 0) {
-                $kodeTiket = $kodeTiket->kode_tiket;
+        DB::table('tiket') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
+        DB::table('voucher') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
+        DB::table('detail_tiket')->where('kode_tiket', $kodeTiket) ->update(['isHariPertama' => $rumpunUI]);
 
-                DB::table('tiket') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
-                DB::table('voucher') -> where('kode_tiket', $kodeTiket) -> update(['isTaken' => 1]);
+        DB::table('peserta') -> insertGetId(
+            ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI, 'kode_tiket' => $kodeTiket]
+        );
 
-                DB::table('peserta')->insertGetId(
-                    ['nama' => $nama, 'jurusan' => $jurusanSMA, 'email' => $email, 'kode_tiket' => $kodeTiket]
-                );
-                
-                return view('pages.menu');
-            }
-            else {
-                $salahKodeVoucher = 'Kode Voucher Sudah Digunakan';
-                return view('pages.aktivasi-voucher', compact('salahKodeVoucher'));
-            }
-        }
-        else {
-            return view('pages.aktivasi-voucher');
-        }
+        $dataDownloadTiket = new \stdClass();
+        $dataDownloadTiket->nama = $namaPeserta;
+        $dataDownloadTiket->kodeTiket = $kodeTiket;
+
+        return view('pages.download-tiket', compact('dataDownloadTiket'));
     }
 
     public function download_tiket(){
@@ -204,6 +201,7 @@ class baseController extends Controller
 
         if (isset($kodeTiket)) {
             if ($kodeTiket->isTaken == 0) {
+                $request->session()->flash('kodeTiket', $kodeTiket->kode_tiket);
                 return view('pages.voucher-registration', compact('kodeTiket'));
             }
             else {
@@ -216,6 +214,7 @@ class baseController extends Controller
             return view('pages.aktivasi-voucher', compact('salahKodeVoucher'));
         }
     }
+
     public function faq(){
         return view('pages.faq');
     }

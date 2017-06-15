@@ -57,8 +57,8 @@
 					<div>
 				  		<div class="col-md-6"> 
 					  	<div class="form-group">
-					    <label for="jurusan">Jurusan SMA</label>
-					    <select required id="jurusan" class="form-control selectpicker" name="jurusan">
+					    <label for="jurusanSMA">Jurusan SMA</label>
+					    <select required id="jurusanSMA" class="form-control selectpicker" name="jurusanSMA">
 					    	<option class="styled-option">IPA</option>
 					    	<option class="styled-option">IPS</option>
 					    	<option class="styled-option" value="others">Lain-lain</option>
@@ -69,8 +69,8 @@
 				 	<div>
 				 		<div class="col-md-12"> 
 					  	<div class="form-group">
-					    <label for="rumpun">Rumpun UI</label>
-					    <select required id="rumpun" class="form-control selectpicker" name="hariH">
+					    <label for="rumpunUI">Rumpun UI</label>
+					    <select required id="rumpunUI" class="form-control selectpicker" name="rumpunUI">
 					    	<option class="styled-option" value="0">IPA</option>
 					    	<option class="styled-option" value="1">IPS</option>
 					    </select>
