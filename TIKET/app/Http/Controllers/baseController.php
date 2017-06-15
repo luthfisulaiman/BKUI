@@ -33,7 +33,7 @@ class baseController extends Controller
         return view('pages.view-transaction');
     }
     public function index(){
-    	return view('pages.menu');
+    	return view('pages.menu-presale');
     }
     
     public function aktivasi_voucher(){
@@ -41,7 +41,19 @@ class baseController extends Controller
     }
     
     public function beli(){
-    	return view('pages.beli');
+        $totalPeserta = DB::table('peserta')->count();
+        if ($totalPeserta > 300 and Carbon::now('Asia/Tokyo')->toDateString() == '2017-06-16') {
+            return view('pages.sold-out');
+        }
+        elseif ($totalPeserta > 600 and Carbon::now('Asia/Tokyo')->toDateString() == '2017-06-17') {
+            return view('pages.sold-out');
+        }
+        elseif ($totalPeserta > 1000 and Carbon::now('Asia/Tokyo')->toDateString() == '2017-06-18') {
+            return view('pages.sold-out');
+        }
+        else {
+           return view('pages.beli');
+        }
     }
 
     public function beliSubmit(Request $request) {
@@ -51,7 +63,7 @@ class baseController extends Controller
             'no-identitas' => 'bail|required|numeric',
             'nomer-hp' => 'bail|required|noHP',],
             [ 'nama-pemesan.required' => '*isi nama pemesan',
-            'email.required'  => '*isi dengan email Anda',
+            'email.required'  => '*isi dengan email yang valid',
             'email.email'  => '*isi dengan format email yang sesuai',
             'no-identitas.required'  => '*isi dengan nomor identitas Anda',
             'no-identitas.numeric' => '*isi dengan nomor identitas Anda',
@@ -91,24 +103,7 @@ class baseController extends Controller
     
     public function isi_data(Request $request) {
         $request -> session() -> reflash();
-
-        $kode_pembayaran = $request->session()->get('arrayPemesan')['kode_pembayaran'];
-        $deadlineDate = $request->session()->get('arrayPemesan')['deadlineDate'];
         $jumlah_tiket = $request->session()->get('arrayPemesan')['jumlahTiket'];
-
-        DB::table('pembayaran')->insert(
-            ['kode_pembayaran' => $kode_pembayaran, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
-        );
-
-        $nama_pemesan = $request->session()->get('arrayPemesan')['nama'];
-        $email_pemesan = $request->session()->get('arrayPemesan')['email'];
-        $nomor_identitas = $request->session()->get('arrayPemesan')['no_id'];
-        $no_hp = $request->session()->get('arrayPemesan')['no_hp'];
-        $jenis_identitas = $request->session()->get('arrayPemesan')['jenis_id'];
-        
-        DB::table('pembayar')->insert(
-            ['email' => $email_pemesan, 'alamat' => 'Test', 'nomorId' => $nomor_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kode_pembayaran, 'jenis_identitas' => $jenis_identitas]
-        );
 
         for ($i = 1; $i <= $jumlah_tiket; $i++) {
             $namaPeserta = $request->input('namaPeserta_'.$i);
@@ -128,10 +123,57 @@ class baseController extends Controller
                 $rumpunUI = 1;
             }
 
-            DB::table('peserta') -> insertGetId(
-                ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI]
-            );
+            $cekPeserta = DB::table('peserta') -> select('email', 'isHariPertama')
+                                               -> where('email', '=', $email) -> get();
+
+            if ($cekPeserta -> isEmpty()) {
+                DB::table('peserta') -> insertGetId(
+                    ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI]
+                );    
+            }
+            else {
+                if (count($cekPeserta) == 1) {
+                    foreach ($cekPeserta as $data) {
+                        $cekHari = $data->isHariPertama;
+                    }
+
+                    if ($rumpunUI == $cekHari) {
+                        $request->session()->flash('arrayPemesan', $request->session()->get('arrayPemesan'));
+                        $pesanErrorPeserta = 'Satu peserta tidak boleh memiliki jenis tiket yang sama';
+                        return view('pages.isi-data', compact('pesanErrorPeserta'));
+                    }
+                    else {
+                        DB::table('peserta') -> insertGetId(
+                            ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI]
+                        );
+                    }
+                }
+                else {
+                    $request->session()->flash('arrayPemesan', $request->session()->get('arrayPemesan'));
+                    $pesanErrorPeserta = 'Satu peserta hanya boleh memiliki maksimal 1 IPA dan 1 IPS';
+                    return view('pages.isi-data', compact('pesanErrorPeserta'));
+                }
+            }
+
+            
         }
+
+        $kode_pembayaran = $request->session()->get('arrayPemesan')['kode_pembayaran'];
+        $deadlineDate = $request->session()->get('arrayPemesan')['deadlineDate'];
+
+        DB::table('pembayaran')->insert(
+            ['kode_pembayaran' => $kode_pembayaran, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
+        );
+
+        $nama_pemesan = $request->session()->get('arrayPemesan')['nama'];
+        $email_pemesan = $request->session()->get('arrayPemesan')['email'];
+        $nomor_identitas = $request->session()->get('arrayPemesan')['no_id'];
+        $no_hp = $request->session()->get('arrayPemesan')['no_hp'];
+        $jenis_identitas = $request->session()->get('arrayPemesan')['jenis_id'];
+        
+        DB::table('pembayar')->insert(
+            ['email' => $email_pemesan, 'alamat' => 'Test', 'nomorId' => $nomor_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kode_pembayaran, 'jenis_identitas' => $jenis_identitas]
+        );
 
         $query = ['email' => $email_pemesan, 'pembayar.kode_pembayaran' => $kode_pembayaran];
         $pembayar = DB::table('pembayar')
@@ -166,7 +208,7 @@ class baseController extends Controller
             [ 
             'namaPeserta.required'  => '*isi dengan nama Anda',
             'sekolah.required'  => '*isi dengan asal SMA',
-            'email.required'  => '*isi dengan email Anda',
+            'email.required'  => '*isi dengan email yang valid',
             'email.email'  => '*isi dengan format email yang sesuai',
             'no-identitas.required'  => '*isi dengan nomor identitas Anda',
             'no-identitas.numeric' => '*isi dengan nomor identitas Anda',

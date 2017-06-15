@@ -33,3 +33,6 @@ Route::post('/payment','baseController@payment');
 Route::post('/confirm-payment','baseController@confirm_payment');
 
 Route::get('/faq', 'baseController@faq');
+Route::get('/soldOut', 'baseController@soldOut');
+
+
