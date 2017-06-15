@@ -41,11 +41,19 @@ class baseController extends Controller
     }
     
     public function beli(){
-    	return view('pages.beli');
-    }
-
-    public function soldOut(){
-        return view('pages.sold-out');
+        $totalPeserta = DB::table('peserta')->count();
+        if ($totalPeserta > 300 and Carbon::now('Asia/Tokyo')->toDateString() == '2017-06-16') {
+            return view('pages.sold-out');
+        }
+        elseif ($totalPeserta > 600 and Carbon::now('Asia/Tokyo')->toDateString() == '2017-06-17') {
+            return view('pages.sold-out');
+        }
+        elseif ($totalPeserta > 1000 and Carbon::now('Asia/Tokyo')->toDateString() == '2017-06-18') {
+            return view('pages.sold-out');
+        }
+        else {
+           return view('pages.beli');
+        }
     }
 
     public function beliSubmit(Request $request) {
