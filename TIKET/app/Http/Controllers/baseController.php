@@ -39,7 +39,7 @@ class baseController extends Controller
     public function beliSubmit(Request $request) {
         $this->validate($request, [
             'nama-pemesan' => 'required',
-            'email' => 'bail|required|email', 
+            'email' => 'bail|required|email|unique:pembayar,email', 
             'no-identitas' => 'bail|required|numeric',
             'nomer-hp' => 'bail|required|noHP',],
             [ 'nama-pemesan.required' => '*isi nama pemesan',
@@ -48,6 +48,7 @@ class baseController extends Controller
             'no-identitas.required'  => '*isi dengan nomor identitas Anda',
             'no-identitas.numeric' => '*isi dengan nomor identitas Anda',
             'nomer-hp.required' => '*isi dengan nomor Hp Anda',
+            'email.unique' => 'Anda sudah membeli tiket dengan email ini. Gunakan email lain',
             ]);
 
         $nama_pemesan = $request->input('nama-pemesan');
