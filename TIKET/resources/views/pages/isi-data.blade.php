@@ -116,7 +116,7 @@
 			 	<div>
 			 		<div class="col-md-12"> 
 				  	<div class="form-group">
-				    <label for="rumpunUI_{{ $i }}">Rumpun UI</label>
+				    <label for="rumpunUI_{{ $i }}">Jenis Tiket</label>
 				    <select required id="rumpunUI_{{ $i }}" class="form-control selectpicker" name="rumpunUI_{{ $i }}">
 				    	<option class="styled-option" value="ipa_{{ $i }}">IPA</option>
 				    	<option class="styled-option" value="ips_{{ $i }}">IPS</option>

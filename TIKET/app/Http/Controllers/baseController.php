@@ -139,6 +139,21 @@ class baseController extends Controller
     }
     
     public function registrasi_voucher(Request $request){
+        $this->validate($request, [
+            'namaPeserta' => 'required', 
+            'sekolah' => 'required',
+            'email' => 'bail|required|email', 
+            'nomer-hp' => 'bail|required|noHP',
+            'no-identitas' => 'bail|required|numeric',],
+            [ 
+            'namaPeserta.required'  => '*isi dengan nama Anda',
+            'sekolah.required'  => '*isi dengan asal SMA',
+            'email.required'  => '*isi dengan email Anda',
+            'email.email'  => '*isi dengan format email yang sesuai',
+            'no-identitas.required'  => '*isi dengan nomor identitas Anda',
+            'no-identitas.numeric' => '*isi dengan nomor identitas Anda',
+            ]);
+
         $request -> session() -> reflash();
 
         $namaPeserta = $request->input('namaPeserta');
@@ -174,6 +189,15 @@ class baseController extends Controller
     }
 
     public function tracking_telusur(Request $request) {
+         $this->validate($request, [
+            'email-peserta' => 'bail|required|email',
+            'nomor-transaksi' => 'bail|required|numeric'],
+            [ 'email-peserta.required' => '*Isi dengan email yang digunakan untuk membeli tiket',
+            'email-peserta.email' => '*Isi dengan email yang digunakan untuk membeli tiket',
+            'nomor-transaksi.required' => '*Isi dengan nomor referensi transaksi Anda',
+            'nomor-transaksi.numeric' => '*Isi dengan nomor referensi transaksi Anda',
+            ]);
+
         $email = $request->input('email-peserta');
         $nomorTransaksi = $request->input('nomor-transaksi');
 
@@ -199,6 +223,11 @@ class baseController extends Controller
     }
 
     public function activate(Request $request) {
+         $this->validate($request, [
+            'ticketVoucherNumber' => 'required',],
+            [ 'ticketVoucherNumber.required' => '*isi dengan nomor voucher Anda',
+            ]);
+
         $kodeVoucher = $request->input('ticketVoucherNumber');
 
         if (strlen($kodeVoucher) == 10) {

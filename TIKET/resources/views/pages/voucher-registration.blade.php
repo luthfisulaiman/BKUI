@@ -20,25 +20,25 @@
 					<div class="col-md-6">
 						<div class="form-group">
 						    <label for="namaPeserta">Nama Peserta :</label>
-						    <input required type="text" class="form-control" id="namaPeserta" name="namaPeserta">
+						    <input required type="text" class="form-control" id="namaPeserta" name="namaPeserta" value="{{ old('namaPeserta') }}">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 						    <label for="sekolah">Asal Sekolah :</label>
-						    <input required type="text" class="form-control" id="sekolah" name="sekolah">
+						    <input required type="text" class="form-control" id="sekolah" name="sekolah" value="{{ old('sekolah') }}">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 						    <label for="email">Email :</label>
-						    <input required type="email" class="form-control" id="email" name="email">
+						    <input required type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="form-group">
 						    <label for="no-identitas">Nomor Identitas :</label>
-						    <input required type="text" class="form-control" id="no-identitas" name="no-identitas">
+						    <input required type="text" class="form-control" id="no-identitas" name="no-identitas" value="{{ old('no-identitas') }}">
 						</div>
 					</div>
 					<div>

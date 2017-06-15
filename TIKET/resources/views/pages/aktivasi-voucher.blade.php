@@ -18,6 +18,7 @@
 					<div class="form-group">
 						<input type="text"  class="form-control" name="ticketVoucherNumber">
 					</div>
+					<p>{{ $errors->first('ticketVoucherNumber') }}</p>  
 
 					<div class="form-group">
 						<input type="submit" class="btn btn-activate" value="Aktivasi" name="activateTicket">
