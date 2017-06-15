@@ -4,7 +4,7 @@
 <div id="admin">
 	<div class="row">
 		<div class="row">
-		<a href="admin.php" class="pull-right">Back To Dashboard</a>
+		<a href="../public/nimda" class="pull-right">Back To Dashboard</a>
 		<br><br>
 			<h1 class="coming-soon">Detail Pemesanan</h1>
 		<div style="float: right;">
