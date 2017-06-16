@@ -56,7 +56,7 @@
 	    </h4></a>
 	    </div>
 	    <div id="collapse5" class="panel-collapse collapse">
-	      <div class="panel-body">Bedah Kampus UI 17 akan dilaksanakan pada tanggal 11 – 12 November 2017. Hari pertama untuk tiket IPA dan hari kedua untuk tiket IPS.</div>
+	      <div class="panel-body">Bedah Kampus UI 17 akan dilaksanakan pada tanggal 11 – 12 November 2017. Hari pertama untuk tiket IPS dan hari kedua untuk tiket IPA.</div>
 	    </div>
 	  </div>
 	  <div class="panel panel-default">
@@ -94,7 +94,20 @@
 	      </div>
 	      
 	      </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	    <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+	    <h4 class="panel-title">
+	    	9. Kak, kode referensi itu buat apa ya? wajib diisi nggak? 
+	    </h4></a>
 	    </div>
+	    <div id="collapse9" class="panel-collapse collapse">
+	      <div class="panel-body"><p>Kode referensi wajib dicantumkan untuk identifikasi pembayaran. Umumnya, kamu akan diminta memasukkan nomor referensi setelah mengisi nomor rekening yang dituju.</p>
+	      </div>
+	      
+	      </div>
+	  </div>
 	  </div>
 	  
 	  </div>

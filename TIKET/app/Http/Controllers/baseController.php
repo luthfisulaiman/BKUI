@@ -64,13 +64,13 @@ class baseController extends Controller
     
     public function beli(){
         $totalPeserta = DB::table('peserta')->count();
-        if ($totalPeserta > 300 and Carbon::now('Asia/Tokyo')->toDateString() == '2017-06-16') {
+        if ($totalPeserta > 300 and Carbon::now('Asia/Jakarta')->toDateString() == '2017-06-16') {
             return view('pages.sold-out');
         }
-        elseif ($totalPeserta > 600 and Carbon::now('Asia/Tokyo')->toDateString() == '2017-06-17') {
+        elseif ($totalPeserta > 600 and Carbon::now('Asia/Jakarta')->toDateString() == '2017-06-17') {
             return view('pages.sold-out');
         }
-        elseif ($totalPeserta > 1000 and Carbon::now('Asia/Tokyo')->toDateString() == '2017-06-18') {
+        elseif ($totalPeserta > 1000 and Carbon::now('Asia/Jakarta')->toDateString() == '2017-06-18') {
             return view('pages.sold-out');
         }
         else {
@@ -95,7 +95,7 @@ class baseController extends Controller
 
         $nama_pemesan = $request->input('nama-pemesan');
         $randnum = rand(1111111111,999999999);
-        $deadlineDate = Carbon::parse('+3 days')->toDateTimeString();
+        $deadlineDate = Carbon::now('Asia/Jakarta')->addHours(24)->toDateTimeString();
         $kodePembayaran = '';
 
         while(true) {
@@ -308,7 +308,7 @@ class baseController extends Controller
                 }
             } else {
                 $belum_beli = true;
-                return view('pages.beli', compact('belum_beli'));
+                return view('pages.tracking', compact('belum_beli'));
             }
         }
     }

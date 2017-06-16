@@ -7,7 +7,7 @@
 				<h1 class="head-form" style="text-align:"center"; ">Isi Data Peserta</h1>
 			</div>
 			<p>Isilah identitas diri pada form di bawah ini</p>
-			<form method="post" action="../public/registrasi-voucher">
+			<form method="post" action="registrasi-voucher">
 				{{ csrf_field() }}
 
 				<div class="row">

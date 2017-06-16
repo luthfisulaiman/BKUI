@@ -45,7 +45,7 @@
 			<div class="thumbnail">
 				<div class="modal-body">
 					<p>E-Tiket akan dikirim maksimal 3 hari setelah pembayaran</p>
-				<form method="post" action="../public/payment">
+				<form method="post" action="payment">
 					{{ csrf_field() }}
 					<input type="submit" class="btn btn-activate" value="Saya sudah membayar" name="submit">
 				</form>

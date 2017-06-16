@@ -3,7 +3,7 @@
 @section('content')
 <div id="admin">
 	<div class="row">
-			<a href="../public/nimda" class="pull-right">Back To Dashboard</a>
+			<a href="nimda" class="pull-right">Back To Dashboard</a>
 			<br><br>
 			<h2 class="coming-soon">Detail Transaksi</h2>
 			@if (isset($usersArray))

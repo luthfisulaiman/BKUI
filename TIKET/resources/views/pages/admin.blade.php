@@ -26,7 +26,7 @@
 				      <td name="nama" value ={{ $user->nama }}>{{ $user->nama }}</td>
 				      <td>{{ $user->jumlah_bayar }}</td>
 				      <td><div class="row">
-				      <form method="POST" action="../public/view-transaction">
+				      <form method="POST" action="view-transaction">
 						{{ csrf_field() }}
 							<div class="col-md-6">
 								<div class="form-group">
@@ -34,7 +34,7 @@
 								</div>
 							</div>
 						</form>
-						<form method="POST" action="../public/delete-transaction">
+						<form method="POST" action="delete-transaction">
 							<div class="col-md-6">
 								<div class="form-group">
 									<button id="continue" class="btn btn-pay" style="font-size: 1em;" name="view" value={{ $user->kode_pembayaran }}>Delete</button>

@@ -6,7 +6,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link href="{{asset('css/styles.css')}}" rel="stylesheet">
-        <link rel="shortcut icon" href="../public/images/favicon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
     </head>
     <body>
         <div class="wrapper">

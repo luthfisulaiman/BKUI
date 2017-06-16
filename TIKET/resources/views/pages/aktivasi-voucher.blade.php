@@ -13,7 +13,7 @@
 				@endif
 
 				<p>Masukkan kode yang terdapat pada tiket voucher</p>
-				<form method="POST" action="../public/aktivasi-voucher">
+				<form method="POST" action="aktivasi-voucher">
 					{!! csrf_field() !!}
 					<div class="form-group">
 						<input type="text"  class="form-control" name="ticketVoucherNumber">

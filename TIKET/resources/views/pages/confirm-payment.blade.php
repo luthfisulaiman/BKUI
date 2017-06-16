@@ -7,7 +7,7 @@
 		<h1 class="coming-soon">Konfirmasi Pembayaran</h1>
 	</div>
 	<div class="col-md-12">
-		<form method="POST" action="../public/confirm-payment">
+		<form method="POST" action="confirm-payment">
 		{{ csrf_field() }}
 			<div class="row">	
 				<div class="col-md-12">
