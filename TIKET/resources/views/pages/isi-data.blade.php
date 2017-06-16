@@ -132,8 +132,25 @@
 				<p>{{ '*'.$pesanErrorPeserta }}</p>
 			@endif
 			<h4>*harap pastikan kembali info yang anda isi telah sesuai</h4>
-			<input type="submit" class="btn btn-activate" value="Submit" name="submitDataPeserta">
+			
+
+			<div class="modal fade" id="confirm" role="dialog">
+		    <div class="modal-dialog">
+		    	<div class="modal-content">
+		    		<div class="modal-body">
+		    			<h4 class="modal-title">Apakah data yang anda masukkan sudah benar?</h4>
+		    			<p>Harap mencatat kode referensi anda karena kode referensi wajib dimasukkan ketika anda mentransfer dana</p>
+		    			<p>Kode referensi anda adalah: {{ Session::get('arrayPemesan')['kode_pembayaran'] }}</p>
+		    		</div>
+		    		<div class="modal-footer">
+			          <input type="submit" class="btn btn-activate" value="Ya" name="submitDataPeserta">
+			          <button id="continue" class="btn btn-pay" data-dismiss="modal">Tidak</button>
+			        </div>
+			      </div>
+			  </div>
+		  </div>
 		</form>
+		<button id="continue" class="btn btn-pay" data-toggle="modal" data-target="#confirm">Submit</button>
 	</div>
 	</div>
 </div>

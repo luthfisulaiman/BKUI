@@ -67,7 +67,7 @@
 			</div>
 		</div>
 		<div class="col-md-12"> 
-			<p> Pastikan email anda merupakan email yang aktif! </p>
+			<p> Pastikan email anda merupakan email yang aktif karena tiket akan dikirimkan ke email anda! </p>
 			<input type="submit" class="btn btn-buy" value="Lanjutkan" name="lanjutkan">
 		</div>
 		</div>
