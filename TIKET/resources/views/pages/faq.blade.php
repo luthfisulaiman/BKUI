@@ -1,7 +1,7 @@
-@extends('layouts.home')
+@extends('layouts.default')
 @section('content')
 <div id="faq">
-	<h1 class="coming-soon">FAQ</h1>
+	<h1 class="text-center coming-soon">Frequently Asked Question (FAQ)</h1><br><br>
 	<div class="panel-group" id="accordion">
 	  <div class="panel panel-default">
 	   
@@ -17,9 +17,22 @@
 	  </div>
 	  <div class="panel panel-default">
 	    <div class="panel-heading">
+	    <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
+	    <h4 class="panel-title">
+	    	2. Kak, kode referensi itu buat apa ya? wajib diisi nggak? 
+	    </h4></a>
+	    </div>
+	    <div id="collapse9" class="panel-collapse collapse">
+	      <div class="panel-body"><p>Kode referensi wajib dicantumkan untuk identifikasi pembayaran. Umumnya, kamu akan diminta memasukkan nomor referensi setelah mengisi nomor rekening yang dituju.</p>
+	      </div>
+	      
+	      </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
 	    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
 	    <h4 class="panel-title">
-	        2.	Kak kok aku buka web udah nggak bisa di akses ya pembelian tiketnya?
+	        3.	Kak kok aku buka web udah nggak bisa di akses ya pembelian tiketnya?
 	    </h4></a>
 	    </div>
 	    <div id="collapse2" class="panel-collapse collapse">
@@ -30,7 +43,7 @@
 	    <div class="panel-heading">
 	    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
 	    <h4 class="panel-title">
-	        3.	Kak tiket promo cuma untuk 1 orang atau aku bisa pesan banyak untuk teman-teman aku juga?
+	        4.	Kak tiket promo cuma untuk 1 orang atau aku bisa pesan banyak untuk teman-teman aku juga?
 	    </h4></a>
 	    </div>
 	    <div id="collapse3" class="panel-collapse collapse">
@@ -41,7 +54,7 @@
 	    <div class="panel-heading">
 	    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
 	    <h4 class="panel-title">
-	        4.	Kak kalau aku bayarnya lebih dari 1x24 jam boleh kak?
+	        5.	Kak kalau aku bayarnya lebih dari 1x24 jam boleh kak?
 	    </h4></a>
 	    </div>
 	    <div id="collapse4" class="panel-collapse collapse">
@@ -52,7 +65,7 @@
 	    <div class="panel-heading">
 	    <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
 	    <h4 class="panel-title">
-	        5.	Kak ini acaranya kapan ya? 
+	        6.	Kak ini acaranya kapan ya? 
 	    </h4></a>
 	    </div>
 	    <div id="collapse5" class="panel-collapse collapse">
@@ -63,7 +76,7 @@
 	    <div class="panel-heading">
 	    <a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
 	    <h4 class="panel-title">
-	        6.	Kak kalau aku lupa download setelah konfirmasi pembayaran bagaimana?
+	        7.	Kak kalau aku lupa download setelah konfirmasi pembayaran bagaimana?
 	    </h4></a>
 	    </div>
 	    <div id="collapse6" class="panel-collapse collapse">
@@ -74,7 +87,7 @@
 	    <div class="panel-heading">
 	    <a data-toggle="collapse" data-parent="#accordion" href="#collapse7">
 	    <h4 class="panel-title">
-	        7.	Kak websitenya tidak dapat diakses, bagaimana?
+	        8.	Kak websitenya tidak dapat diakses, bagaimana?
 	    </h4></a>
 	    </div>
 	    <div id="collapse7" class="panel-collapse collapse">
@@ -85,7 +98,7 @@
 	    <div class="panel-heading">
 	    <a data-toggle="collapse" data-parent="#accordion" href="#collapse8">
 	    <h4 class="panel-title">
-	        8.	Kak cara pembelian tiket bagaimana ya? 
+	        9.	Kak cara pembelian tiket bagaimana ya? 
 	    </h4></a>
 	    </div>
 	    <div id="collapse8" class="panel-collapse collapse">
@@ -95,19 +108,7 @@
 	      
 	      </div>
 	  </div>
-	  <div class="panel panel-default">
-	    <div class="panel-heading">
-	    <a data-toggle="collapse" data-parent="#accordion" href="#collapse9">
-	    <h4 class="panel-title">
-	    	9. Kak, kode referensi itu buat apa ya? wajib diisi nggak? 
-	    </h4></a>
-	    </div>
-	    <div id="collapse9" class="panel-collapse collapse">
-	      <div class="panel-body"><p>Kode referensi wajib dicantumkan untuk identifikasi pembayaran. Umumnya, kamu akan diminta memasukkan nomor referensi setelah mengisi nomor rekening yang dituju.</p>
-	      </div>
-	      
-	      </div>
-	  </div>
+	  
 	  </div>
 	  
 	  </div>

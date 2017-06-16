@@ -899,7 +899,7 @@ input {
 	.icon-bar{
 		border: solid 1px #155072;
 	}
-	#admin, #buy-tiket, #tracking-content, #download, #buy-ticket,#activate-content, #confirm-content{
+	#faq, #admin, #buy-tiket, #tracking-content, #download, #buy-ticket,#activate-content, #confirm-content{
 		margin:0;
 		height:85vh;
 		overflow-y:scroll;
