@@ -8,8 +8,8 @@
   /*border: 1px solid #DDDDDD;*/
   position: relative;
   /*margin-top: 20%;*/
-  height: 60%;
-  width: 60%;
+  height: 50%;
+  width: 30%;
 }
 img{
   /*height: 200%;*/
@@ -19,24 +19,24 @@ img{
 
 #bc{
   float:left;
-  padding-top: 27.5%;
+  padding-top: 24.5%;
   padding-left: 6%;
   position: absolute;
-  font-size: 80px;
+  font-size: 30px;
 }
 
 #name{
   float:right;
-  padding-top: 17%;
-  padding-left: 58%;
+  padding-top: 15%;
+  padding-left: 53%;
   position: absolute;
-  font-size: 49px;
+  font-size: 20px;
 }
 
 #kode_tiket{
   float:right;
-  padding-top: 27%;
-  padding-left: 61%;
+  padding-top: 24.5%;
+  padding-left: 58.3%;
   position: absolute;
-  font-size: 65px;
+  font-size: 24px;
 }
