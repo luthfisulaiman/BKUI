@@ -23,10 +23,9 @@
   }
 
   function genIMG() {
-    document.getElementById('main').parentNode.style.overflow = 'visible';
-    html2canvas(document.getElementById('main'), {
+    
+    html2canvas(document.getElementsByClassName('main'), {
       onrendered: function(canvas){
-        document.getElementById('main').parentNode.style.overflow = 'hidden';
         $('#down').attr('href', canvas.toDataURL('image/png'));
         $('#down').attr('download', 'imagetest.png');
         $('#down')[0].click();
@@ -41,14 +40,14 @@
 </head>
 <body>
 
-  <div id="main">
+  <div class="main">
     <h1 id="bc">BARCODE</h1>
     <h1 id="name">NAMA NAMA NAMA</h1>
     <h1 id="kode_tiket">0123456789</h1>
     <img src="ready_pdf/IPA/ipaA.png" alt="kosong-A">
-  </div>
+</div>
 
-  <a href="javascript:genIMG()">Download Tiket (PDF)</a>
-  <a id='down'></a>
+<a href="javascript:genIMG()">Download Tiket (PDF)</a>
+<a id='down'></a>
 </body>
 </html>
