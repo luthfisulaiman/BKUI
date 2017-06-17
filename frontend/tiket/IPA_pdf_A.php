@@ -11,6 +11,25 @@
   <title>TIKET IPA A</title>
 
   <script type="text/javascript">
+
+  function takeIMG() {
+  var element = $('.main');
+  html2canvas(element,{
+    background: '#FFFFFF',
+    onrendered:function (canvas) {
+      var imgData = canvas.toDataURL('image/png');
+      $.ajax({
+        url:'save.php',
+        type:'post',
+        dataType:'text',
+        data:{
+          base64data:imgData
+        }
+      });
+    }
+  });
+  }
+
   function genPDF(){
     html2canvas(document.getElementsByClassName('main'), {
       onrendered: function(canvas){
@@ -23,7 +42,7 @@
   }
 
   function genIMG() {
-    
+
     html2canvas(document.getElementsByClassName('main'), {
       onrendered: function(canvas){
         $('#down').attr('href', canvas.toDataURL('image/png'));
@@ -47,7 +66,7 @@
     <img src="ready_pdf/IPA/ipaA.png" alt="kosong-A">
 </div>
 
-<a href="javascript:genIMG()">Download Tiket (PDF)</a>
+<a href="javascript:takeIMG()">Download Tiket (PDF)</a>
 <a id='down'></a>
 </body>
 </html>
