@@ -3,10 +3,27 @@
 <head>
   <link rel="stylesheet" type="text/css" href="pdf.css"/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="jspdf.min.js"></script>
+  <script type="text/javascript" src="html2canvas.js"></script>
   <meta charset="utf-8">
-  <title></title>
+  <title>TIKET IPA A</title>
+
+  <script type="text/javascript">
+  function genPDF(){
+    html2canvas(document.getElementsByClassName('main'), {
+      onrendered: function(canvas){
+        var img = canvas.toDataURL("image/png");
+        var doc = new jsPDF('p', 'mm', 'a4');
+        doc.addImage(img, 'JPEG',0,30,img.width,img.height);
+        doc.save("test.pdf");
+      }
+    });
+  }
+  </script>
+
+
 </head>
 <body>
 
@@ -15,12 +32,9 @@
     <h1 id="name">NAMA NAMA NAMA</h1>
     <h1 id="kode_tiket">0123456789</h1>
     <img src="ready_pdf/IPA/ipaA.png" alt="kosong-A">
-    <!-- <div id="barcode_box">
-    </div>
-    <div id="name_box">
-      NAME
-    </div> -->
-  </div>
+</div>
+
+<a href="javascript:genPDF()">Download Tiket (PDF)</a>
 
 </body>
 </html>
