@@ -1,0 +1,47 @@
+/*body{
+  background: url("../../aset-designs/tiket_pdf.png") no-repeat top;
+}*/
+
+.main{
+  margin-left: 10%;
+  margin-right: 10%;
+  border: 1px solid #DDDDDD;
+  position: relative;
+}
+img{
+  /*height: 200%;*/
+  width: 100%;
+  height: 100%;
+}
+
+#bc{
+  float:left;
+  padding-top: 27%;
+  padding-left: 5%;
+  position: absolute;
+  font-size: 70px;
+}
+
+#name{
+  float:right;
+  padding-top: 17%;
+  padding-left: 54%;
+  position: absolute;
+  font-size: 49px;
+}
+
+#kode_tiket{
+  float:right;
+  padding-top: 27%;
+  padding-left: 58%;
+  position: absolute;
+  font-size: 65px;
+}
+
+
+/*#name_box{
+  position: static;
+  margin-left: 19%;
+  margin-top: 19.6%;
+  font-size: 70px;
+}*/
