@@ -6,7 +6,11 @@ body{
   /*margin-top: 20%;
   padding-top: 25%;*/
 }
+h1{
+font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+}
 .main{
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
   position: relative;
   height: 100%;
   width: 100%;
@@ -18,6 +22,7 @@ img{
 }
 
 #bc{
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
   float:left;
   padding-top: 27.5%;
   padding-left: 7%;
@@ -26,6 +31,7 @@ img{
 }
 
 #name{
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
   float:right;
   padding-top: 17.5%;
   padding-left: 52%;
@@ -34,6 +40,7 @@ img{
 }
 
 #kode_tiket{
+  font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
   float:right;
   padding-top: 27.5%;
   padding-left: 62%;
