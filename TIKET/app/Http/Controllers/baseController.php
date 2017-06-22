@@ -661,4 +661,14 @@ class baseController extends Controller
     public function soldOut() {
         return view('pages.sold-out');
     }
+
+    public function delete(Request $request) {
+        DB::table('pembayar')->where('kode_pembayaran', '=', $request->delete)->delete();
+
+        DB::table('peserta')->where('kode_pembayaran', '=', $request->delete)->delete();
+
+        DB::table('pembayaran')->where('kode_pembayaran', '=', $request->delete)->delete();
+
+        return view('pages.success-delete');
+    }
 }

@@ -43,9 +43,10 @@
 							</div>
 						</form>
 						<form method="POST" action="delete-transaction">
+						{{ csrf_field() }}
 							<div class="col-md-6">
 								<div class="form-group">
-									<button id="continue" class="btn btn-pay" style="font-size: 1em;" name="view" value={{ $user->kode_pembayaran }}>Delete</button>
+									<button id="continue" class="btn btn-pay" style="font-size: 1em;" name="delete" value={{ $user->kode_pembayaran }}>Delete</button>
 								</div>
 							</div>
 						</form>
