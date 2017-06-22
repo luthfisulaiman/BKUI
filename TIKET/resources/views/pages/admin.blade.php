@@ -14,6 +14,7 @@
 			      <th>No</th>
 			      <th>Nama Pemesan</th>
 			      <th>Jumlah Pesanan</th>
+			      <th>Status Pembayaran</th>
 			      <th>Action</th>
 			    </tr>
 			  </thead>
@@ -25,6 +26,13 @@
 				      <th scope="row"><?php echo $i; ?></th>
 				      <td name="nama" value ={{ $user->nama }}>{{ $user->nama }}</td>
 				      <td>{{ $user->jumlah_bayar }}</td>
+				      <td><div class="row">
+				      	@if ($user->isPaid == 0)
+				      		<p style="font-size: 1em; color: red;"> BELUM LUNAS </p>
+				      	@else
+				      		<p style="font-size: 1em; color: blue;"> SUDAH LUNAS </p>
+				      	@endif
+					  </div></td>
 				      <td><div class="row">
 				      <form method="POST" action="view-transaction">
 						{{ csrf_field() }}
