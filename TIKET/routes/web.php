@@ -19,7 +19,8 @@ Route::post('/registrasi-voucher', 'baseController@registrasi_voucher');
 
 Route::get('/beli', 'baseController@beli');
 Route::post('/beli', 'baseController@beliSubmit');
-Route::post('/isi-data', 'baseController@isi_data');
+Route::post('/isi-data', 'baseController@isi_data_step1');
+Route::post('/update-data', 'baseController@update_data');
 
 Route::post('/nimda', 'baseController@admin');
 Route::post('/view-transaction', 'baseController@adminView');

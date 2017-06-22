@@ -23,14 +23,14 @@ class baseController extends Controller
                         ->get();
 
         $userName = DB::table('pembayar')
-                      ->select('nama')
+                      ->select('nama', 'email')
                       ->where('kode_pembayaran', '=', $kode_pembayaran)
                       ->get();
 
         $userPayment = DB::table('pembayaran')
                         ->where('kode_pembayaran', '=', $kode_pembayaran)
                         ->get();
-
+                        
         $usersArray = ["pemesan" => $userName, "kode_pembayaran" => $kode_pembayaran, "dipesan" => $usersQuery, "bayaran" => $userPayment];
 
         $request -> session() -> flash('usersArray', $usersArray);
@@ -55,26 +55,43 @@ class baseController extends Controller
         return view('pages.view-transaction');
     }
     public function index(){
-    	return view('pages.menu-presale');
+        return view('pages.menu-presale');
     }
     
     public function aktivasi_voucher(){
-    	return view('pages.aktivasi-voucher');
+        return view('pages.aktivasi-voucher');
     }
     
     public function beli(){
         $totalPeserta = DB::table('peserta')->count();
-        if ($totalPeserta > 300 and Carbon::now('Asia/Jakarta')->toDateString() == '2017-06-16') {
-            return view('pages.sold-out');
+        $waktuSekarang = Carbon::now('Asia/Jakarta');
+        
+        if ($waktuSekarang > '2017-06-18 09:00:00') {
+            if ($totalPeserta < 1000) {
+                return view('pages.beli');
+            }
+            else {
+                return view('pages.sold-out');
+            }
         }
-        elseif ($totalPeserta > 600 and Carbon::now('Asia/Jakarta')->toDateString() == '2017-06-17') {
-            return view('pages.sold-out');
+        elseif ($waktuSekarang > '2017-06-17 09:00:00') {
+            if ($totalPeserta < 718) {
+                return view('pages.beli');
+            }
+            else {
+                return view('pages.sold-out');
+            }
         }
-        elseif ($totalPeserta > 1000 and Carbon::now('Asia/Jakarta')->toDateString() == '2017-06-18') {
-            return view('pages.sold-out');
+        elseif ($waktuSekarang > '2017-06-16 09:00:00') {
+            if ($totalPeserta < 300) {
+                return view('pages.beli');
+            }
+            else {
+                return view('pages.sold-out');
+            }
         }
         else {
-           return view('pages.beli');
+            return view('pages.menu');
         }
     }
 
@@ -115,34 +132,85 @@ class baseController extends Controller
         $no_hp_pemesan = $request->input('nomer-hp');
         $jumlah_tiket_pemesan = $request->input('jumlahTiket');
 
-        $arrayPemesan = array('nama' => $nama_pemesan, 'email' => $email_pemesan, 'no_id' => $no_identitas_pemesan, 'jenis_id' => $jenis_identitas_pemesan, 'no_hp' => $no_hp_pemesan, 'jumlahTiket' => $jumlah_tiket_pemesan, 'kode_pembayaran' => $kodePembayaran, 'deadlineDate' => $deadlineDate);
+        $arrayPemesan = array('nama' => $nama_pemesan, 'email' => $email_pemesan, 'no_id' => $no_identitas_pemesan, 'jenis_id' => $jenis_identitas_pemesan, 'no_hp' => $no_hp_pemesan, 'jumlahTiket' => $jumlah_tiket_pemesan, 'kode_pembayaran' => $kodePembayaran, 'deadlineDate' => $deadlineDate, 'isUpdate' => 0);
+        
+        $totalPeserta = DB::table('peserta')->count();
+        $waktuSekarang = Carbon::now('Asia/Jakarta');
+        if ($waktuSekarang > '2017-06-18 09:00:00') {
+            if ($totalPeserta < 1000) {
+                $request -> session() -> flash('arrayPemesan', $arrayPemesan);
+                return view('pages.isi-data', compact('arrayPemesan'));
+            }
+            else {
+                return view('pages.sold-out');
+            }
+        }
+        elseif ($waktuSekarang > '2017-06-17 09:00:00') {
+            if ($totalPeserta < 718) {
+                $request -> session() -> flash('arrayPemesan', $arrayPemesan);
+                return view('pages.isi-data', compact('arrayPemesan'));
+            }
+            else {
+                return view('pages.sold-out');
+            }
+        }
+        elseif ($waktuSekarang > '2017-06-16 09:00:00') {
+            if ($totalPeserta < 300) {
+                $request -> session() -> flash('arrayPemesan', $arrayPemesan);
+                return view('pages.isi-data', compact('arrayPemesan'));
+            }
+            else {
+                return view('pages.sold-out');
+            }
+        }
+        else {
+            return view('pages.sold-out');
+        }
 
-        $request -> session() -> flash('arrayPemesan', $arrayPemesan);
-
-        return view('pages.isi-data', compact('arrayPemesan'));
+        
+    }
+    
+    public function isi_data_step1(Request $request) {
+        $request -> session() -> reflash();
+        
+        $totalPeserta = DB::table('peserta')->count();
+        $waktuSekarang = Carbon::now('Asia/Jakarta');
+        if ($waktuSekarang > '2017-06-18 09:00:00') {
+            if ($totalPeserta < 1000) {
+                return $this->isi_data_step2($request);
+            }
+            else {
+                return view('pages.sold-out');
+            }
+        }
+        elseif ($waktuSekarang > '2017-06-17 09:00:00') {
+            if ($totalPeserta < 718) {
+                return $this->isi_data_step2($request);
+            }
+            else {
+                return view('pages.sold-out');
+            }
+        }
+        elseif ($waktuSekarang > '2017-06-16 09:00:00') {
+            if ($totalPeserta < 300) {
+                return $this->isi_data_step2($request);
+            }
+            else {
+                return view('pages.sold-out');
+            }
+        }
+        else {
+            return view('pages.sold-out');
+        }
     }
 
-    
-    public function isi_data(Request $request) {
+    public static function getDataArray(Request $request) {
         $request -> session() -> reflash();
         $jumlah_tiket = $request->session()->get('arrayPemesan')['jumlahTiket'];
-        
-        $kode_pembayaran = $request->session()->get('arrayPemesan')['kode_pembayaran'];
-        $deadlineDate = $request->session()->get('arrayPemesan')['deadlineDate'];
 
-        DB::table('pembayaran')->insert(
-            ['kode_pembayaran' => $kode_pembayaran, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
-        );
 
-        $nama_pemesan = $request->session()->get('arrayPemesan')['nama'];
-        $email_pemesan = $request->session()->get('arrayPemesan')['email'];
-        $nomor_identitas = $request->session()->get('arrayPemesan')['no_id'];
-        $no_hp = $request->session()->get('arrayPemesan')['no_hp'];
-        $jenis_identitas = $request->session()->get('arrayPemesan')['jenis_id'];
-        
-        DB::table('pembayar')->insert(
-            ['email' => $email_pemesan, 'alamat' => 'Test', 'nomorId' => $nomor_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kode_pembayaran, 'jenis_identitas' => $jenis_identitas]
-        );
+        // return $request->input('namaPeserta_1');
+        $dataPeserta[0] = array('test'=>'test');
 
         for ($i = 1; $i <= $jumlah_tiket; $i++) {
             $namaPeserta = $request->input('namaPeserta_'.$i);
@@ -161,6 +229,100 @@ class baseController extends Controller
             else {
                 $rumpunUI = 1;
             }
+            
+            if ($i == 1) {
+                $dataPeserta[1] = array('nama'=>$namaPeserta, 'email'=>$email, 'jurusanSMA'=>$jurusanSMA, 'rumpunUI'=>$rumpunUI, 'asalSMA'=>$asalSMA, 'no_id'=>$no_identitas, 'jenis_id'=>$jenis_identitas); 
+            }
+            elseif ($i == 2) {
+                $dataPeserta[2] = array('nama'=>$namaPeserta, 'email'=>$email, 'jurusanSMA'=>$jurusanSMA, 'rumpunUI'=>$rumpunUI, 'asalSMA'=>$asalSMA, 'no_id'=>$no_identitas, 'jenis_id'=>$jenis_identitas);
+            }
+            elseif ($i == 3) {
+                $dataPeserta[3] = array('nama'=>$namaPeserta, 'email'=>$email, 'jurusanSMA'=>$jurusanSMA, 'rumpunUI'=>$rumpunUI, 'asalSMA'=>$asalSMA, 'no_id'=>$no_identitas, 'jenis_id'=>$jenis_identitas);
+            }
+            elseif ($i == 4) {
+                $dataPeserta[4] = array('nama'=>$namaPeserta, 'email'=>$email, 'jurusanSMA'=>$jurusanSMA, 'rumpunUI'=>$rumpunUI, 'asalSMA'=>$asalSMA, 'no_id'=>$no_identitas, 'jenis_id'=>$jenis_identitas);
+            }
+            else {
+                $dataPeserta[5] = array('nama'=>$namaPeserta, 'email'=>$email, 'jurusanSMA'=>$jurusanSMA, 'rumpunUI'=>$rumpunUI, 'asalSMA'=>$asalSMA, 'no_id'=>$no_identitas, 'jenis_id'=>$jenis_identitas);
+            }
+        }
+
+        for ($i = 1; $i <= $jumlah_tiket; $i++) {
+            $cekPeserta = DB::table('peserta') -> select('email', 'isHariPertama')
+                                               -> where('email', '=', $dataPeserta[$i]['email']) -> get();
+                                               
+            if (count($cekPeserta) == 1) {
+                foreach ($cekPeserta as $data) {
+                    $cekHari = $data->isHariPertama;
+                }
+
+                if ($dataPeserta[$i]['rumpunUI'] == $cekHari) {
+                    $request->session()->flash('arrayPemesan', $request->session()->get('arrayPemesan'));
+                    $pesanErrorPeserta = 'Satu peserta tidak boleh memiliki jenis tiket yang sama';
+                    if ($request->session()->get('arrayPemesan')['isUpdate'] == 1) {
+                        // return $request->session()->get('arrayPemesan');
+                        return view('pages.update-data', compact('pesanErrorPeserta'));
+                    } else {
+                        return view('pages.isi-data', compact('pesanErrorPeserta'));
+                    }
+                }
+            } elseif (count($cekPeserta) > 1) {
+                $request->session()->flash('arrayPemesan', $request->session()->get('arrayPemesan'));
+                $pesanErrorPeserta = 'Satu peserta hanya boleh memiliki maksimal 1 IPA dan 1 IPS';
+                if ($request->session()->get('arrayPemesan')['isUpdate'] == 1) {
+                    return view('pages.update-data', compact('pesanErrorPeserta'));
+                } else {
+                    return view('pages.isi-data', compact('pesanErrorPeserta'));
+                }
+            }
+        }
+        
+        for ($i = 1; $i < $jumlah_tiket; $i++) {
+            for ($j = $i + 1; $j <= $jumlah_tiket; $j++) {
+                if ($dataPeserta[$i]['email'] == $dataPeserta[$j]['email'] and $dataPeserta[$i]['rumpunUI'] == $dataPeserta[$j]['rumpunUI']) {
+                    $request->session()->flash('arrayPemesan', $request->session()->get('arrayPemesan'));
+                    return $request->session()->get('arrayPemesan');
+                    $pesanErrorPeserta = 'Satu peserta tidak boleh memiliki jenis tiket yang sama';
+                    if ($request->session()->get('arrayPemesan')['isUpdate'] == 1) {
+                        return view('pages.update-data', compact('pesanErrorPeserta'));
+                    } else {
+                        return view('pages.isi-data', compact('pesanErrorPeserta'));
+                    }
+                }
+            }
+        }
+
+        return $dataPeserta;
+    }
+
+    public function update_data(Request $request) {
+        $request -> session() -> reflash();
+        $request->session()->flash('arrayPemesan', $request->session()->get('arrayPemesan'));
+        $dataPeserta = $this->getDataArray($request);
+
+        // return $dataPeserta[3];
+
+        $request->session()->flash('dataPeserta', $dataPeserta);
+        return $this->update_data_insert($request);
+    }
+
+    public function update_data_insert(Request $request) {
+        $request -> session() -> reflash();
+        $email_pemesan = $request->session()->get('arrayPemesan')['pemesan']->email;
+        $jumlah_tiket = $request->session()->get('arrayPemesan')['jumlahTiket'];
+        $jumlah_terdaftar = $request->session()->get('arrayPemesan')['jumlah_terdaftar'];
+        $jumlah_belum_terdaftar = $jumlah_tiket - $jumlah_terdaftar;
+        $kode_pembayaran = $request->session()->get('arrayPemesan')['pemesan']->kode_bayar;
+
+        for ($i = $jumlah_terdaftar + 1; $i <= $jumlah_tiket; $i++) {
+            $namaPeserta = $request->session()->get('dataPeserta')[$i]['nama'];
+            $email = $request->session()->get('dataPeserta')[$i]['email'];
+            $jurusanSMA = $request->session()->get('dataPeserta')[$i]['jurusanSMA'];
+
+            $rumpunUI = $request->session()->get('dataPeserta')[$i]['rumpunUI'];
+            $asalSMA = $request->session()->get('dataPeserta')[$i]['asalSMA'];
+            $no_identitas = $request->session()->get('dataPeserta')[$i]['no_id'];
+            $jenis_identitas = $request->session()->get('dataPeserta')[$i]['jenis_id'];
 
             $cekPeserta = DB::table('peserta') -> select('email', 'isHariPertama')
                                                -> where('email', '=', $email) -> get();
@@ -169,8 +331,91 @@ class baseController extends Controller
                 DB::table('peserta') -> insertGetId(
                     ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI, 'kode_pembayaran' => $kode_pembayaran]
                 );    
+            } else {
+                if (count($cekPeserta) == 1) {
+                    foreach ($cekPeserta as $data) {
+                        $cekHari = $data->isHariPertama;
+                    }
+
+                    if ($rumpunUI == $cekHari) {
+                        $request->session()->flash('arrayPemesan', $request->session()->get('arrayPemesan'));
+                        $pesanErrorPeserta = 'Satu peserta tidak boleh memiliki jenis tiket yang sama';
+                        return view('pages.update-data', compact('pesanErrorPeserta'));
+                    }
+                    else {
+                        DB::table('peserta') -> insertGetId(
+                            ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI, 'kode_pembayaran' => $kode_pembayaran]
+                        );
+                    }
+                }
+                else {
+                    $request->session()->flash('arrayPemesan', $request->session()->get('arrayPemesan'));
+                    $pesanErrorPeserta = 'Satu peserta hanya boleh memiliki maksimal 1 IPA dan 1 IPS';
+                    return view('pages.update-data', compact('pesanErrorPeserta'));
+                }
             }
-            else {
+        }
+        
+        $query = ['email' => $email_pemesan, 'pembayar.kode_pembayaran' => $kode_pembayaran];
+        $pembayar = DB::table('pembayar')
+                        -> join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
+                        -> select('nama', 'email', 'pembayar.kode_pembayaran as kode_bayar', 'isPaid', 'waktu_bayar', 'jumlah_bayar')
+                        -> where($query) -> first();
+
+        $request->session()-> flash('dataPembayar', $pembayar);
+
+        return view('pages.payment', compact('pembayar'));
+
+    }
+    
+    public function isi_data_step2(Request $request) {
+        $request -> session() -> reflash();
+        $request->session()->flash('arrayPemesan', $request->session()->get('arrayPemesan'));
+        $dataPeserta = $this->getDataArray($request);
+        
+        $request->session()->flash('dataPeserta', $dataPeserta);
+        return $this->isi_data_step3($request);
+    }
+
+    
+    public function isi_data_step3(Request $request) {
+        $request -> session() -> reflash();
+        $jumlah_tiket = $request->session()->get('arrayPemesan')['jumlahTiket'];
+        $kode_pembayaran = $request->session()->get('arrayPemesan')['kode_pembayaran'];
+        $deadlineDate = $request->session()->get('arrayPemesan')['deadlineDate'];
+
+        DB::table('pembayaran')->insert(
+            ['kode_pembayaran' => $kode_pembayaran, 'waktu_bayar' => $deadlineDate, 'jumlah_bayar' => $jumlah_tiket, 'isPaid' => false]
+        );
+
+        $nama_pemesan = $request->session()->get('arrayPemesan')['nama'];
+        $email_pemesan = $request->session()->get('arrayPemesan')['email'];
+        $nomor_identitas = $request->session()->get('arrayPemesan')['no_id'];
+        $no_hp = $request->session()->get('arrayPemesan')['no_hp'];
+        $jenis_identitas = $request->session()->get('arrayPemesan')['jenis_id'];
+        
+        DB::table('pembayar')->insert(
+            ['email' => $email_pemesan, 'alamat' => 'Test', 'nomorId' => $nomor_identitas, 'nama' => $nama_pemesan, 'noHP' => $no_hp, 'kode_pembayaran' => $kode_pembayaran, 'jenis_identitas' => $jenis_identitas]
+        );
+
+        for ($i = 1; $i <= $jumlah_tiket; $i++) {
+            $namaPeserta = $request->session()->get('dataPeserta')[$i]['nama'];
+            $email = $request->session()->get('dataPeserta')[$i]['email'];
+            $jurusanSMA = $request->session()->get('dataPeserta')[$i]['jurusanSMA'];
+
+            $rumpunUI = $request->session()->get('dataPeserta')[$i]['rumpunUI'];
+            $asalSMA = $request->session()->get('dataPeserta')[$i]['asalSMA'];
+            $no_identitas = $request->session()->get('dataPeserta')[$i]['no_id'];
+            $jenis_identitas = $request->session()->get('dataPeserta')[$i]['jenis_id'];
+
+            $cekPeserta = DB::table('peserta') -> select('email', 'isHariPertama')
+                                               -> where('email', '=', $email) -> get();
+
+            if ($cekPeserta -> isEmpty()) {
+                DB::table('peserta') -> insertGetId(
+                    ['nama' => $namaPeserta, 'jurusan' => $jurusanSMA, 'email' => $email, 'asalSMA' => $asalSMA, 'no_identitas' => $no_identitas, 'jenis_identitas' => $jenis_identitas, 'isHariPertama' => $rumpunUI, 'kode_pembayaran' => $kode_pembayaran]
+                );    
+            } else {
                 if (count($cekPeserta) == 1) {
                     foreach ($cekPeserta as $data) {
                         $cekHari = $data->isHariPertama;
@@ -193,14 +438,12 @@ class baseController extends Controller
                     return view('pages.isi-data', compact('pesanErrorPeserta'));
                 }
             }
-
-            
         }
-
+        
         $query = ['email' => $email_pemesan, 'pembayar.kode_pembayaran' => $kode_pembayaran];
         $pembayar = DB::table('pembayar')
                         -> join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
-                        -> select('email', 'pembayar.kode_pembayaran as kode_bayar', 'isPaid', 'waktu_bayar', 'jumlah_bayar')
+                        -> select('nama', 'email', 'pembayar.kode_pembayaran as kode_bayar', 'isPaid', 'waktu_bayar', 'jumlah_bayar')
                         -> where($query) -> first();
 
         $request->session()-> flash('dataPembayar', $pembayar);
@@ -226,7 +469,7 @@ class baseController extends Controller
             ->where('kode_pembayaran', $nomorReferensi)
             ->update(['isPaid' => 1, 'nama_bank' => $namaBank, 'rekening_pemilik' => $nomorRekening, 'tanggal_transfer' => $tanggalTransfer]);
 
-    	return view('pages.success');
+        return view('pages.success');
     }
     
     public function registrasi_voucher(Request $request){
@@ -272,39 +515,61 @@ class baseController extends Controller
     }
 
     public function download_tiket(){
-    	return view('pages.download-tiket');
+        return view('pages.download-tiket');
     }
 
     public function tracking(){
-    	return view('pages.tracking');
+        return view('pages.tracking');
     }
 
     public function tracking_telusur(Request $request) {
          $this->validate($request, [
             'email-peserta' => 'bail|required|email',
-            'nomor-transaksi' => 'bail|required|numeric',],
+            // 'nomor-transaksi' => 'bail|required|numeric',
+            ],
             [ 'email-peserta.required' => '*Isi dengan email yang digunakan untuk membeli tiket',
             'email-peserta.email' => '*Isi dengan email yang digunakan untuk membeli tiket',
-            'nomor-transaksi.required' => '*Isi dengan nomor referensi transaksi Anda',
-            'nomor-transaksi.numeric' => '*Isi dengan nomor referensi transaksi Anda',
+            // 'nomor-transaksi.required' => '*Isi dengan nomor referensi transaksi Anda',
+            // 'nomor-transaksi.numeric' => '*Isi dengan nomor referensi transaksi Anda',
             ]);
 
         $email = $request->input('email-peserta');
-        $nomorTransaksi = $request->input('nomor-transaksi');
+        // $nomorTransaksi = $request->input('nomor-transaksi');
 
-        if(isset($email) && isset($nomorTransaksi)) {
-            $query = ['email' => $email, 'pembayar.kode_pembayaran' => $nomorTransaksi];
+        if(isset($email)) {   // && isset($nomorTransaksi)) {
+            $query = ['email' => $email]; //, 'pembayar.kode_pembayaran' => $nomorTransaksi];
             $pembayar = DB::table('pembayar')
                             -> join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')
-                            -> select('email', 'pembayar.kode_pembayaran as kode_bayar', 'isPaid', 'waktu_bayar', 'jumlah_bayar')
+                            -> select('nama', 'email', 'pembayar.kode_pembayaran as kode_bayar', 'isPaid', 'waktu_bayar', 'jumlah_bayar', 'noHP', 'nomorId', 'jenis_identitas')
                             -> where($query) -> first();
 
             if(isset($pembayar)) { // Jika dia membeli tiket
-                if ($pembayar->isPaid == 1) {
-                    // dia udah bayar
-                } else { // Jika dia belum bayar / belum lunas
-                    $request->session()-> flash('dataPembayar', $pembayar);
-                    return view('pages.payment', compact('pembayar'));
+                $jumlah_bayar = $pembayar->jumlah_bayar;
+                $kode_pembayaran = $pembayar->kode_bayar;
+                $peserta = DB::select(DB::raw("SELECT count(*) as jumlah FROM peserta WHERE kode_pembayaran = '$kode_pembayaran'"));
+                $jumlah_terdaftar = $peserta[0]->jumlah;
+
+                if ($peserta[0]->jumlah != $jumlah_bayar) {
+                    $peserta = DB::table('peserta')
+                                 ->select('nama', 'asalSMA', 'email', 'no_identitas', 'jenis_identitas', 'jurusan', 'isHariPertama')
+                                 ->where('kode_pembayaran', '=', $kode_pembayaran)
+                                 ->get();
+
+                    // return $peserta;
+
+                    $arrayPemesan =['pemesan' => $pembayar, 'peserta' => $peserta, 'jumlah_terdaftar' => $jumlah_terdaftar, 'jumlahTiket' => $pembayar->jumlah_bayar, 'isUpdate' => 1];
+                    // return $arrayPemesan;
+                    $request -> session() -> flash('arrayPemesan', $arrayPemesan);
+                    return view('pages.update-data', compact('arrayPemesan'));
+                } else {
+                    if ($pembayar->isPaid == 1) {
+                        // dia udah bayar
+                        $request->session()-> flash('dataPembayar', $pembayar);
+                        return view('pages.payment', compact('pembayar'));
+                    } else { // Jika dia belum bayar / belum lunas
+                        $request->session()-> flash('dataPembayar', $pembayar);
+                        return view('pages.payment', compact('pembayar'));
+                    }
                 }
             } else {
                 $belum_beli = true;

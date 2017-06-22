@@ -10,13 +10,13 @@
 		<form method="post" action="isi-data">
 		{{ csrf_field() }}
 		<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<div class="form-group">
 			    <label for="kode_pembayaran">Kode Referensi:</label>
-			    <input required type="text" class="form-control" id="kode_pembayaran" name="kode_pembayaran" value="{{ Session::get('arrayPemesan')['kode_pembayaran'] }}" readonly>
+			    <input required type="text" class="form-control" id="kode_pembayaran" name="kode_pembayaran" value="Akan didapatkan setelah mengisi seluruh data peserta" readonly>
 			</div>
 		</div>
-		<div class="col-md-6">
+		<div class="col-md-12">
 			<div class="form-group">
 			    <label for="deadlineDate">Deadline Pembayaran</label>
 			    <input required type="text" class="form-control" id="deadlineDate" name="deadlineDate" value="{{ Session::get('arrayPemesan')['deadlineDate'] }}" readonly>
@@ -139,8 +139,7 @@
 		    	<div class="modal-content">
 		    		<div class="modal-body">
 		    			<h4 class="modal-title">Apakah data yang anda masukkan sudah benar?</h4>
-		    			<p>Harap mencatat kode referensi anda karena kode referensi wajib dimasukkan ketika anda mentransfer dana</p>
-		    			<p>Kode referensi anda adalah: {{ Session::get('arrayPemesan')['kode_pembayaran'] }}</p>
+		    			<p>Silahkan mengecek kembali kebenaran data anda</p>
 		    		</div>
 		    		<div class="modal-footer">
 			          <input type="submit" class="btn btn-activate" value="Ya" name="submitDataPeserta">

@@ -20,6 +20,12 @@
 								{{$pemesan->nama}}
 							@endforeach
 						</p>
+						<h2 class="detailOrder">Email Pemesan</h2>
+						<p class="contentOrder">
+							@foreach ($usersArray['pemesan'] as $pemesan)
+								{{$pemesan->email}}
+							@endforeach
+						</p>
 				@foreach ($usersArray['dipesan'] as $user)
 					<div class="row">
 							<div class="col-sm-12">
