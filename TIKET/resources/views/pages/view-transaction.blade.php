@@ -54,6 +54,7 @@
 										@if($user->kode_tiket == null)
 											<p class="contentOrder" style="color: red;">Belum Memiliki Tiket!</p>
 										@else
+											<?php $isAda = true; ?>
 											<p class="contentOrder">{{ $user->kode_tiket }}</p>
 										@endif					
 									</div>
@@ -123,7 +124,13 @@
 												Rp. {{$bayaran->jumlah_bayar * 20000}},-
 											</div>
 										</div>
-										<button id="continue" class="btn btn-pay" data-toggle="modal" data-target="#confirmPayment" style="margin-top: 10px;">Aktifkan Tiket</button>
+										@if (!$isAda)
+											<form method="POST" action="activate">
+											{{ csrf_field() }}
+												<input type="hidden" name="activate" value="{{$usersArray['kode_pembayaran']}}" />
+												<input required type="submit" id="continue" class="btn btn-pay" data-target="#confirmPayment" style="margin-top: 10px;" value="Aktifkan Tiket">
+											</form>
+										@endif
 									</div>
 								@endif
 							</div>

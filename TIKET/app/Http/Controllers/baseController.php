@@ -17,6 +17,7 @@ class baseController extends Controller
     }
 
     public function adminView(Request $request) {
+        $request -> session() -> reflash();
         $kode_pembayaran = $request->view;
         $usersQuery = DB::table('peserta')
                         ->where('kode_pembayaran', '=', $kode_pembayaran)
@@ -34,11 +35,56 @@ class baseController extends Controller
         $usersArray = ["pemesan" => $userName, "kode_pembayaran" => $kode_pembayaran, "dipesan" => $usersQuery, "bayaran" => $userPayment];
 
         $request -> session() -> flash('usersArray', $usersArray);
-        // return $usersArray;
         return view('pages.view-transaction', compact('usersArray'));
     }
 
+    public function activateTicket(Request $request) {
+        $kode_pembayaran = $request->activate;
+        $jenis_tiket = 'Pre-Sale';
+
+        $tiket_amount = DB::table('pembayaran')
+                          ->select('jumlah_bayar')
+                          ->where('kode_pembayaran', '=', $kode_pembayaran)
+                          ->first();
+
+        for ($i = 1; $i <= $tiket_amount->jumlah_bayar; $i++) {
+            $tiket_query = DB::table('tiket')
+                        ->select('kode_tiket')
+                        ->where('jenis_tiket', '=', $jenis_tiket)
+                        ->where('isTaken', '=', 0)
+                        ->first();
+
+            $query_peserta = DB::table('peserta')
+                        ->select('isHariPertama', 'email')
+                        ->where('kode_pembayaran', '=', $kode_pembayaran)
+                        ->where('kode_tiket', '=', NULL)
+                        ->first();
+
+            DB::table('tiket')
+                ->where('kode_tiket', '=', $tiket_query->kode_tiket)
+                ->update(['isTaken' => 1]);
+
+            DB::table('peserta')
+                ->where('kode_pembayaran', '=', $kode_pembayaran)
+                ->where('email', '=', $query_peserta->email)
+                ->update(['kode_tiket' => $tiket_query->kode_tiket]);
+
+            if ($query_peserta->isHariPertama == 1) {
+                DB::table('detail_tiket')
+                   ->where('kode_tiket', '=', $tiket_query->kode_tiket)
+                   ->update(array('isHariPertama' => 1, 'kode_pembayaran' => $kode_pembayaran));
+            } else {
+                DB::table('detail_tiket')
+                   ->where('kode_tiket', '=', $tiket_query->kode_tiket)
+                   ->update(['kode_pembayaran' => $kode_pembayaran]);
+            }
+        }
+
+        return view('pages.success-activate');
+    }
+
     public function admin(Request $request){
+        $request -> session() -> reflash();
         if (isset($request) && $request->kode == 'borah_bkui17') {
             $usersArray = DB::table('pembayar')
                         ->join('pembayaran', 'pembayar.kode_pembayaran', '=', 'pembayaran.kode_pembayaran')

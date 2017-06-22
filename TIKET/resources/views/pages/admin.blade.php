@@ -18,9 +18,9 @@
 			    </tr>
 			  </thead>
 			  <tbody>
-			  @if (isset($usersArray))
+			  @if (Session::get('usersArray') != null)
 				  <?php $i = 1;?>
-				  @foreach ($usersArray as $user)
+				  @foreach (Session::get('usersArray') as $user)
 				  	<tr>
 				      <th scope="row"><?php echo $i; ?></th>
 				      <td name="nama" value ={{ $user->nama }}>{{ $user->nama }}</td>
@@ -30,7 +30,7 @@
 						{{ csrf_field() }}
 							<div class="col-md-6">
 								<div class="form-group">
-								    <button id="continue" class="btn btn-pay" style="font-size: 1em;" name="view" value={{ $user->kode_pembayaran}}>View</button>
+								    <button id="continue" class="btn btn-pay" style="font-size: 1em;" name="view" value={{ $user->kode_pembayaran }}>View</button>
 								</div>
 							</div>
 						</form>

@@ -24,6 +24,7 @@ Route::post('/update-data', 'baseController@update_data');
 
 Route::post('/nimda', 'baseController@admin');
 Route::post('/view-transaction', 'baseController@adminView');
+Route::post('/activate', 'baseController@activateTicket');
 Route::get('/nimda', 'baseController@validateAdmin');
 Route::get('/view-transaction', 'baseController@view_transaction');
 
